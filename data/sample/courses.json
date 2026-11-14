@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "note": "Sample subset"
+  },
+  "count": 8,
+  "courses": [
+    {
+      "code": "AI201L",
+      "name": "Programming for AI Lab",
+      "credits": "0-3 1",
+      "credit_hours": 1,
+      "prerequisites": [
+        "CS112"
+      ],
+      "prerequisites_raw": "CS112",
+      "description": "IDE for the language (e.g., Jupyter Notebook or IPython), variables, expressions, operands and operators, loops, control structures, debugging, error messages, functions, strings, lists, object-oriented constructs and basic graphics in the language, writing production quality clean code in the programming language using version control (git and subversion), pertinent libraries necessary for interpreting, analyzing and plotting numerical data (e.g., NumPy, MatPlotLib, Anaconda and Pandas for Python) and examples of each library using simple use cases and small case studies.",
+      "unit": "fcse",
+      "offered_in": [
+        {
+          "program_id": "bs-artificial-intelligence",
+          "year": 2,
+          "semester": 3,
+          "name_in_catalog": "Programming for AI Lab"
+        }
+      ],
+      "is_lab": true,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 76",
+          "GIKI Course Hub live catalog (2026-10-13)"
+        ]
+      }
+    },
+    {
+      "code": "AI311",
+      "name": "Knowledge Representation and Problem Solving",
+      "credits": "2-0 2",
+      "credit_hours": 2,
+      "prerequisites": [
+        "CS231"
+      ],
+      "prerequisites_raw": "CS231",
+      "description": "Propositional Logic, First-order Logic, Horn Clauses, Description Logic, Reasoning using Description Logic, Forward and Backward Chaining in Inference Engines, Semantic Networks, Ontologies and Ontology Languages, Logical Agents, Planning, Rule-based Knowledge Representation, Reasoning Under Uncertainty, Bayesian Networks Representation, Inference in Bayesian Networks, Fuzzy Logic, Inference using Fuzzy Rules, Markov Models, Commonsense Reasoning, Explainable AI.",
+      "unit": "fcse",
+      "offered_in": [
+        {
+          "program_id": "bs-artificial-intelligence",
+          "year": 3,
+          "semester": 5,
+          "name_in_catalog": "Knowledge Representation & Problem Solving"
+        }
+      ],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 77",
+          "GIKI Course Hub live catalog (2026-10-13)"
+        ]
+      }
+    },
+    {
+      "code": "AI312",
+      "name": "Machine Learning",
+      "credits": "3-3 4",
+      "credit_hours": 4,
+      "prerequisites": [
+        "AI202"
+      ],
+      "prerequisites_raw": "AI202",
+      "description": "Introduction, Data preprocessing, Feature selection, Dimensionality reduction (principal component analysis), Data splitting (training, validation, testing), Classification vs. Regression, Evaluation metrics, Supervised learning (decision trees, Naive Bayes, artificial neural networks, support vector machines, overfitting, underfitting, noisy data, and pruning), Ensemble learning (stacking, bagging, and boosting with random forests), Regression (linear, logistic), Unsupervised learning (hierarchical clustering, k-means partitional clustering, k-Nearest-neighbor algorithm), Semi-supervised learning with EM using labeled and unlabeled data, Reinforcement learning.",
+      "unit": "fcse",
+      "offered_in": [],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 77"
+        ]
+      }
+    },
+    {
+      "code": "AI331",
+      "name": "Deep Neural Networks",
+      "credits": "3-3 4",
+      "credit_hours": 4,
+      "prerequisites": [
+        "AI321"
+      ],
+      "prerequisites_raw": "AI321",
+      "description": "Introduction to artificial and biological neurons, learning from data, artificial neural networks and non-linear activation functions, error back propagation and restricted boltzman machine algorithms, deep vs. shallow learning, data augmentation, theory of generalization, convolutional neural networks, recurrent neural networks, generative adversarial networks, deep unsupervised and reinforcement learning, parallel computing for AI (GPU computing, CuDNN, etc.), and application areas of deep learning \u2013 speech recognition, images, vision, etc.",
+      "unit": "fcse",
+      "offered_in": [
+        {
+          "program_id": "bs-artificial-intelligence",
+          "year": 3,
+          "semester": 5,
+          "name_in_catalog": "Deep Neural Networks"
+        }
+      ],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 77",
+          "GIKI Course Hub live catalog (2026-10-13)"
+        ]
+      }
+    },
+    {
+      "code": "AI432",
+      "name": "Deep Reinforcement Learning and Control",
+      "credits": "3-0 3",
+      "credit_hours": 3,
+      "prerequisites": [
+        "AI331"
+      ],
+      "prerequisites_raw": "AI331",
+      "description": "Introduction to autonomous systems, self and reinforcement learning, core challenges and approaches to meet challenges, generalization and exploration, algorithms for control policies guided by reinforcement, demonstrations and intrinsic curiosity, evaluating complexity, generalization and generality of algorithms, examples of autonomous tasks, e.g., robotics, game playing, consumer modelling, healthcare, etc.",
+      "unit": "fcse",
+      "offered_in": [],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 85"
+        ]
+      }
+    },
+    {
+      "code": "AI441",
+      "name": "Computer Vision",
+      "credits": "3-0 3",
+      "credit_hours": 3,
+      "prerequisites": [
+        "AI331"
+      ],
+      "prerequisites_raw": "AI331",
+      "description": "Foundation of image formation, measurement, and analysis, geometric relationships between 2D images and the 3D world, object and scene recognition and categorization from images, fundamentals of image formation, camera imaging geometry, image filtering, feature detection and matching, stereo vision, motion estimation and tracking, deep learning architectures for computer vision, AlexNet, GoogleNet, VGGNet, ResNet, Xception, ResNext-50, YOLO and others, and semantic segmentation, pose estimation, image classification and scene understanding.",
+      "unit": "fcse",
+      "offered_in": [],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 77"
+        ]
+      }
+    },
+    {
+      "code": "AI442",
+      "name": "Medical Image Processing",
+      "credits": "3-0 3",
+      "credit_hours": 3,
+      "prerequisites": [
+        "AI341"
+      ],
+      "prerequisites_raw": "AI341",
+      "description": "Introduction, texture analysis, basic principles of medical image communication, history, terminology, algorithms, image formation and medical imaging, imaging modalities, image enhancement, image statistics, histograms, visualization of medical images, surface and volume-based approaches, illumination, image segmentation, robustness, watershed transform, active contours, live wire, active shapes, texture analysis, texture localization and delineation, digital representation of color, image data management, standards, components of PACS, lossy and lossless compression, ImageJ.",
+      "unit": "fcse",
+      "offered_in": [],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 85"
+        ]
+      }
+    },
+    {
+      "code": "AI443",
+      "name": "Visual Perception for Self-Driving Cars",
+      "credits": "3-0 3",
+      "credit_hours": 3,
+      "prerequisites": [
+        "AI341"
+      ],
+      "prerequisites_raw": "AI341",
+      "description": "Major building blocks of the perception system for self-driving cars, autonomous driving, static and dynamic object detection, main perception tasks, survey of common computer vision methods, pinhole camera model, intrinsic and extrinsic camera calibration, detect, describe and match image features, design convolutional neural networks, application to visual odometry, object detection and tracking, and semantic segmentation for drivable surface estimation.",
+      "unit": "fcse",
+      "offered_in": [],
+      "is_lab": false,
+      "provenance": {
+        "sources": [
+          "GIKI Undergraduate Prospectus 2025, p. 86"
+        ]
+      }
+    }
+  ]
+}

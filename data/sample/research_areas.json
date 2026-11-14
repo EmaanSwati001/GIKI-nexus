@@ -1,0 +1,184 @@
+{
+  "meta": {
+    "note": "Sample subset"
+  },
+  "count": 10,
+  "research_areas": [
+    {
+      "id": "machine-learning",
+      "label": "Machine Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "19086",
+        "dr-ambreen-nazir",
+        "dr-haseeb-ahmad",
+        "hafiz-syed-ahmed-qasim",
+        "laraib-noor",
+        "mr-said-nabi",
+        "muhammad-huzaifa-shah",
+        "muhammad-shahab-alam",
+        "nazia-shahzadi-lecturer",
+        "prof-dr-qadeer-ul-hasan",
+        "salman-ashraf",
+        "syed-salman-shah",
+        "waheed-ahmad"
+      ],
+      "faculty_count": 13,
+      "units": [
+        "dcve",
+        "fbs",
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "internet-of-thing",
+      "label": "IoT",
+      "aliases": [
+        "Internet of Things",
+        "Internet of Things (IoT)"
+      ],
+      "faculty_ids": [
+        "abbas",
+        "dr-ali-akbar",
+        "dr-asad-mahmood",
+        "dr-mian-muaz-razaq",
+        "dr-muhammad-fawad-khan",
+        "dr-muhammad-salman",
+        "dr-sarah-iqbal",
+        "dr-shahab-haider",
+        "dr-zubair-ahmad",
+        "laraib-noor"
+      ],
+      "faculty_count": 10,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "natural-language-processing",
+      "label": "Natural Language Processing",
+      "aliases": [
+        "NLP",
+        "Natural Language Processing (NLP)"
+      ],
+      "faculty_ids": [
+        "dr-ambreen-nazir",
+        "hafiz-syed-ahmed-qasim",
+        "laraib-noor",
+        "mr-muhammad-qasim-riaz",
+        "mr-said-nabi",
+        "safia-baloch",
+        "salman-ashraf",
+        "waheed-ahmad"
+      ],
+      "faculty_count": 8,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "deep-learning",
+      "label": "Deep Learning",
+      "aliases": [
+        "Deep learning"
+      ],
+      "faculty_ids": [
+        "2-dr-farah-saeed",
+        "dr-ambreen-nazir",
+        "dr-ayaz-umer",
+        "hafiz-syed-ahmed-qasim",
+        "muhammad-huzaifa-shah",
+        "nazia-shahzadi-lecturer",
+        "syed-salman-shah"
+      ],
+      "faculty_count": 7,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "wireless-communication",
+      "label": "Wireless Communications",
+      "aliases": [
+        "Wireless Communication",
+        "Wireless communications"
+      ],
+      "faculty_ids": [
+        "dr-ahmad-kamal-hassan",
+        "dr-asad-mahmood",
+        "dr-muhammad-fawad-khan",
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 4,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "large-language-model",
+      "label": "Large Language Modelling",
+      "aliases": [
+        "Large Language Models"
+      ],
+      "faculty_ids": [
+        "dr-ambreen-nazir",
+        "rabbia-hassan"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "agentic-ai",
+      "label": "Agentic AI",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "aspect-based-sentiment-analysis",
+      "label": "Aspect-Based Sentiment Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "bayesian-experimental-design",
+      "label": "Bayesian Experimental Design",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-imran-sandhu"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "biomedical-engineering",
+      "label": "Biomedical engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    }
+  ]
+}

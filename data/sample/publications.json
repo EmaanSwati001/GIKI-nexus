@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "note": "Sample subset"
+  },
+  "count": 10,
+  "publications": [
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "E. Naseer, A. I. Sandhu, et. al, \u201cGAN-driven Electromagnetic Imaging of 2-D Dielectric Scatterers\u201d,(under review) Submitted to IEEE on February 16, 2024. Preprint Available at https://doi.org/10.48550/arXiv.2402.10831,",
+      "type": "unspecified",
+      "section_heading": "Selected Publications",
+      "year": 2024,
+      "doi": "10.48550/arXiv.2402.10831"
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, B. D. Mansour, O. Dorn and P. Soupios, \u201cBayesian Experimental Design for Efficient Sensor Placement for TwoDimensional Electromagnetic Imaging\u201d, in IEEE Access, vol. 11, pp. 65649-65662, 2023.",
+      "type": "unspecified",
+      "section_heading": "Selected Publications",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, U. Waheed, O. Dorn and P. Soupios, \u201cMultifrequency Wavefield Modeling of Acoustic VTI Wave Equation Using Physics Informed Neural Networks\u201d, in Frontiers in Earth Science, vol. 11, 2023",
+      "type": "unspecified",
+      "section_heading": "Selected Publications",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, A. Desmal, S. A. Shaukat and H. Bagci, \u201cA Neural Network Assisted Greedy Algorithm For Sparse Electromagnetic Imaging\u201d, IEEE Trans. Antennas Propag., vol. 69, no. 9, pp. 6093-6098, Sept. 2021",
+      "type": "unspecified",
+      "section_heading": "Selected Publications",
+      "year": 2021,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, A. Desmal and H. Bagci, \u201cAn Accelerated Nonlinear Contrast Source Inversion Scheme for Sparse Electromagnetic Imaging\u201d, in IEEE Access, vol. 9, pp. 54811-54819, 2021.",
+      "type": "unspecified",
+      "section_heading": "Selected Publications",
+      "year": 2021,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, e.t. al, \u201cRadiating elements for shared aperture Tx/Rx phased arrays at K/Ka band\u201d, IEEE Trans. Antennas Propag., vol. 64, no. 6, pp. 2270-2282, 2016",
+      "type": "unspecified",
+      "section_heading": "Selected Publications",
+      "year": 2016,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, U. Waheed, O. Dorn and P. Soupios, \u201cMultifrequency seismic wavefield modeling in anisotropic media using physics-informed neural networks\u201d, presented at SEG IMAGE 2023 conference, August 2023, Houston Texas",
+      "type": "conference",
+      "section_heading": "CONFERENCE PAPERS",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. Miftakhutdinov, U. Waheed, A. I. Sandhu, K. Shukla and G. Karniadakis, \u201cJAXcelerate Seismic Full Waveform Inversion : A HighPerformance Approach to PINN- based FWI\u201d, presented at SEG IMAGE 2023 conference, August 2023, Houston Texas",
+      "type": "conference",
+      "section_heading": "CONFERENCE PAPERS",
+      "year": 2023,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, S.A. Shaukat, A. Desmal and H. Bagci, \u201cA Machine Learning Assisted Compressive Sensing Approach for Sparse Electromagnetic Imaging\u201d, In. Proc. IEEE International Conference on Computational Electromagnetics (ICCEM), March 2020, Singapore",
+      "type": "conference",
+      "section_heading": "CONFERENCE PAPERS",
+      "year": 2020,
+      "doi": null
+    },
+    {
+      "faculty_id": "dr-ali-imran-sandhu",
+      "citation": "A. I. Sandhu, A. Desmal and H. Bagci, \u201cA Self-Adaptive Accelerated Contrast Source Inversion Scheme for Nonlinear Electromagnetic Imaging\u201d, In. Proc. IEEE International Conference on Imaging Systems and Techniques (IST), (Best Student Poster Finalist), December 2019, AbuDhabi",
+      "type": "conference",
+      "section_heading": "CONFERENCE PAPERS",
+      "year": 2019,
+      "doi": null
+    }
+  ]
+}

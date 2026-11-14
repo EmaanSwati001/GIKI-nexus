@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "note": "Sample subset"
+  },
+  "count": 3,
+  "programs": [
+    {
+      "id": "bs-artificial-intelligence",
+      "name": "BS Artificial Intelligence",
+      "unit": "fcse",
+      "coursehub_program_id": 45
+    },
+    {
+      "id": "bs-computer-science",
+      "name": "BS Computer Science",
+      "unit": "fcse",
+      "coursehub_program_id": 46
+    },
+    {
+      "id": "bs-computer-engineering",
+      "name": "BS Computer Engineering",
+      "unit": "fcse",
+      "coursehub_program_id": 47
+    }
+  ]
+}

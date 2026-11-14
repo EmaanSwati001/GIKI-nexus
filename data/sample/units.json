@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "note": "Sample subset for testing and demonstration"
+  },
+  "count": 2,
+  "units": [
+    {
+      "id": "fcse",
+      "name": "Faculty of Computer Science and Engineering",
+      "short": "FCSE",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/fcse/faculty-profiles/",
+      "source_url": "https://giki.edu.pk/fcse/faculty-profiles/"
+    },
+    {
+      "id": "fee",
+      "name": "Faculty of Electrical Engineering",
+      "short": "FEE",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/fee/fee-faculty-profile/",
+      "source_url": "https://giki.edu.pk/fee/fee-faculty-profile/"
+    }
+  ]
+}

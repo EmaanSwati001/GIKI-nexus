@@ -1,0 +1,336 @@
+{
+  "meta": {
+    "note": "Sample subset"
+  },
+  "count": 5,
+  "faculty": [
+    {
+      "id": "prof-dr-nisar-ahmed",
+      "name": "Prof. Dr. Nisar Ahmed",
+      "designation": "Dean, Faculty of Basic Sciences (FBS)",
+      "designation_on_profile_page": "Dean, Faculty of Basic Sciences (FBS)",
+      "status": "active",
+      "units": [
+        "fbs",
+        "fee"
+      ],
+      "email": "nisarahmed@giki.edu.pk",
+      "phone_or_ext": "(Ext. 2246)",
+      "office": null,
+      "qualifications_raw": "Ph.D. (Control Engineering) 1999, University of London, Imperial College, London, UK. \u2022 B.Sc. (Engg) 1989, UCET Mirpur A.K.",
+      "qualifications": [
+        "Ph.D. (Control Engineering) 1999, University of London, Imperial College, London, UK",
+        "B.Sc. (Engg) 1989, UCET Mirpur A.K"
+      ],
+      "qualifications_summary": null,
+      "research_interests_raw": "Krylov subspace methods for model reduction of large-scale systems. Control and model reduction for linear parameter varying systems. Robust control system design for multivariable systems",
+      "research_interests": [
+        "Krylov subspace methods for model reduction of large-scale systems",
+        "Control and model reduction for linear parameter varying systems",
+        "Robust control system design for multivariable systems"
+      ],
+      "research_summary": null,
+      "bio": null,
+      "publication_count_on_profile": 0,
+      "profile_sections": [],
+      "photo_url": "https://giki.edu.pk/wp-content/uploads/2025/04/Dean-FBS-Photograph-1-500x500.jpg",
+      "profile_url": "https://giki.edu.pk/personnel/prof-dr-nisar-ahmed/",
+      "listing_urls": [
+        "https://giki.edu.pk/fbs/es-faculty-profile/",
+        "https://giki.edu.pk/fee/fee-faculty-profile/"
+      ],
+      "website_categories": [],
+      "prospectus_2025": null,
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/prof-dr-nisar-ahmed/",
+          "https://giki.edu.pk/fbs/es-faculty-profile/",
+          "https://giki.edu.pk/fee/fee-faculty-profile/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      },
+      "missing_fields": [],
+      "verified": true,
+      "research_area_ids": [
+        "control-and-model-reduction-for-linear-parameter-varying-system",
+        "krylov-subspace-methods-for-model-reduction-of-large-scale-system",
+        "robust-control-system-design-for-multivariable-system"
+      ]
+    },
+    {
+      "id": "dr-ali-imran-sandhu",
+      "name": "Dr. Ali Imran Sandhu",
+      "designation": "Assistant Professor",
+      "designation_on_profile_page": "Assistant Professor FCSE",
+      "status": "active",
+      "units": [
+        "fcse"
+      ],
+      "email": "aliimran.sandhu@giki.edu.pk",
+      "phone_or_ext": null,
+      "office": null,
+      "qualifications_raw": "PhD: PhD (Electrical Engineering), King Abdullah University of Sciences and Technology (KAUST), Thuwal, Saudi Arabia",
+      "qualifications": [
+        "PhD: PhD (Electrical Engineering)",
+        "King Abdullah University of Sciences and Technology (KAUST)",
+        "Thuwal, Saudi Arabia"
+      ],
+      "qualifications_summary": null,
+      "research_interests_raw": "Computational Electromagnetics, Microwave Imaging, Physics Informed Machine Learning, Bayesian Experimental Design, Phased Array Antennas\nAli Imran Sandhu (Senior Member, IEEE) received the B.S. degree in electronics engineering from COMSATS University Islamabad (CUI), Lahore, Pakistan, in 2007, the M.S. degree in communication engineering from the Chalmers University of Technology, Gothenburg, Sweden, in 2010, and the Ph.D. degree in electrical engineering from the Division of Computer, Electrical, and Mathematical Sciences and Engineering, King Abdullah University of Science and Technology, (KAUST), Thuwal, Saudi Arabia, in 2020.\nDr. Sandhu is a humble individual with 10+ years of interdisciplinary research experience at the intersection of:\n(i) developing numerical solvers for forward and inverse electromagnetic (imaging) problems,\n(ii) integration of scientific machine learning algorithms, and generative adversarial neural networks (GANs) with numerical electromagnetic, and acoustic wave propagation models, and\n(iii) designing phased array antennas and microwave devices.\nFrom 2011 to 2013, he was a Research Engineer with the Microwave Laboratory, University of Calabria, Rende, Italy. From August 2007 to September 2021, he was a Lecturer with the Electrical and Computer Engineering Department, CUI, where he taught at undergraduate and graduate levels. During September 2021 to August 2023, Dr. Sandhu has been a postdoctoral fellow with the Center of Integrative Petroleum Research, King Fahd University of Petroleum and Minerals (KFUPM).\nHis research interests include applied computational electromagnetics with an emphasis on the characterization of electromagnetic fields and wave interactions in complex geometries, solutions for 2-D and 3-D joint electromagnetic and seismic inverse problems incorporating signal processing and machine learning techniques, integration of physics-informed machine learning with numerical wave propagation solvers, and Bayesian experimental design for efficient sensor placement in an imaging framework.\nHe was a finalist in the student poster competition at the 2016 IEEE IST Conference and secured the best student paper nomination at the 2017 IEEE Applied Computational Electromagnetics Society Conference.\nHe received two bronze medals for securing distinction in his undergraduate discipline at the campus as well as at institute levels at COMSATS University Islamabad.\nDr. Sandhu is a self-motivated and detailed-oriented individual with excellent communication skills. He is educated and trained throughout in a diverse and cross-cultural environment. He is currently serving as an assistant professor at the faculty of computer science and engineering at the GIK Institute Pakistan.",
+      "research_interests": [
+        "Computational Electromagnetics",
+        "Microwave Imaging",
+        "Physics Informed Machine Learning",
+        "Bayesian Experimental Design",
+        "Phased Array Antennas"
+      ],
+      "research_summary": null,
+      "bio": null,
+      "publication_count_on_profile": 19,
+      "profile_sections": [
+        "Qualification",
+        "Research Interests",
+        "Selected Publications",
+        "CONFERENCE PAPERS"
+      ],
+      "photo_url": "https://giki.edu.pk/wp-content/uploads/2019/11/AIS_KAUST_PIC-Cropped-267x300.png",
+      "profile_url": "https://giki.edu.pk/personnel/dr-ali-imran-sandhu/",
+      "listing_urls": [
+        "https://giki.edu.pk/faculty/",
+        "https://giki.edu.pk/fcse/faculty-profiles/"
+      ],
+      "website_categories": [],
+      "prospectus_2025": {
+        "listed_as": "Dr. Ali Imran Sandhu",
+        "detail": "PhD (KAUST, Thuwal, KSA)",
+        "section": "Faculty Members",
+        "match_score": 1.0,
+        "review_needed": false
+      },
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-ali-imran-sandhu/",
+          "https://giki.edu.pk/faculty/",
+          "https://giki.edu.pk/fcse/faculty-profiles/",
+          "GIKI Undergraduate Prospectus 2025"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      },
+      "missing_fields": [],
+      "verified": true,
+      "research_area_ids": [
+        "bayesian-experimental-design",
+        "computational-electromagnetics",
+        "microwave-imaging",
+        "phased-array-antenna",
+        "physics-informed-machine-learning"
+      ]
+    },
+    {
+      "id": "dr-ambreen-nazir",
+      "name": "Dr. Ambreen Nazir",
+      "designation": "Assisstant Professor",
+      "designation_on_profile_page": "Assisstant Professor",
+      "status": "active",
+      "units": [
+        "fcse"
+      ],
+      "email": "ambreen.nazir@giki.edu.pk",
+      "phone_or_ext": null,
+      "office": null,
+      "qualifications_raw": "Ph.D. Software Engineering, Xi\u2019an Jiaotong University (XJTU), China (2023)",
+      "qualifications": [
+        "Ph.D. Software Engineering, Xi\u2019an Jiaotong University (XJTU)",
+        "China (2023)"
+      ],
+      "qualifications_summary": null,
+      "research_interests_raw": "Agentic AI, Natural Language Processing, Large Language Modelling, Sentiment Analysis, Aspect-Based Sentiment Analysis, Machine Learning, Deep Learning, Information Extraction, Sentiment Evolution",
+      "research_interests": [
+        "Agentic AI",
+        "Natural Language Processing",
+        "Large Language Modelling",
+        "Sentiment Analysis",
+        "Aspect-Based Sentiment Analysis",
+        "Machine Learning",
+        "Deep Learning",
+        "Information Extraction",
+        "Sentiment Evolution"
+      ],
+      "research_summary": null,
+      "bio": null,
+      "publication_count_on_profile": 9,
+      "profile_sections": [
+        "Education",
+        "Research Interests",
+        "Selected Publications"
+      ],
+      "photo_url": "https://giki.edu.pk/wp-content/uploads/2026/11/Blue_BG-175-kb-550x500.png",
+      "profile_url": "https://giki.edu.pk/personnel/dr-ambreen-nazir/",
+      "listing_urls": [
+        "https://giki.edu.pk/faculty/",
+        "https://giki.edu.pk/fcse/faculty-profiles/"
+      ],
+      "website_categories": [],
+      "prospectus_2025": null,
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-ambreen-nazir/",
+          "https://giki.edu.pk/faculty/",
+          "https://giki.edu.pk/fcse/faculty-profiles/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      },
+      "missing_fields": [],
+      "verified": true,
+      "research_area_ids": [
+        "agentic-ai",
+        "aspect-based-sentiment-analysis",
+        "deep-learning",
+        "information-extraction",
+        "large-language-model",
+        "machine-learning",
+        "natural-language-processing",
+        "sentiment-analysis",
+        "sentiment-evolution"
+      ]
+    },
+    {
+      "id": "dr-asad-mahmood",
+      "name": "Dr. Asad Mahmood",
+      "designation": "Associate Professor",
+      "designation_on_profile_page": "Associate Professor",
+      "status": "active",
+      "units": [
+        "fcse"
+      ],
+      "email": "asad.mahmood@giki.edu.pk",
+      "phone_or_ext": "Ext: 2285",
+      "office": null,
+      "qualifications_raw": "Ph.D (Telecom Paristech, France)",
+      "qualifications": [
+        "Ph.D (Telecom Paristech, France)"
+      ],
+      "qualifications_summary": null,
+      "research_interests_raw": "Signal Processing for Communications, Wireless Communications, Wireless Sensor Networks, Hyperspectral Imaging, Compressed Sensing, Sparse Signal Processing, Internet of Things (IoT), Biomedical engineering, Optical Communications",
+      "research_interests": [
+        "Signal Processing for Communications",
+        "Wireless Communications",
+        "Wireless Sensor Networks",
+        "Hyperspectral Imaging",
+        "Compressed Sensing",
+        "Sparse Signal Processing",
+        "Internet of Things (IoT)",
+        "Biomedical engineering",
+        "Optical Communications"
+      ],
+      "research_summary": null,
+      "bio": null,
+      "publication_count_on_profile": 0,
+      "profile_sections": [
+        "Courses Taught",
+        "Current Research Projects",
+        "Supervised Final Year Projects",
+        "Fundings & MoUs"
+      ],
+      "photo_url": "https://giki.edu.pk/wp-content/uploads/2019/11/pic2024-900x500.webp",
+      "profile_url": "https://giki.edu.pk/personnel/dr-asad-mahmood/",
+      "listing_urls": [
+        "https://giki.edu.pk/faculty/",
+        "https://giki.edu.pk/fcse/faculty-profiles/"
+      ],
+      "website_categories": [
+        "faculty",
+        "fcse"
+      ],
+      "prospectus_2025": null,
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-asad-mahmood/",
+          "https://giki.edu.pk/faculty/",
+          "https://giki.edu.pk/fcse/faculty-profiles/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      },
+      "missing_fields": [],
+      "verified": true,
+      "research_area_ids": [
+        "biomedical-engineering",
+        "compressed-sensing",
+        "hyperspectral-imaging",
+        "internet-of-thing",
+        "optical-communication",
+        "signal-processing-for-communication",
+        "sparse-signal-processing",
+        "wireless-communication",
+        "wireless-sensor-network"
+      ]
+    },
+    {
+      "id": "dr-ayaz-umer",
+      "name": "Dr. Ayaz Umer",
+      "designation": "Assistant Professor",
+      "designation_on_profile_page": "Assistant Professor",
+      "status": "active",
+      "units": [
+        "fcse"
+      ],
+      "email": "ayaz.umer@giki.edu.pk",
+      "phone_or_ext": null,
+      "office": null,
+      "qualifications_raw": "Ph.D. in Computer and Information Science.\nUniversity of South Australia, Adelaide (UniSA).",
+      "qualifications": [
+        "Ph.D. in Computer and Information Science",
+        "University of South Australia, Adelaide (UniSA)"
+      ],
+      "qualifications_summary": null,
+      "research_interests_raw": "Human visual attention prediction, Knowledge distillation, Deep learning,\nDr. Ayaz Umer has worked in the field of visual attention prediction, focusing on developing innovative methods to enhance the performance and efficiency of saliency prediction networks. His research includes novel techniques to facilitate the development of saliency prediction networks with reduced computational cost by utilizing knowledge distillation. Furthermore, he has worked on Explainable AI (XAI) by providing an insight into how knowledge is transferred from the teacher to the student network under the knowledge distillation method.\nFrom 2010 to 2014, he worked at COMSATS University, Attock Campus as a Research Associate and Lecturer, where he taught various undergraduate courses. From 2016 to 2019, he was with the University of South Australia, Adelaide, serving as a Course Coordinator, Practical Supervisor, and Tutor.\nIn August 2024, he joined the faculty of computer science and engineering at GIKI as an assistant professor. He is excited to both learn and teach cross-disciplinary.",
+      "research_interests": [
+        "Human visual attention prediction",
+        "Knowledge distillation",
+        "Deep learning"
+      ],
+      "research_summary": null,
+      "bio": null,
+      "publication_count_on_profile": 4,
+      "profile_sections": [
+        "Qualifications",
+        "Research Interests",
+        "Peer Reviewed Journals",
+        "Selected Publications"
+      ],
+      "photo_url": "https://giki.edu.pk/wp-content/uploads/2019/11/Dr.-Umer-Ayaz-jpg.webp",
+      "profile_url": "https://giki.edu.pk/personnel/dr-ayaz-umer/",
+      "listing_urls": [
+        "https://giki.edu.pk/faculty/",
+        "https://giki.edu.pk/fcse/faculty-profiles/"
+      ],
+      "website_categories": [
+        "faculty",
+        "fcse"
+      ],
+      "prospectus_2025": {
+        "listed_as": "Dr. Ayaz Umer",
+        "detail": "PhD (University of South Australia, Adelaide, Australia)",
+        "section": "Faculty list",
+        "match_score": 1.0,
+        "review_needed": false
+      },
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-ayaz-umer/",
+          "https://giki.edu.pk/faculty/",
+          "https://giki.edu.pk/fcse/faculty-profiles/",
+          "GIKI Undergraduate Prospectus 2025"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      },
+      "missing_fields": [],
+      "verified": true,
+      "research_area_ids": [
+        "deep-learning",
+        "human-visual-attention-prediction",
+        "knowledge-distillation"
+      ]
+    }
+  ]
+}
