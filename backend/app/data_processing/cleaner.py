@@ -117,8 +117,8 @@ def parse_credits(credits_val: Optional[Any]) -> Tuple[Optional[str], Optional[i
     if not s or s.lower() in {"none", "nil"}:
         return None, None
 
-    # Replace spaces with hyphens in '3 0 3' patterns
-    s_norm = re.sub(r"(\d)\s+(\d)", r"\1-\2", s)
+    # Replace whitespace between digits with hyphens (e.g. '3 0 3' -> '3-0-3')
+    s_norm = re.sub(r"(?<=\d)\s+(?=\d)", "-", s)
     nums = [int(n) for n in re.findall(r"\d+", s)]
     credit_hours = nums[-1] if nums else None
 
