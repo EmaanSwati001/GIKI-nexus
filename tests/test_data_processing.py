@@ -249,6 +249,59 @@ class TestDataProcessing(unittest.TestCase):
         self.assertEqual(stats["prospectus_flags"], 1)
         self.assertTrue(cleaned[0]["prospectus_2025"]["review_needed"])
 
+    def test_unmatched_instructors_preserved(self):
+        """Verify that all 66 unmatched CourseHub instructors are preserved without truncation."""
+        with open(self.project_root / "data" / "processed" / "coursehub_instructor_links.json", "r", encoding="utf-8") as f:
+            links = json.load(f)["links"]
+        unmatched = [l for l in links if not l.get("faculty_id")]
+        self.assertEqual(len(links), 190)
+        self.assertEqual(len(unmatched), 66)
+
+    def test_dual_appointment_preserved(self):
+        """Verify faculty with dual affiliations (Prof. Dr. Nisar Ahmed) retain both units."""
+        with open(self.project_root / "data" / "processed" / "faculty.json", "r", encoding="utf-8") as f:
+            fac = json.load(f)["faculty"]
+        nisar = next((f for f in fac if f["id"] == "prof-dr-nisar-ahmed"), None)
+        self.assertIsNotNone(nisar)
+        self.assertEqual(sorted(nisar["units"]), ["fbs", "fee"])
+
+    def test_no_silent_record_discarding(self):
+        """Verify that no records were dropped between raw and processed datasets."""
+        raw_counts = {
+            "units.json": ("units", 9),
+            "faculty.json": ("faculty", 181),
+            "courses.json": ("courses", 647),
+            "programs.json": ("programs", 15),
+            "other_personnel.json": ("people", 20),
+            "coursehub_instructor_links.json": ("links", 190),
+        }
+        for fname, (key, expected_count) in raw_counts.items():
+            with open(self.raw_dir / fname, "r", encoding="utf-8") as rf:
+                r_len = len(json.load(rf)[key])
+            with open(self.project_root / "data" / "processed" / fname, "r", encoding="utf-8") as pf:
+                p_len = len(json.load(pf)[key])
+            self.assertEqual(r_len, expected_count)
+            self.assertEqual(p_len, expected_count)
+
+    def test_pydantic_domain_model_validation(self):
+        """Verify that processed data records validate against Pydantic domain models."""
+        from backend.app.schemas.domain import (
+            AcademicUnit, FacultyMember, Course, Program,
+            ResearchArea, Publication, OtherPersonnel, CourseHubInstructorLink
+        )
+        proc_dir = self.project_root / "data" / "processed"
+        with open(proc_dir / "units.json", "r", encoding="utf-8") as f:
+            for u in json.load(f)["units"]:
+                AcademicUnit.model_validate(u)
+
+        with open(proc_dir / "faculty.json", "r", encoding="utf-8") as f:
+            for fac in json.load(f)["faculty"][:20]:  # sample check
+                FacultyMember.model_validate(fac)
+
+        with open(proc_dir / "courses.json", "r", encoding="utf-8") as f:
+            for c in json.load(f)["courses"][:20]:
+                Course.model_validate(c)
+
 
 if __name__ == "__main__":
     unittest.main()
