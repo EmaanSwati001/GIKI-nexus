@@ -1,0 +1,1343 @@
+{
+  "meta": {
+    "generated_from": [
+      "giki.edu.pk faculty listing + personnel pages",
+      "GIKI Undergraduate Prospectus 2025",
+      "GIKI Course Hub repo (giki_course_hub-1) JSON data"
+    ],
+    "scraped_at": "2026-11-10T16:37:44.477Z",
+    "note": "Course Hub instructor names matched to scraped faculty by name; null faculty_id = no confident match. Who-teaches-what lives in Course Hub's course_instructors table, not in these files."
+  },
+  "links": [
+    {
+      "coursehub_name": "Mr. Qasim Riaz",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "mr-muhammad-qasim-riaz",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Ghufran",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-muhammad-ghufran-khan",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Ms. Beenish",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.56
+    },
+    {
+      "coursehub_name": "Mr. Hafiz Qasim",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "hafiz-syed-ahmed-qasim",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Engr. Aneeqa Ramzan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.64
+    },
+    {
+      "coursehub_name": "Engr. Badr Munir",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "engr-badre-munir",
+      "match_method": "full_name",
+      "match_score": 0.95
+    },
+    {
+      "coursehub_name": "Mr. Sajid Ali",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "muhammad-sajid-ali",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Sahab Haider",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-shahab-haider",
+      "match_method": "full_name",
+      "match_score": 0.96
+    },
+    {
+      "coursehub_name": "Dr. Qamar Abbas",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-qamar-abbas-2",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Rabbia Hassan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "rabbia-hassan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Said Nabi",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "mr-said-nabi",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Hafsa Nayyab",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.58
+    },
+    {
+      "coursehub_name": "Engr. Arooba Saeed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.78
+    },
+    {
+      "coursehub_name": "Ms. Memoona Amjad",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.64
+    },
+    {
+      "coursehub_name": "Mr. Salman Ashraf",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "salman-ashraf",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Huzaifa",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "muhammad-huzaifa-shah",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. Talha",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.57
+    },
+    {
+      "coursehub_name": "Engr. Mah Rukh",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.56
+    },
+    {
+      "coursehub_name": "Dr. Asad Mehmood",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-asad-mahmood",
+      "match_method": "full_name",
+      "match_score": 0.92
+    },
+    {
+      "coursehub_name": "Dr. Ali Imran",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-ali-imran-sandhu",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. Talha Ashfaq",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.64
+    },
+    {
+      "coursehub_name": "Engr. Zaheer Ahmad",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.83
+    },
+    {
+      "coursehub_name": "Maham Shahzadi",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.81
+    },
+    {
+      "coursehub_name": "Sadiq Shah",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.7
+    },
+    {
+      "coursehub_name": "Dr. Taj",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.5
+    },
+    {
+      "coursehub_name": "Dr. Zoya",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.43
+    },
+    {
+      "coursehub_name": "Mr. Israr",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "israr-ahmad",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. Ahsan Shah",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "engr-ahsan-shah",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Waheed Iqbal",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.7
+    },
+    {
+      "coursehub_name": "Muhammad Naeem",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "muhammad-naveed",
+      "match_method": "full_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Fahad Bin Muslim",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-fahad-bin-muslim",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Engr. Abbas Khan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.76
+    },
+    {
+      "coursehub_name": "Dr. Ayaz Umer",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-ayaz-umer",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Basma Nasir",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Dr. Memoon Sajid",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-memoon-sajid",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Engr. Ali Husnain",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Engr. M. Abu Bakar",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.57
+    },
+    {
+      "coursehub_name": "Dr. Shahab Ansari",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.84
+    },
+    {
+      "coursehub_name": "Prof. Dr. Ahmar Rashid",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "engr-dr-ahmar-rashid",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Safia Baloch",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "safia-baloch",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ghulam Abbas",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "abbas",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Engr. M. Shakaib Khan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Mr. Ahmad Nawaz",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.76
+    },
+    {
+      "coursehub_name": "Dr. Fawad Khan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-muhammad-fawad-khan",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Rashid Jillani",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.87
+    },
+    {
+      "coursehub_name": "Mr. Samiullah Hussain",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.71
+    },
+    {
+      "coursehub_name": "Ms. Laraib Afzal",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "ms-laraib-afzal",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Noor Nayyer",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Dr. Sarah Iqbal",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-sarah-iqbal",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Waheed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "waheed-ahmad",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Salman",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Mr. Asim Shah",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.74
+    },
+    {
+      "coursehub_name": "Dr. Salman Ahmed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-salman-ahmed",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Khurram",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.56
+    },
+    {
+      "coursehub_name": "Ms. Laraib Noor",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "laraib-noor",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Hanif",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "engr-dr-muhammad-hanif",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Engr. Irfan Ullah",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.77
+    },
+    {
+      "coursehub_name": "Dr. Omer Bin Saeed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-m-omer-bin-saeed-2",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Hafiz. S. M. Muslim",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.58
+    },
+    {
+      "coursehub_name": "Prof. Dr. Qadeer ul Hasan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "prof-dr-qadeer-ul-hasan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Asima Sarwar",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.61
+    },
+    {
+      "coursehub_name": "Ms. Umme Rubab Hashmi",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.56
+    },
+    {
+      "coursehub_name": "Dr. Farah Saeed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "2-dr-farah-saeed",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Anmol S. Khan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.64
+    },
+    {
+      "coursehub_name": "Dr. Salman Saeed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "muhammad-salman-saeed",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Zubair",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.83
+    },
+    {
+      "coursehub_name": "Ms. Hadia Abbas",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.83
+    },
+    {
+      "coursehub_name": "Dr. Shahab Haider",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-shahab-haider",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Adnan Shah",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-adnan-shah",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Waqas",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-muhammad-waqas",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Khurram Jadoon",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-khurram-khan-jadoon",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Waqar Ahmed",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": "dr-waqar-ahmad",
+      "match_method": "full_name",
+      "match_score": 0.91
+    },
+    {
+      "coursehub_name": "Mr. Khizar Khan",
+      "coursehub_faculty": "FCSE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.61
+    },
+    {
+      "coursehub_name": "Engr. Umar Waleed",
+      "coursehub_faculty": "FEE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.7
+    },
+    {
+      "coursehub_name": "Dr. Memoon Sajid",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-memoon-sajid",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Irfan",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-muhammad-irfan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Muqeet Mughal",
+      "coursehub_faculty": "FEE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.63
+    },
+    {
+      "coursehub_name": "Dr. Husnul Maab",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-husnul-maab",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Hadeed Ahmed Sher",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-hadeed-ahmed-sher",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Prof. Dr. Nisar Ahmed",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "prof-dr-nisar-ahmed",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Dur-e-Zehra Baig",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-dur-e-zehra-baig",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ahmad Kamal",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-ahmad-kamal-hassan",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Waleed Sethi",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-waleed-tariq-sethi-2",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Shahid Alam",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-shahid-alam",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ali Imran Sandhu",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-ali-imran-sandhu",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Zaiwar Ali",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "zaiwar-ali",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Adnan Noor",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-adnan-noor",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ammar Arshad",
+      "coursehub_faculty": "FEE",
+      "faculty_id": "dr-ammar-arshad",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Ms. Nayab Khan",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.64
+    },
+    {
+      "coursehub_name": "Dr. Mahnoor",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-mahnoor-sarfraz",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Usman Habib",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "usman-habib",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Zahid",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.62
+    },
+    {
+      "coursehub_name": "Dr. Minhaj",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-minhaj-zaheer",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Danyal",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-danyal-ahmad-assistant-professor",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. Asif",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.62
+    },
+    {
+      "coursehub_name": "Dr. Sheharyar Pervaiz",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "sheharyar-pervaiz",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Babar Zaman",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-babar-zaman-2",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Muti ur Rehman",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "muhammad-muti-ur-rehman",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Tahir Naseem",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-tahir-naseem",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Mazhar Javed",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "mazhar-javed",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ziaul Haq abbas",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-zia-ul-haq-abbas",
+      "match_method": "full_name",
+      "match_score": 0.93
+    },
+    {
+      "coursehub_name": "Mr. Sadiq",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "mr-muhammad-sadiq",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. Mutti ur Rahman",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.7
+    },
+    {
+      "coursehub_name": "Dr. Nasir Javad",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-nasir-javed",
+      "match_method": "full_name",
+      "match_score": 0.91
+    },
+    {
+      "coursehub_name": "Mr. Saqib",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.73
+    },
+    {
+      "coursehub_name": "Mr. Mazhar",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "mazhar-javed",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Engr. Hamza",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.62
+    },
+    {
+      "coursehub_name": "Engr. Hassan",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.63
+    },
+    {
+      "coursehub_name": "Rao Uzair",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.63
+    },
+    {
+      "coursehub_name": "Engr. Rafay",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.44
+    },
+    {
+      "coursehub_name": "Engr. Wajahat",
+      "coursehub_faculty": "FBS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.45
+    },
+    {
+      "coursehub_name": "Engr. Huzaifa",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "muhammad-huzaifa-shah",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Sirajul Haq",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "prof-dr-sirajul-haq",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Nasir Javed",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-nasir-javed",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Babar",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-babar-zaman-2",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Usman",
+      "coursehub_faculty": "FBS",
+      "faculty_id": "dr-muhammad-usman",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Sajjad Hussain",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-sajjad-hussain-assistant-professor",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Engr. Abdul Wahab",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "engr-abdul-wahab",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Waqar Shaukat",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "waqar-shaukat",
+      "match_method": "full_name",
+      "match_score": 0.93
+    },
+    {
+      "coursehub_name": "Engr. Qaiser Abbas",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "qaiser-abbas",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Engr. Hamza Nasir",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.7
+    },
+    {
+      "coursehub_name": "Dr. Javaid Rabbani Khan",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-javaid-rabbani-khan-professor",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Hammad Khan",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-hammad-amjad-khan",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Ahsan Jalal",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "ahsan-jalal",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Khurram Imran",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-khurram-imran-khan-associate-professor",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. M. Shozab Mehdi",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.69
+    },
+    {
+      "coursehub_name": "Dr. Shanza",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-shanza-rehan-assistant-professor",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. Abdullah",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-abid-ullah",
+      "match_method": "full_name",
+      "match_score": 0.89
+    },
+    {
+      "coursehub_name": "Dr. Rashid",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.75
+    },
+    {
+      "coursehub_name": "Dr. Imran",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Dr. Hamza",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.62
+    },
+    {
+      "coursehub_name": "Mr. Atteeq",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "atteeq-uz-zaman",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Zameer",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-syed-zameer-abbas",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Ramzan",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-muhammad-ramzan-abdul-karim",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Mohsin Ali Marwat",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "dr-mohsin-ali-marwat",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ramzan A. Karim",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.68
+    },
+    {
+      "coursehub_name": "Dr. Hamza Mohsin",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": "19805",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Mohsin",
+      "coursehub_faculty": "FMCE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Mr. Hamza Abbas",
+      "coursehub_faculty": "FME",
+      "faculty_id": "hamza-abbas",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Khalid Rahman",
+      "coursehub_faculty": "FME",
+      "faculty_id": "dr-khalid-rahman",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ahmad Abbas",
+      "coursehub_faculty": "FME",
+      "faculty_id": "dr-ahmad-abbas",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Abid Imran",
+      "coursehub_faculty": "FME",
+      "faculty_id": "dr-abid-imran",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Massab Junaid",
+      "coursehub_faculty": "FME",
+      "faculty_id": "dr-massab-junaid",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Shahzad Ahmad",
+      "coursehub_faculty": "FME",
+      "faculty_id": "shahzad-ahmed",
+      "match_method": "full_name",
+      "match_score": 0.92
+    },
+    {
+      "coursehub_name": "Mr. Syed Salman Shah",
+      "coursehub_faculty": "FME",
+      "faculty_id": "syed-salman-shah",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. M. Shahab Alam",
+      "coursehub_faculty": "FME",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.79
+    },
+    {
+      "coursehub_name": "Dr. Taimoor Hassan",
+      "coursehub_faculty": "FME",
+      "faculty_id": "taimoor-hassan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Qasim Zafar",
+      "coursehub_faculty": "FME",
+      "faculty_id": "mr-muhammad-qasim-zafar",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Omar A. Qureshi",
+      "coursehub_faculty": "FME",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.81
+    },
+    {
+      "coursehub_name": "Dr. Taqi A. Cheema",
+      "coursehub_faculty": "FME",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.87
+    },
+    {
+      "coursehub_name": "Dr. Zeeshan Asghar",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.59
+    },
+    {
+      "coursehub_name": "Dr. Shiraz Ahmad",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "dr-shiraz-ahmed",
+      "match_method": "full_name",
+      "match_score": 0.92
+    },
+    {
+      "coursehub_name": "Engr. Muntazir Abbass",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "muntazir-abbas",
+      "match_method": "full_name",
+      "match_score": 0.97
+    },
+    {
+      "coursehub_name": "Engr. Aizaz Haider",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "syed-aizaz-haider",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Engr. Sayyam Asif",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "engr-muhammad-sayyam-asif",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Adnan Akmal",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "dr-adnan-akmal",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Ahmad Waqas",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "dr-waqar-ahmad",
+      "match_method": "full_name",
+      "match_score": 0.91
+    },
+    {
+      "coursehub_name": "Engr. Shehzad Ahmed",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "shahzad-ahmed",
+      "match_method": "full_name",
+      "match_score": 0.92
+    },
+    {
+      "coursehub_name": "Dr. M. Ashraf Tanoli",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.81
+    },
+    {
+      "coursehub_name": "Dr. Faisal Javed",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.54
+    },
+    {
+      "coursehub_name": "Dr. M. Waseem",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.6
+    },
+    {
+      "coursehub_name": "Dr. Faizan ul Haq",
+      "coursehub_faculty": "DCvE",
+      "faculty_id": "dr-m-faizan-ul-haq",
+      "match_method": "full_name",
+      "match_score": 0.91
+    },
+    {
+      "coursehub_name": "Mr. Abrar Ahmad",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "ibrar-ahmad",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Noreen Shah",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-noreen-shah",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Atta ur Rehman Jadoon",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "atta-ur-rehman-jadoon",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Haseeb Ahsan",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "haseeb-ahsan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Miss. Hira Ahad",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "ms-hira-ahad",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Fida ur Rehman",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "mr-fida-ur-rahman",
+      "match_method": "full_name",
+      "match_score": 0.91
+    },
+    {
+      "coursehub_name": "Dr. Nasir Amin",
+      "coursehub_faculty": "MgS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.7
+    },
+    {
+      "coursehub_name": "Dr. M. Sabir",
+      "coursehub_faculty": "MgS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.67
+    },
+    {
+      "coursehub_name": "Dr. Rubeena Slamat",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-rubeena-slamat",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Sajid Khan",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-sajid-khan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Izhar Ali",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "izhar-ali",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Ayman Habib",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "mr-ayman-habib",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Hassaan Tariq",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "hassaan-tariq",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Suhaib",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "suhaib",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. M. Shariq",
+      "coursehub_faculty": "MgS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.75
+    },
+    {
+      "coursehub_name": "Mr. Sarim Jalal",
+      "coursehub_faculty": "MgS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.64
+    },
+    {
+      "coursehub_name": "Miss. Naveen Gul",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "mr-naveen-gul-yousafzai",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Miss. Bakhtawar Rubab",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "ms-bakhtawar-rubab",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Amin Ullah",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-amin-ullah",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Mr. M. Ahmad Zaka",
+      "coursehub_faculty": "MgS",
+      "faculty_id": null,
+      "match_method": null,
+      "match_score": 0.77
+    },
+    {
+      "coursehub_name": "Mr. Umer Saeed",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "mr-muhammad-umer-saeed",
+      "match_method": "unique_partial_name",
+      "match_score": 0.9
+    },
+    {
+      "coursehub_name": "Dr. Shakir Sardar",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-shakir-sardar",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Mr. Haroom ur Rashid",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "haroon-ur-rashid",
+      "match_method": "full_name",
+      "match_score": 0.92
+    },
+    {
+      "coursehub_name": "Dr. Noshaba Zulfiqar",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-noshaba-zulfiqar",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Saima Aftab",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-saima-aftab-2",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Abid Ullah",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-abid-ullah",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Muhammad Furqan",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "dr-muhammad-furqan",
+      "match_method": "full_name",
+      "match_score": 1.0
+    },
+    {
+      "coursehub_name": "Dr. Sami Farooq",
+      "coursehub_faculty": "MgS",
+      "faculty_id": "sami-farooq",
+      "match_method": "full_name",
+      "match_score": 1.0
+    }
+  ]
+}

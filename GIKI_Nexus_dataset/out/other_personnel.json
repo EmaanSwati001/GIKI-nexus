@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "generated_from": [
+      "giki.edu.pk faculty listing + personnel pages",
+      "GIKI Undergraduate Prospectus 2025",
+      "GIKI Course Hub repo (giki_course_hub-1) JSON data"
+    ],
+    "scraped_at": "2026-11-10T16:37:44.477Z"
+  },
+  "count": 20,
+  "people": [
+    {
+      "id": "dr-muhammad-zubair-khan",
+      "name": "Dr. Muhammad Zubair Khan",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Education"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-muhammad-zubair-khan/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-muhammad-zubair-khan/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "prof-dr-khasan-s-karimov",
+      "name": "Prof. Dr. Khasan S. Karimov (Late)",
+      "designation": "Professor",
+      "email": "khasan@giki.edu.pk",
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Funded Projects",
+        "Publications and Presentations"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/prof-dr-khasan-s-karimov/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/prof-dr-khasan-s-karimov/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "ms-ismat-gul-khattak",
+      "name": "Ms. Ismat Gul Khattak",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-ismat-gul-khattak/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/ms-ismat-gul-khattak/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-faisal-iqbal-ratyal",
+      "name": "Mr. Faisal Iqbal Ratyal",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview",
+        "Achievements"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-faisal-iqbal-ratyal/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-faisal-iqbal-ratyal/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "ms-nargis-ali-akbar-ghaloo",
+      "name": "Ms. Nargis Ali Akbar Ghaloo",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-nargis-ali-akbar-ghaloo/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/ms-nargis-ali-akbar-ghaloo/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "dr-zain-ul-abdin",
+      "name": "Dr. Zain Ul-Abdin",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-zain-ul-abdin/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-zain-ul-abdin/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "ms-khadija-jamal-shaban",
+      "name": "Ms. Khadija Jamal Shaban",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-khadija-jamal-shaban/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/ms-khadija-jamal-shaban/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-shah-faisal-afridi",
+      "name": "Mr. Shah Faisal Afridi",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-shah-faisal-afridi/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-shah-faisal-afridi/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "dr-samia-altaf",
+      "name": "Dr. Samia Altaf",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-samia-altaf/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-samia-altaf/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-tariq-iqbal-khan",
+      "name": "Dr. Tariq Iqbal Khan",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-tariq-iqbal-khan/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-tariq-iqbal-khan/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-iftikhar-h-shirazi",
+      "name": "Mr. Iftikhar H. Shirazi",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-iftikhar-h-shirazi/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-iftikhar-h-shirazi/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-m-adil-khattak",
+      "name": "Mr. M. Adil Khattak",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-m-adil-khattak/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-m-adil-khattak/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-osman-saifullah-khan",
+      "name": "Mr. Osman Saifullah Khan",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-osman-saifullah-khan/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-osman-saifullah-khan/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "mr-khawaja-zaheer-ahmed",
+      "name": "Mr. Khawaja Zaheer Ahmed",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Overview"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-khawaja-zaheer-ahmed/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/mr-khawaja-zaheer-ahmed/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "ali-shaukat",
+      "name": "Engr. Ali Shaukat",
+      "designation": "Marketing Manager",
+      "email": "alishaukat@giki.edu.pk",
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Qualifications",
+        "Research Interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ali-shaukat/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/ali-shaukat/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "dr-nasir-javed-assistant-professor-fes",
+      "name": "Dr. Nasir Javed",
+      "designation": null,
+      "email": null,
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [],
+      "profile_url": "https://giki.edu.pk/personnel/dr-nasir-javed-assistant-professor-fes/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-nasir-javed-assistant-professor-fes/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "sadia-bakhtiar",
+      "name": "Sadia Bakhtiar",
+      "designation": "Lecturer",
+      "email": "sadia.bakhtiar@giki.edu.pk",
+      "office": "Faculty Lobby",
+      "website_categories": [],
+      "profile_sections": [
+        "Education",
+        "Professional Experience",
+        "Research Interests",
+        "Publications"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/sadia-bakhtiar/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/sadia-bakhtiar/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "professor-s-m-ahmad-dean",
+      "name": "Professor S. M. Ahmad",
+      "designation": "Professor",
+      "email": "smahmad@giki.edu.pk",
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Work Experience"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/professor-s-m-ahmad-dean/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/professor-s-m-ahmad-dean/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "ms-kinza-rahim",
+      "name": "Ms Kinza Rahim",
+      "designation": "Lecturer",
+      "email": "kinza.rahim@giki.edu.pk",
+      "office": null,
+      "website_categories": [],
+      "profile_sections": [
+        "Selected Publications"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-kinza-rahim/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/ms-kinza-rahim/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    },
+    {
+      "id": "dr-umar-farooq",
+      "name": "Dr. Umar Farooq",
+      "designation": "Assistant Professor",
+      "email": "umar@giki.edu.pk",
+      "office": "Faculty Lobby",
+      "website_categories": [],
+      "profile_sections": [],
+      "profile_url": "https://giki.edu.pk/personnel/dr-umar-farooq/",
+      "note": "Has a personnel page on giki.edu.pk but is not on any current faculty listing page (e.g. board member, staff, former or late faculty). Not imported as current faculty.",
+      "provenance": {
+        "sources": [
+          "https://giki.edu.pk/personnel/dr-umar-farooq/"
+        ],
+        "scraped_at": "2026-11-10T16:37:44.477Z"
+      }
+    }
+  ]
+}

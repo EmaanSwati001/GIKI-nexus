@@ -1,0 +1,413 @@
+{
+  "meta": {
+    "generated_from": [
+      "giki.edu.pk faculty listing + personnel pages",
+      "GIKI Undergraduate Prospectus 2025",
+      "GIKI Course Hub repo (giki_course_hub-1) JSON data"
+    ],
+    "scraped_at": "2026-11-10T16:37:44.477Z"
+  },
+  "count": 36,
+  "records": [
+    {
+      "id": "dr-javaid-rabbani-khan-professor",
+      "name": "Dr. Javaid Rabbani Khan",
+      "units": [
+        "dche"
+      ],
+      "reasons": [
+        "missing: qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-javaid-rabbani-khan-professor/"
+    },
+    {
+      "id": "dr-abdul-wahab",
+      "name": "Dr. Abdul Wahab",
+      "units": [
+        "dcve"
+      ],
+      "reasons": [
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-abdul-wahab/"
+    },
+    {
+      "id": "dr-adnan-akmal",
+      "name": "Dr. Adnan Akmal",
+      "units": [
+        "dcve"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-adnan-akmal/"
+    },
+    {
+      "id": "dr-hafiz-ahmed-waqas",
+      "name": "Dr. Hafiz Ahmed Waqas",
+      "units": [
+        "dcve"
+      ],
+      "reasons": [
+        "missing: email",
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-hafiz-ahmed-waqas/"
+    },
+    {
+      "id": "dr-m-faizan-ul-haq",
+      "name": "Dr. M. Faizan ul Haq",
+      "units": [
+        "dcve"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-m-faizan-ul-haq/"
+    },
+    {
+      "id": "engr-muhammad-sayyam-asif",
+      "name": "Engr. Muhammad Sayyam Asif",
+      "units": [
+        "dcve"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/engr-muhammad-sayyam-asif/"
+    },
+    {
+      "id": "shahzad-ahmed",
+      "name": "Shahzad Ahmed",
+      "units": [
+        "dcve"
+      ],
+      "reasons": [
+        "missing: email",
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/shahzad-ahmed/"
+    },
+    {
+      "id": "19805",
+      "name": "Dr. Hamza Mohsin",
+      "units": [
+        "dmse"
+      ],
+      "reasons": [
+        "missing: qualifications"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/19805/"
+    },
+    {
+      "id": "dr-rashid-ali",
+      "name": "Dr. Rashid Ali",
+      "units": [
+        "dmse"
+      ],
+      "reasons": [
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-rashid-ali/"
+    },
+    {
+      "id": "dr-muhammad-imran-khan",
+      "name": "Prof. Dr. Muhammad Imran Khan",
+      "units": [
+        "dmse"
+      ],
+      "reasons": [
+        "missing: research_interests",
+        "qualifications field looks mixed with other profile text"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-muhammad-imran-khan/"
+    },
+    {
+      "id": "dr-arif-ullah-khan",
+      "name": "Dr. Arif Ullah Khan",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-arif-ullah-khan/"
+    },
+    {
+      "id": "dr-danyal-ahmad-assistant-professor",
+      "name": "Dr. Danyal Ahmad",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-danyal-ahmad-assistant-professor/"
+    },
+    {
+      "id": "dr-minhaj-zaheer",
+      "name": "Dr. Minhaj Zaheer",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-minhaj-zaheer/"
+    },
+    {
+      "id": "dr-muhammad-marwan",
+      "name": "Dr. Muhammad Marwan",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-muhammad-marwan/"
+    },
+    {
+      "id": "dr-nilam-khaliq",
+      "name": "Dr. Nilam Khaliq",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-nilam-khaliq/"
+    },
+    {
+      "id": "sheharyar-pervaiz",
+      "name": "Dr. Sheharyar Pervaiz",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: qualifications"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/sheharyar-pervaiz/"
+    },
+    {
+      "id": "dr-taj-munir",
+      "name": "Dr. Taj Munir",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-taj-munir/"
+    },
+    {
+      "id": "usman-habib",
+      "name": "Dr. Usman Habib",
+      "units": [
+        "fbs"
+      ],
+      "reasons": [
+        "missing: research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/usman-habib/"
+    },
+    {
+      "id": "dr-adnan-shah",
+      "name": "Dr. Adnan Shah",
+      "units": [
+        "fcse"
+      ],
+      "reasons": [
+        "missing: qualifications"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-adnan-shah/"
+    },
+    {
+      "id": "dr-fahd-sikandar-khan",
+      "name": "Dr. Fahd Sikandar Khan",
+      "units": [
+        "fcse"
+      ],
+      "reasons": [
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-fahd-sikandar-khan/"
+    },
+    {
+      "id": "dr-muhammad-asad",
+      "name": "Dr. Muhammad Asad",
+      "units": [
+        "fcse"
+      ],
+      "reasons": [
+        "missing: email, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-muhammad-asad/"
+    },
+    {
+      "id": "dr-m-omer-bin-saeed-2",
+      "name": "Dr. Muhammad Omer Bin Saeed",
+      "units": [
+        "fcse"
+      ],
+      "reasons": [
+        "missing: research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-m-omer-bin-saeed-2/"
+    },
+    {
+      "id": "dr-qamar-abbas-2",
+      "name": "Dr. Qamar Abbas",
+      "units": [
+        "fcse"
+      ],
+      "reasons": [
+        "missing: qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-qamar-abbas-2/"
+    },
+    {
+      "id": "dr-zahid-ullah",
+      "name": "Dr. Zahid Ullah",
+      "units": [
+        "fee"
+      ],
+      "reasons": [
+        "missing: email",
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-zahid-ullah/"
+    },
+    {
+      "id": "dr-arsalan-arif",
+      "name": "Dr. Arsalan Arif",
+      "units": [
+        "fme"
+      ],
+      "reasons": [
+        "research interests only as prose (research_summary)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-arsalan-arif/"
+    },
+    {
+      "id": "dr-muhammad-furqan",
+      "name": "Dr. Muhammad Furqan",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, research_interests",
+        "qualifications field looks mixed with other profile text"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-muhammad-furqan/"
+    },
+    {
+      "id": "dr-noreen-shah",
+      "name": "Dr. Noreen Shah",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-noreen-shah/"
+    },
+    {
+      "id": "dr-saima-aftab-2",
+      "name": "Dr. Saima Aftab",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-saima-aftab-2/"
+    },
+    {
+      "id": "dr-sajid-khan",
+      "name": "Dr. Sajid Khan",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-sajid-khan/"
+    },
+    {
+      "id": "mr-m-sohaib",
+      "name": "Mr. M. Sohaib",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-m-sohaib/"
+    },
+    {
+      "id": "mr-yasir-niaz",
+      "name": "Mr. Yasir Niaz",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/mr-yasir-niaz/"
+    },
+    {
+      "id": "ms-bakhtawar-rubab",
+      "name": "Ms. Bakhtawar Rubab",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-bakhtawar-rubab/"
+    },
+    {
+      "id": "ms-darmon-mumtaz",
+      "name": "Ms. Darmon Mumtaz",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-darmon-mumtaz/"
+    },
+    {
+      "id": "ms-ghazal-mohni",
+      "name": "Ms. Ghazal Mohni",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-ghazal-mohni/"
+    },
+    {
+      "id": "ms-sabahat-orakzai",
+      "name": "Ms. Sabahat Orakzai",
+      "units": [
+        "mgs"
+      ],
+      "reasons": [
+        "missing: email, qualifications, research_interests"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/ms-sabahat-orakzai/"
+    },
+    {
+      "id": "dr-asif-khan-assistant-professor",
+      "name": "Dr. Asif Khan",
+      "units": [],
+      "reasons": [
+        "missing: email, qualifications, research_interests",
+        "not on any department listing (found only on /faculty/)"
+      ],
+      "profile_url": "https://giki.edu.pk/personnel/dr-asif-khan-assistant-professor/"
+    }
+  ]
+}

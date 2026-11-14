@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "generated_from": [
+      "giki.edu.pk faculty listing + personnel pages",
+      "GIKI Undergraduate Prospectus 2025",
+      "GIKI Course Hub repo (giki_course_hub-1) JSON data"
+    ],
+    "scraped_at": "2026-11-10T16:37:44.477Z"
+  },
+  "programs": [
+    {
+      "id": "bs-artificial-intelligence",
+      "name": "BS Artificial Intelligence",
+      "unit": "fcse",
+      "coursehub_program_id": 45
+    },
+    {
+      "id": "bs-computer-science",
+      "name": "BS Computer Science",
+      "unit": "fcse",
+      "coursehub_program_id": 46
+    },
+    {
+      "id": "bs-computer-engineering",
+      "name": "BS Computer Engineering",
+      "unit": "fcse",
+      "coursehub_program_id": 47
+    },
+    {
+      "id": "bs-cyber-security",
+      "name": "BS Cyber Security",
+      "unit": "fcse",
+      "coursehub_program_id": 48
+    },
+    {
+      "id": "bs-data-science",
+      "name": "BS Data Science",
+      "unit": "fcse",
+      "coursehub_program_id": 49
+    },
+    {
+      "id": "bs-software-engineering",
+      "name": "BS Software Engineering",
+      "unit": "fcse",
+      "coursehub_program_id": 50
+    },
+    {
+      "id": "bs-electrical-engineering-robotics-autonomous-systems",
+      "name": "BS Electrical Engineering (Robotics & Autonomous Systems)",
+      "unit": "fee",
+      "coursehub_program_id": 51
+    },
+    {
+      "id": "bs-electrical-engineering-digital-design-embedded-systems",
+      "name": "BS Electrical Engineering (Digital Design & Embedded Systems)",
+      "unit": "fee",
+      "coursehub_program_id": 52
+    },
+    {
+      "id": "bs-electrical-engineering-smart-communication-signal-processing",
+      "name": "BS Electrical Engineering (Smart Communication & Signal Processing)",
+      "unit": "fee",
+      "coursehub_program_id": 53
+    },
+    {
+      "id": "bs-electrical-engineering-smart-grid",
+      "name": "BS Electrical Engineering (Smart Grid)",
+      "unit": "fee",
+      "coursehub_program_id": 54
+    },
+    {
+      "id": "bs-management-sciences",
+      "name": "BS Management Sciences",
+      "unit": "mgs",
+      "coursehub_program_id": 55
+    },
+    {
+      "id": "bs-chemical-engineering",
+      "name": "BS Chemical Engineering",
+      "unit": "fmce",
+      "coursehub_program_id": 56
+    },
+    {
+      "id": "bs-chemical-engineering-oil-and-gas-engineering",
+      "name": "BS Chemical Engineering (Oil and Gas Engineering)",
+      "unit": "fmce",
+      "coursehub_program_id": 57
+    },
+    {
+      "id": "bs-mechanical-engineering",
+      "name": "BS Mechanical Engineering",
+      "unit": "fme",
+      "coursehub_program_id": 58
+    },
+    {
+      "id": "bs-civil-engineering",
+      "name": "BS Civil Engineering",
+      "unit": "dcve",
+      "coursehub_program_id": 59
+    }
+  ]
+}

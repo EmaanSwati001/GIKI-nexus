@@ -1,0 +1,8080 @@
+{
+  "meta": {
+    "generated_from": [
+      "giki.edu.pk faculty listing + personnel pages",
+      "GIKI Undergraduate Prospectus 2025",
+      "GIKI Course Hub repo (giki_course_hub-1) JSON data"
+    ],
+    "scraped_at": "2026-11-10T16:37:44.477Z"
+  },
+  "count": 657,
+  "research_areas": [
+    {
+      "id": "machine-learning",
+      "label": "Machine Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "19086",
+        "dr-ambreen-nazir",
+        "dr-haseeb-ahmad",
+        "hafiz-syed-ahmed-qasim",
+        "laraib-noor",
+        "mr-said-nabi",
+        "muhammad-huzaifa-shah",
+        "muhammad-shahab-alam",
+        "nazia-shahzadi-lecturer",
+        "prof-dr-qadeer-ul-hasan",
+        "salman-ashraf",
+        "syed-salman-shah",
+        "waheed-ahmad"
+      ],
+      "faculty_count": 13,
+      "units": [
+        "dcve",
+        "fbs",
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "internet-of-thing",
+      "label": "IoT",
+      "aliases": [
+        "Internet of Things",
+        "Internet of Things (IoT)"
+      ],
+      "faculty_ids": [
+        "abbas",
+        "dr-ali-akbar",
+        "dr-asad-mahmood",
+        "dr-mian-muaz-razaq",
+        "dr-muhammad-fawad-khan",
+        "dr-muhammad-salman",
+        "dr-sarah-iqbal",
+        "dr-shahab-haider",
+        "dr-zubair-ahmad",
+        "laraib-noor"
+      ],
+      "faculty_count": 10,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "natural-language-processing",
+      "label": "Natural Language Processing",
+      "aliases": [
+        "NLP",
+        "Natural Language Processing (NLP)"
+      ],
+      "faculty_ids": [
+        "dr-ambreen-nazir",
+        "hafiz-syed-ahmed-qasim",
+        "laraib-noor",
+        "mr-muhammad-qasim-riaz",
+        "mr-said-nabi",
+        "safia-baloch",
+        "salman-ashraf",
+        "waheed-ahmad"
+      ],
+      "faculty_count": 8,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "deep-learning",
+      "label": "Deep Learning",
+      "aliases": [
+        "Deep learning"
+      ],
+      "faculty_ids": [
+        "2-dr-farah-saeed",
+        "dr-ambreen-nazir",
+        "dr-ayaz-umer",
+        "hafiz-syed-ahmed-qasim",
+        "muhammad-huzaifa-shah",
+        "nazia-shahzadi-lecturer",
+        "syed-salman-shah"
+      ],
+      "faculty_count": 7,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "artificial-intelligence",
+      "label": "Artificial Intelligence",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran",
+        "dr-ejaz-ahmad",
+        "dr-shoukat",
+        "hafiz-syed-ahmed-qasim",
+        "nazia-shahzadi-lecturer",
+        "syed-salman-shah"
+      ],
+      "faculty_count": 6,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "label": "Computer Vision",
+      "aliases": [
+        "computer vision"
+      ],
+      "faculty_ids": [
+        "dr-ali-akbar",
+        "dr-khurram-khan-jadoon",
+        "hafiz-syed-ahmed-qasim",
+        "muhammad-huzaifa-shah",
+        "muhammad-shahab-alam",
+        "syed-salman-shah"
+      ],
+      "faculty_count": 6,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "cyber-security",
+      "label": "Cyber Security",
+      "aliases": [
+        "Cybersecurity",
+        "cybersecurity"
+      ],
+      "faculty_ids": [
+        "abbas",
+        "dr-muhammad-salman",
+        "dr-salman-ahmed",
+        "dr-shahab-haider",
+        "dr-zubair-ahmad",
+        "ms-laraib-afzal"
+      ],
+      "faculty_count": 6,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran",
+        "dr-ali-akbar",
+        "dr-ejaz-ahmad",
+        "muhammad-shahab-alam",
+        "syed-salman-shah"
+      ],
+      "faculty_count": 5,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "computational-fluid-dynamics",
+      "label": "Computational Fluid Dynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mahnoor-sarfraz",
+        "dr-zahid-ahmed",
+        "faheem-ahmed",
+        "najam-us-saqi-fraz"
+      ],
+      "faculty_count": 4,
+      "units": [
+        "dcve",
+        "fbs",
+        "fme"
+      ]
+    },
+    {
+      "id": "image-processing",
+      "label": "Image Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "19086",
+        "dr-khurram-khan-jadoon",
+        "dr-masroor-hussain",
+        "engr-badre-munir"
+      ],
+      "faculty_count": 4,
+      "units": [
+        "fbs",
+        "fcse"
+      ]
+    },
+    {
+      "id": "wireless-communication",
+      "label": "Wireless Communications",
+      "aliases": [
+        "Wireless Communication",
+        "Wireless communications"
+      ],
+      "faculty_ids": [
+        "dr-ahmad-kamal-hassan",
+        "dr-asad-mahmood",
+        "dr-muhammad-fawad-khan",
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 4,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "cryptography",
+      "label": "Cryptography",
+      "aliases": [
+        "cryptography"
+      ],
+      "faculty_ids": [
+        "dr-shahab-haider",
+        "dr-waqar-ahmad",
+        "muhammad-salman-saeed"
+      ],
+      "faculty_count": 3,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "data-science",
+      "label": "Data Science",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ahsan-shah",
+        "nazia-shahzadi-lecturer",
+        "salman-ashraf"
+      ],
+      "faculty_count": 3,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "embedded-system",
+      "label": "Embedded Systems",
+      "aliases": [
+        "Embedded systems"
+      ],
+      "faculty_ids": [
+        "dr-fahad-bin-muslim",
+        "dr-muhammad-irfan",
+        "dr-waqar-ahmad"
+      ],
+      "faculty_count": 3,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "adaptive-signal-processing",
+      "label": "Adaptive Signal Processing",
+      "aliases": [
+        "Adaptive Signal processing"
+      ],
+      "faculty_ids": [
+        "dr-dur-e-zehra-baig",
+        "prof-dr-qadeer-ul-hasan"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive Manufacturing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-imran",
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "advertising",
+      "label": "Advertising",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-naveen-gul-yousafzai",
+        "muhammad-shahzeb-fayyaz"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "computational-mechanics",
+      "label": "Computational Mechanics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ahmad-abbas",
+        "muntazir-abbas"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve",
+        "fme"
+      ]
+    },
+    {
+      "id": "computer-architecture",
+      "label": "Computer Architecture",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-dur-e-zehra-baig",
+        "dr-taj-muhammad-khan"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "construction-material",
+      "label": "construction materials",
+      "aliases": [
+        "Construction Materials"
+      ],
+      "faculty_ids": [
+        "adil-poshad-khan",
+        "prof-dr-muhammad-ashraf-tanoli-hod"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "control-system",
+      "label": "Control Systems",
+      "aliases": [
+        "Control System"
+      ],
+      "faculty_ids": [
+        "dr-ejaz-ahmad",
+        "dr-salman-ahmed"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "data-mining",
+      "label": "Data Mining",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-masroor-hussain",
+        "engr-ahsan-shah"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "development-economics",
+      "label": "Development Economics",
+      "aliases": [
+        "development economics"
+      ],
+      "faculty_ids": [
+        "mr-muhammad-umer-saeed",
+        "ms-umme-rabab-syed"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "digital-microfluidics",
+      "label": "Digital microfluidics",
+      "aliases": [
+        "Digital Microfluidics"
+      ],
+      "faculty_ids": [
+        "dr-ali-turab-jafry",
+        "hamza-abbas"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "earthquake-engineering",
+      "label": "Earthquake Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-haidar-ali",
+        "muhammad-naveed"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "energy-management-system",
+      "label": "Energy Management Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-salman-ahmed",
+        "prof-dr-qadeer-ul-hasan"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "fluid-mechanics",
+      "label": "fluid mechanics",
+      "aliases": [
+        "Fluid Mechanics"
+      ],
+      "faculty_ids": [
+        "dr-khawar-rehman",
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve",
+        "fme"
+      ]
+    },
+    {
+      "id": "fog-computing",
+      "label": "Fog Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-muaz-razaq",
+        "dr-sarah-iqbal"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "heat-transfer",
+      "label": "Heat Transfer",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema",
+        "hamza-abbas"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "large-language-model",
+      "label": "Large Language Modelling",
+      "aliases": [
+        "Large Language Models"
+      ],
+      "faculty_ids": [
+        "dr-ambreen-nazir",
+        "rabbia-hassan"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "material-characterization",
+      "label": "material characterization",
+      "aliases": [
+        "Material Characterization"
+      ],
+      "faculty_ids": [
+        "dr-massab-junaid",
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "materials-characterization",
+      "label": "Materials Characterization",
+      "aliases": [
+        "Materials characterization"
+      ],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat",
+        "dr-shanza-rehan-assistant-professor"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "mathematical-modeling",
+      "label": "Mathematical Modeling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mahnoor-sarfraz",
+        "qaiser-abbas"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dche",
+        "fbs"
+      ]
+    },
+    {
+      "id": "metamaterial",
+      "label": "Metamaterials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-noor",
+        "dr-husnul-maab"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "nanomaterials-and-nanotechnology",
+      "label": "Nanomaterials & Nanotechnology",
+      "aliases": [
+        "nanomaterials & nanotechnology"
+      ],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat",
+        "prof-dr-f-ahmad-khalid-sitara-i-imtiaz"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "neural-network",
+      "label": "Neural Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-masroor-hussain",
+        "zaiwar-ali"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "numerical-solution-of-differential-equation",
+      "label": "Numerical Solution of Differential Equations",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mahnoor-sarfraz",
+        "dr-zahid-ahmed"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "open-channel-flow",
+      "label": "open channel flows",
+      "aliases": [
+        "Open Channel Flow"
+      ],
+      "faculty_ids": [
+        "dr-khawar-rehman",
+        "najam-us-saqi-fraz"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "operations-and-supply-chain-management",
+      "label": "Operations and Supply Chain Management",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-amin-ullah",
+        "sami-farooq"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "photocatalysis",
+      "label": "Photocatalysis",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-abdul-wahab",
+        "waqar-shaukat"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "physical-layer-security",
+      "label": "Physical Layer Security",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-muaz-razaq",
+        "dr-muhammad-fawad-khan"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "plasmonics",
+      "label": "plasmonics",
+      "aliases": [
+        "Plasmonics"
+      ],
+      "faculty_ids": [
+        "dr-adnan-noor",
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fbs",
+        "fee"
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed Electronics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid",
+        "dr-muhammad-muqeet-rehman"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "process-modeling-and-optimization",
+      "label": "Process modeling and optimization",
+      "aliases": [
+        "Process Modeling & Optimization"
+      ],
+      "faculty_ids": [
+        "fazal-wahab",
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dche",
+        "fme"
+      ]
+    },
+    {
+      "id": "qualitative-research",
+      "label": "Qualitative Research",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat",
+        "dr-shakir-sardar"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "rcc-structure",
+      "label": "RCC Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad",
+        "muhammad-naveed"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "reinforcement-learning",
+      "label": "Reinforcement Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-fawad-khan",
+        "muhammad-shahab-alam"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse",
+        "fme"
+      ]
+    },
+    {
+      "id": "renewable-energy",
+      "label": "Renewable Energy",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-dur-e-zehra-baig",
+        "dr-hadeed-ahmed-sher"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "smart-grid",
+      "label": "Smart Grids",
+      "aliases": [
+        "Smart Grid"
+      ],
+      "faculty_ids": [
+        "dr-ammar-arshad",
+        "nazia-shahzadi-lecturer"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse",
+        "fee"
+      ]
+    },
+    {
+      "id": "social-entrepreneurship",
+      "label": "Social Entrepreneurship",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-ullah",
+        "haroon-ur-rashid"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "social-media-marketing",
+      "label": "Social Media Marketing",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-ayman-habib",
+        "muhammad-shahzeb-fayyaz"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "software-project-management",
+      "label": "Software Project Management",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-said-nabi",
+        "ms-laraib-afzal"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "structural-dynamics",
+      "label": "Structural Dynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan",
+        "engr-haidar-ali"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "structural-health-monitoring",
+      "label": "Structural Health Monitoring",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad",
+        "engr-haidar-ali"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "supply-chain-management",
+      "label": "Supply Chain Management",
+      "aliases": [],
+      "faculty_ids": [
+        "hassaan-tariq",
+        "suhaib"
+      ],
+      "faculty_count": 2,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "3-d-concrete-printing",
+      "label": "3-D Concrete Printing",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "3d-and-2d-computer-vision",
+      "label": "3D and 2D Computer Vision",
+      "aliases": [],
+      "faculty_ids": [
+        "rabbia-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "3d-printed-concrete",
+      "label": "3D-Printed Concrete",
+      "aliases": [],
+      "faculty_ids": [
+        "muntazir-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "4g-and-beyond-mobile-system",
+      "label": "4G and beyond Mobile Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "5g-and-6g-sub-thz-communication",
+      "label": "5G and 6G sub-THz communication",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "abha",
+      "label": "Abha",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sarah-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "abusive-leadership",
+      "label": "Abusive Leadership",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "accounting-information-system",
+      "label": "Accounting Information system",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-ahmad-zaka"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "adaptive-beamforming",
+      "label": "Adaptive beamforming",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ahmad-kamal-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "adaptive-nonlinear-system",
+      "label": "Adaptive Nonlinear System",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-qadeer-ul-hasan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "additive-manufacturing-3d-printing",
+      "label": "Additive Manufacturing/3D Printing",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "additive-manufacturing-technologie",
+      "label": "Additive Manufacturing Technologies",
+      "aliases": [],
+      "faculty_ids": [
+        "asim-iltaf"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "advanced-ceramics",
+      "label": "Advanced Ceramics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "advanced-characterization-sem",
+      "label": "Advanced Characterization (SEM",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "advanced-composites-and-nanocomposite",
+      "label": "Advanced Composites and Nanocomposites",
+      "aliases": [],
+      "faculty_ids": [
+        "atteeq-uz-zaman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "advanced-machine-learning",
+      "label": "Advanced Machine Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "advanced-manufacturing-processe",
+      "label": "Advanced Manufacturing Processes",
+      "aliases": [],
+      "faculty_ids": [
+        "asim-iltaf"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "advanced-material-processing",
+      "label": "Advanced Material Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "advanced-materials-for-environmental-application",
+      "label": "Advanced materials for environmental applications",
+      "aliases": [],
+      "faculty_ids": [
+        "fazal-wahab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "afm",
+      "label": "AFM",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "agentic-ai",
+      "label": "Agentic AI",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "agile-leadership",
+      "label": "Agile leadership",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "agile-software-development",
+      "label": "Agile Software Development",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-laraib-afzal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "ai-agent-and-agentic-ai-based-software-engineering",
+      "label": "AI Agent and Agentic AI based Software Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-waqas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "ai-and-computer-vision-for-construction-and-infrastructure-monitoring",
+      "label": "AI and computer vision for construction and infrastructure monitoring",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-bilawal-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "ai-and-data-driven-method",
+      "label": "AI & Data-Driven Methods",
+      "aliases": [],
+      "faculty_ids": [
+        "muntazir-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "ai-augmented-communication-skill",
+      "label": "AI-Augmented Communication Skills",
+      "aliases": [],
+      "faculty_ids": [
+        "haseeb-ahsan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "ai-driven-catalyst-and-material-discovery",
+      "label": "AI-driven catalyst and material discovery",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "ai-enabled-digital-twins-for-infrastructure-management",
+      "label": "AI-enabled digital twins for infrastructure management",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-bilawal-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "ai-in-materials-science-using-ml-dl-and-ann-to-accelerate-discovery-and-optimize-processing",
+      "label": "AI in Materials Science: Using ML/DL and ANN to accelerate discovery and optimize processing",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "ai-in-scientific-and-environmental-domain",
+      "label": "AI in scientific and environmental domains",
+      "aliases": [],
+      "faculty_ids": [
+        "2-dr-farah-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "ai-integration-in-organization",
+      "label": "AI integration in organizations",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "algae-pond",
+      "label": "Algae Ponds",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "alloy",
+      "label": "alloys",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "ammonia-decomopostion",
+      "label": "Ammonia Decomopostion",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "ammonia-enhanced-heat-transfer",
+      "label": "Ammonia Enhanced Heat Transfer",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ahmad-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "analysis-of-non-local-lattice-models-and-applications-in-dislocation-theory",
+      "label": "Analysis of Non-Local Lattice Models and Applications in Dislocation Theory",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-sirajul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "applications-in-mobile-chaotic-robot",
+      "label": "Applications in mobile chaotic robots",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "applications-of-ann-and-gis-in-geotechnical-engineering",
+      "label": "Applications of ANN & GIS in Geotechnical Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "syed-aizaz-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "applications-of-fractional-calculus-in-electromagnetism",
+      "label": "Applications of Fractional Calculus in Electromagnetism",
+      "aliases": [],
+      "faculty_ids": [
+        "arbab-abdur-rahim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "applied-economics",
+      "label": "Applied Economics",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-sabir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "applied-electromagnetics",
+      "label": "Applied Electromagnetics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "approximate-computing",
+      "label": "Approximate Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waqar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "aqueous-alkali-silicate",
+      "label": "Aqueous Alkali Silicates",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "ar-vr",
+      "label": "AR/VR",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-bilawal-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "archetypal-theory-in-literature",
+      "label": "Archetypal Theory in Literature",
+      "aliases": [],
+      "faculty_ids": [
+        "ibrar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "artificial-intelligence-in-civil-engineering",
+      "label": "Artificial Intelligence in Civil Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "artificial-neural-network",
+      "label": "Artificial Neural Network",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "ash-based-opc-in-arcc",
+      "label": "Ash based OPC in ARCC",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "aspect-based-sentiment-analysis",
+      "label": "Aspect-Based Sentiment Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "auditory-neuroscience",
+      "label": "Auditory Neuroscience",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "augmented-and-virtual-reality",
+      "label": "Augmented and Virtual Reality",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-m-faizan-ul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "auto-thermal-reforming",
+      "label": "Auto-thermal reforming",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ramesha-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "autonomic-computing",
+      "label": "Autonomic Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-salman-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "autonomous-mobile-robot",
+      "label": "Autonomous Mobile Robots",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ahmad-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "bandgap-engineering",
+      "label": "Bandgap engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "banking",
+      "label": "Banking",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-umme-rabab-syed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "bayesian-experimental-design",
+      "label": "Bayesian Experimental Design",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-imran-sandhu"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "behavioural-modelling",
+      "label": "Behavioural Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-m-faizan-ul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "bifurcation-theory",
+      "label": "Bifurcation theory",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "big-data-indexing-and-query-optimization",
+      "label": "Big data Indexing and Query Optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "bim-and-digital-construction",
+      "label": "BIM and digital construction",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-bilawal-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "bio-based-chemical-synthesis",
+      "label": "bio-based chemical synthesis",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "bio-robotics",
+      "label": "Bio-Robotics",
+      "aliases": [],
+      "faculty_ids": [
+        "taimoor-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "biocatalytic-material",
+      "label": "Biocatalytic materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-turab-jafry"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "biochemical-engineering",
+      "label": "Biochemical Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-hammad-amjad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "bioenergy",
+      "label": "bioenergy)",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "biofuel",
+      "label": "Biofuels",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-turab-jafry"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "biomedical",
+      "label": "biomedical",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "biomedical-engineering",
+      "label": "Biomedical engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "biomedical-instrumentation",
+      "label": "Biomedical instrumentation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-dur-e-zehra-baig"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "biosensor",
+      "label": "Biosensors",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "blockchain",
+      "label": "Blockchain",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-laraib-afzal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "branding",
+      "label": "Branding",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-shahzeb-fayyaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "building-energy-performance",
+      "label": "Building Energy Performance",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "bulk-metallic-glasse",
+      "label": "Bulk Metallic Glasses",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-syed-zameer-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "business-model-innovation",
+      "label": "Business Model Innovation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-ullah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "cad-cam",
+      "label": "CAD/CAM",
+      "aliases": [],
+      "faculty_ids": [
+        "taimoor-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "cad-cam-cae",
+      "label": "CAD/CAM/CAE",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "carbon-capture",
+      "label": "Carbon Capture",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ramesha-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "carbon-nanostructure",
+      "label": "carbon nanostructures",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "catalyst-design-for-sustainable-chemical",
+      "label": "catalyst design for sustainable chemicals",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "cellular-structure",
+      "label": "cellular structures",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "ceramics",
+      "label": "Ceramics",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "cfd",
+      "label": "CFD",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "cfd-application",
+      "label": "CFD Applications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "change-management",
+      "label": "Change Management",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajid-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "chao",
+      "label": "Chaos",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "characterization-and-structureproperty-relationship",
+      "label": "Characterization & Structure–Property Relationships",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "characterization-of-material",
+      "label": "Characterization of Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-syed-zameer-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "chemical-and-environmental-diagnostic-platforms-using-paper-based-microfluidics",
+      "label": "chemical and environmental diagnostic platforms using Paper-based Microfluidics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-turab-jafry"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "climate-change-impact-on-geotechnical-infrastructure",
+      "label": "Climate change impact on Geotechnical Infrastructure",
+      "aliases": [],
+      "faculty_ids": [
+        "syed-aizaz-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "climate-variation",
+      "label": "climate variations",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "clinical",
+      "label": "Clinical",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-turab-jafry"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "cnt-graphene-nanocomposites-for-energy-storage-device",
+      "label": "CNT/Graphene Nanocomposites for Energy Storage Devices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ramzan-abdul-karim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "co2-capture-and-conversion",
+      "label": "CO2 capture and conversion",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nilam-khaliq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "co2-conversion",
+      "label": "CO2 Conversion",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "coastal-and-riverine-flood-forecasting",
+      "label": "coastal and riverine flood forecasting",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "coastal-modeling",
+      "label": "coastal modeling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "cognitive-psychology",
+      "label": "Cognitive psychology",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "cognitive-radio",
+      "label": "Cognitive Radio",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-qadeer-ul-hasan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "cognitive-radio-network",
+      "label": "Cognitive Radio Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "communication-skill",
+      "label": "Communication Skills",
+      "aliases": [],
+      "faculty_ids": [
+        "ibrar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "compliance-regulation",
+      "label": "Compliance regulations",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zubair-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "compliant-mechanism",
+      "label": "Compliant Mechanism",
+      "aliases": [],
+      "faculty_ids": [
+        "taimoor-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "composite-material",
+      "label": "Composite Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ramzan-abdul-karim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "compressed-sensing",
+      "label": "Compressed Sensing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "computational-electromagnetics",
+      "label": "Computational Electromagnetics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-imran-sandhu"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "computational-fluid-dynamics",
+      "label": "Computational Fluid Dynamics)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "computational-geo-dynamics",
+      "label": "Computational Geo Dynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zahid-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "computational-linguistic",
+      "label": "Computational Linguistic",
+      "aliases": [],
+      "faculty_ids": [
+        "safia-baloch"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "computational-micromagnetics",
+      "label": "Computational Micromagnetics",
+      "aliases": [],
+      "faculty_ids": [
+        "arbab-abdur-rahim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "computational-science",
+      "label": "Computational Science",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-masroor-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "computational-structural-mechanics",
+      "label": "Computational structural mechanics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "computer-and-wireless-network",
+      "label": "Computer and Wireless Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-salman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "computer-communication-and-network",
+      "label": "Computer Communication & Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-salman-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "computer-network",
+      "label": "Computer networks",
+      "aliases": [],
+      "faculty_ids": [
+        "abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "concrete-durability",
+      "label": "Concrete Durability",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "concurrent-data-structure",
+      "label": "Concurrent Data Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "constitutive-material-modelling",
+      "label": "constitutive material modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "consumer-behavior",
+      "label": "Consumer Behavior",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-naveen-gul-yousafzai"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "consumer-behaviour",
+      "label": "Consumer Behaviour",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shakir-sardar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "contactless-sensing",
+      "label": "Contactless Sensing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-salman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "content-adaptation",
+      "label": "Content Adaptation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rashad-m-jillani"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "control-and-model-reduction-for-linear-parameter-varying-system",
+      "label": "Control and model reduction for linear parameter varying systems",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-nisar-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs",
+        "fee"
+      ]
+    },
+    {
+      "id": "control-charts",
+      "label": "Control Charts)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-babar-zaman-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "control-system-adaptive-control",
+      "label": "Control System: Adaptive control",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-sadiq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "control-theory",
+      "label": "Control theory",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "cooperative-communication",
+      "label": "Cooperative Communications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "corporate-engineering-criminology",
+      "label": "Corporate Engineering Criminology",
+      "aliases": [],
+      "faculty_ids": [
+        "izhar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "corrosion-degradation-and-protection",
+      "label": "Corrosion Degradation and Protection",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ramzan-abdul-karim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "crashworthiness",
+      "label": "Crashworthiness",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "critical-discourse-analysis",
+      "label": "Critical Discourse Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "atta-ur-rehman-jadoon"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "cyber-physical-system",
+      "label": "Cyber Physical Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "laraib-noor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "damage-detection",
+      "label": "Damage Detection",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "data-science-and-bio-informatics",
+      "label": "Data Science and Bio-Informatics",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-sajid-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "database-system",
+      "label": "Database Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "dead-core-phenomena",
+      "label": "Dead-Core Phenomena",
+      "aliases": [],
+      "faculty_ids": [
+        "qaiser-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "deep-neural-network",
+      "label": "Deep Neural Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "19086"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "deep-reinforcement-learning",
+      "label": "Deep Reinforcement Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-muaz-razaq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "deformation-machining-surface-composite",
+      "label": "Deformation Machining Surface Composites",
+      "aliases": [],
+      "faculty_ids": [
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "derivative",
+      "label": "Derivatives",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-noshaba-zulfiqar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "design-and-development-of-mechanical-and-aerospace-structure",
+      "label": "Design and development of mechanical and aerospace structures",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shakeel-afzal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "device-characterization",
+      "label": "Device Characterization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "device-fabrication",
+      "label": "Device Fabrication",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "device-modeling-and-simulation",
+      "label": "Device Modeling & Simulation",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "devop",
+      "label": "DevOps",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-sajid-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "dielectric-resonator",
+      "label": "Dielectric Resonators",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "dielectrics-and-ferroelectrics",
+      "label": "Dielectrics and Ferroelectrics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "digital-consumer-behavior",
+      "label": "Digital Consumer Behavior",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-ayman-habib"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "digital-currencie",
+      "label": "Digital Currencies",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-noshaba-zulfiqar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "digital-design",
+      "label": "Digital Designs",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-akbar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "digital-multimedia-system",
+      "label": "Digital Multimedia Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rashad-m-jillani"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "digital-prototyping-and-advanced-composite-material",
+      "label": "Digital Prototyping and Advanced Composite Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "asim-iltaf"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "digital-signal-processing",
+      "label": "Digital Signal Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-shahabuddin-ansari"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "direct-write-technologie",
+      "label": "Direct Write Technologies",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khalid-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "district-cooling-optimization",
+      "label": "District Cooling Optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "dsp",
+      "label": "DSP",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "durability-of-concrete",
+      "label": "Durability of Concrete",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-ashraf-tanoli-hod"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "durability-of-engineered-material",
+      "label": "durability of engineered materials",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "dyakonov-tamm-waves-in-sculptured-thin-film",
+      "label": "Dyakonov-Tamm waves) in Sculptured Thin Film",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-husnul-maab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "dynamical-systems-of-odes-and-pdes",
+      "label": "Dynamical systems of ODEs and PDEs",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "earlier",
+      "label": "Earlier",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sarah-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "earning-management",
+      "label": "Earning Management",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-ahmad-zaka"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "efficient-finite-field-arithmetic",
+      "label": "Efficient Finite Field Arithmetic",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "electrical-and-dielectric-characterizations-of-hvdc-insulation-system",
+      "label": "Electrical and dielectric characterizations of HVDC insulation systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahid-alam"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "electrical-impedance-tomography",
+      "label": "Electrical Impedance Tomography",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-ahmar-rashid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "electrochemical-and-photo-electrochemical-technologies-for-wastewater-treatment",
+      "label": "Electrochemical and photo-electrochemical technologies for wastewater treatment",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajjad-hussain-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "electrochemical-degradation-processe",
+      "label": "Electrochemical degradation processes",
+      "aliases": [],
+      "faculty_ids": [
+        "fazal-wahab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "electrochemical-system",
+      "label": "Electrochemical Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-majid-aziz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "electrohydrodynamic-inkjet-printing",
+      "label": "Electrohydrodynamic Inkjet Printing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khalid-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "electrohydrodynamic-jet-printing",
+      "label": "Electrohydrodynamic jet printing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-turab-jafry"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "electromagnetic-field-theory-and-microwave-engineering",
+      "label": "Electromagnetic Field Theory and Microwave Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "arbab-abdur-rahim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "electronic-design-automation",
+      "label": "Electronic Design Automation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-fahad-bin-muslim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "elliptic-curve-cryptography",
+      "label": "Elliptic Curve Cryptography",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "employee-emotion",
+      "label": "Employee Emotions",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "employee-engagement",
+      "label": "Employee Engagement",
+      "aliases": [],
+      "faculty_ids": [
+        "haroon-ur-rashid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "energy-application",
+      "label": "energy applications",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "energy-conversion",
+      "label": "Energy Conversion",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-majid-aziz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "energy-demand",
+      "label": "Energy Demand",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-umer-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "energy-economics",
+      "label": "Energy Economics",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "energy-efficiency-in-hybrid-mobile-and-wireless-communication-network",
+      "label": "Energy Efficiency in Hybrid Mobile and Wireless Communication Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "energy-finance",
+      "label": "Energy Finance",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-noshaba-zulfiqar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "energy-material",
+      "label": "energy materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "energy-optimizations-technique",
+      "label": "Energy Optimizations Techniques",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "energy-storage-and-conversion",
+      "label": "energy storage and conversion",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nilam-khaliq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "energy-storage-devices-designing-high-performance-materials-for-sustainable-energy-solution",
+      "label": "Energy Storage Devices: Designing high-performance materials for sustainable energy solutions",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "energy-storage-material",
+      "label": "Energy Storage Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "energy-system-modelling",
+      "label": "Energy System Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "engineering-justice",
+      "label": "Engineering Justice",
+      "aliases": [],
+      "faculty_ids": [
+        "izhar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "engineering-trial-advocacy",
+      "label": "Engineering Trial Advocacy",
+      "aliases": [],
+      "faculty_ids": [
+        "izhar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "english-for-academic-purpose",
+      "label": "English for Academic Purposes",
+      "aliases": [],
+      "faculty_ids": [
+        "atta-ur-rehman-jadoon"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "english-for-specific-purpose",
+      "label": "English for Specific Purposes",
+      "aliases": [],
+      "faculty_ids": [
+        "atta-ur-rehman-jadoon"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "entrepreneurship",
+      "label": "Entrepreneurship",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-ullah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "entrepreneurship-education",
+      "label": "Entrepreneurship Education",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-ullah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "environment",
+      "label": "Environment",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-sabir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "environmental-effect-on-modal-propertie",
+      "label": "Environmental Effect on Modal Properties",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "environmental-engineering",
+      "label": "Environmental Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-hammad-amjad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "environmental-remediation",
+      "label": "environmental remediation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nilam-khaliq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "environmental-sensor",
+      "label": "Environmental Sensors",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "environmental-sustainability",
+      "label": "Environmental Sustainability",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-noshaba-zulfiqar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "environmentally-friendly-material",
+      "label": "environmentally friendly materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "ethics",
+      "label": "Ethics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajid-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "ethnographic-research",
+      "label": "Ethnographic Research",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "evolutionary-algorithms-eas",
+      "label": "evolutionary algorithms (EAs)",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-ahmar-rashid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "explainable-ai",
+      "label": "Explainable AI",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "failure-analysis",
+      "label": "Failure Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tauheed-shehbaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "fast-fashion-brand",
+      "label": "Fast Fashion Brands",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-naveen-gul-yousafzai"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "fea-linear-and-nonlinear-structural-analysis",
+      "label": "FEA (linear and nonlinear Structural Analysis)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khalid-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "feminism",
+      "label": "Feminism",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-hira-ahad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "ferromagnetic-shape-memory-alloy",
+      "label": "Ferromagnetic Shape Memory Alloys",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-syed-zameer-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "finance",
+      "label": "finance",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-umme-rabab-syed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "financial-accounting",
+      "label": "Financial Accounting",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-ahmad-zaka"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "finite-element-modelling",
+      "label": "Finite Element Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "fintech",
+      "label": "FinTech",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-noshaba-zulfiqar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "flood-hazard-assessment",
+      "label": "Flood Hazard Assessment",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-imran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "flow-through-catalytic-membrane-reactor",
+      "label": "Flow-through Catalytic Membrane Reactor",
+      "aliases": [],
+      "faculty_ids": [
+        "qaiser-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "fluid-dynamics",
+      "label": "Fluid Dynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "hamza-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "fluid-solid-interaction",
+      "label": "fluid-solid interaction",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "fluid-structure-interaction-fsi",
+      "label": "Fluid Structure Interaction (FSI)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "fmri-fnirs-neuroimaging",
+      "label": "fMRI/fNIRS Neuroimaging",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "food-supply-chain",
+      "label": "Food Supply Chains",
+      "aliases": [],
+      "faculty_ids": [
+        "hassaan-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "forensic-engineering",
+      "label": "Forensic Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "izhar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "formal-verification-of-distributed-system",
+      "label": "Formal Verification of Distributed Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-waqas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "foundation-model",
+      "label": "foundation models",
+      "aliases": [],
+      "faculty_ids": [
+        "2-dr-farah-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "fpga-design-optimization",
+      "label": "FPGA design optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waqar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "fractal",
+      "label": "Fractals",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "fractional-order-system-of-odes",
+      "label": "Fractional-order system of ODEs",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "friction-stir-welding",
+      "label": "Friction Stir Welding",
+      "aliases": [],
+      "faculty_ids": [
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "fuel-cell",
+      "label": "Fuel Cells",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-majid-aziz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "functional-electronic-material",
+      "label": "Functional Electronic Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "functional-thin-film-coatings-developing-ceramics",
+      "label": "Functional Thin Film Coatings: Developing ceramics",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "functional-thin-films-and-thick-coating",
+      "label": "Functional Thin Films & Thick Coatings",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "fusion-and-solid-state-joining-of-high-performance-high-entropy-alloy",
+      "label": "Fusion and solid state joining of high-performance High Entropy Alloys",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tauheed-shehbaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "fuzzy-logic",
+      "label": "Fuzzy Logic",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-badre-munir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "fuzzy-sets",
+      "label": "Fuzzy Sets",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-muti-ur-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "gdpr",
+      "label": "GDPR",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zubair-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "genai-and-adaptive-language-learning",
+      "label": "GenAI and Adaptive Language Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "haseeb-ahsan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "gender-equality",
+      "label": "Gender Equality",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajid-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "gene-expression-programming",
+      "label": "Gene Expression Programming",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "geo-polymer-concrete",
+      "label": "Geo-polymer Concrete",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "geotechnical-engineering",
+      "label": "Geotechnical Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "syed-aizaz-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "gis-based-spatial-analysis-and-decision-support",
+      "label": "GIS-Based Spatial Analysis and Decision Support",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-muhammad-sayyam-asif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "glacial-lake",
+      "label": "Glacial Lakes",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-imran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "glacial-lake-outburst-flood",
+      "label": "Glacial Lake Outburst Floods",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-imran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "glacier",
+      "label": "Glaciers",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-imran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "glacier-hydrology",
+      "label": "Glacier Hydrology",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-imran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "glasse",
+      "label": "Glasses",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "graph-deep-learning",
+      "label": "Graph Deep Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "safia-baloch"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "grasping-in-cluttered-environment",
+      "label": "Grasping in Cluttered Environments",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "green-concrete",
+      "label": "Green Concrete",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "green-netw",
+      "label": "Green Netw",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "gripper-hand-design",
+      "label": "Gripper/Hand Design",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "group-theoretic-method",
+      "label": "Group Theoretic Methods",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-sirajul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "hardware-accelerator",
+      "label": "Hardware Accelerator",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-akbar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "hardware-accelerators-for-video-coding",
+      "label": "Hardware accelerators for video coding",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waqar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "health-systems-and-comparison",
+      "label": "Health Systems and Comparisons",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "hemodynamics",
+      "label": "Hemodynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "heterogeneous-catalysis",
+      "label": "Heterogeneous Catalysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "heterogeneous-compute-system",
+      "label": "Heterogeneous Compute Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-fahad-bin-muslim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "high-performance-computing",
+      "label": "High Performance Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-masroor-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "high-speed-memory-design-team-lead-at-chip-dv",
+      "label": "High speed Memory design Team Lead at Chip-DV",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-irfan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "high-temperature-and-functional-material",
+      "label": "High-Temperature and Functional Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "atteeq-uz-zaman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "human-visual-attention-prediction",
+      "label": "Human visual attention prediction",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ayaz-umer"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "hydraulic-structure",
+      "label": "Hydraulic Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "najam-us-saqi-fraz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "hydrodynamics-and-mass-transfer-study-of-multiphase-flow",
+      "label": "Hydrodynamics and Mass Transfer Study of Multiphase flows",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shozab-mehdi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "hydrogen-production",
+      "label": "Hydrogen production",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ramesha-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "hydrogen-technologie",
+      "label": "Hydrogen Technologies",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-majid-aziz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "hydrologic-and-hydraulic-modelling",
+      "label": "Hydrologic and Hydraulic Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-muhammad-sayyam-asif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "hyperspectral-imaging",
+      "label": "Hyperspectral Imaging",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "iii-n-material",
+      "label": "III-N Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "image-and-video-compression",
+      "label": "Image and Video Compression",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-hanif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "image-deconvolution",
+      "label": "Image Deconvolution",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-hanif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "image-restoration",
+      "label": "Image Restoration",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-hanif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "impact-mechanics",
+      "label": "Impact mechanics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mian-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "impact-of-screening",
+      "label": "Impact of Screening",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "incremental-forming",
+      "label": "Incremental Forming",
+      "aliases": [],
+      "faculty_ids": [
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "index-construction-methodology",
+      "label": "Index Construction Methodology",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "index-fund",
+      "label": "Index Funds",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "industrial-ecology",
+      "label": "Industrial Ecology",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-ashraf-tanoli-hod"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "industrial-organizational-psychology",
+      "label": "Industrial Organizational Psychology",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "industry",
+      "label": "Industry",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "influencer-marketing",
+      "label": "Influencer Marketing",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-naveen-gul-yousafzai"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "information-and-communication-technology",
+      "label": "Information and Communication Technology",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "information-extraction",
+      "label": "Information Extraction",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "information-theoretic-security",
+      "label": "Information-theoretic Security",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "information-theory",
+      "label": "Information Theory",
+      "aliases": [],
+      "faculty_ids": [
+        "mazhar-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "innovations-and-intellectual-property",
+      "label": "Innovations & Intellectual Property",
+      "aliases": [],
+      "faculty_ids": [
+        "izhar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "instrumentation",
+      "label": "Instrumentation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-memoon-sajid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "intelligent-control",
+      "label": "Intelligent control",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-sadiq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "intelligent-reflecting-surfaces-and-cybersecurity",
+      "label": "Intelligent Reflecting Surfaces and Cybersecurity",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-fawad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "internet-and-web-measurement",
+      "label": "Internet and Web Measurements",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zubair-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "internet-of-things-iots",
+      "label": "Internet of Things (IoTs)",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "internet-web-technologie",
+      "label": "Internet/Web Technologies",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-badre-munir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "intrapreneurship-and-corporate-entrepreneurship",
+      "label": "Intrapreneurship and Corporate Entrepreneurship",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-ullah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "intrusion-detection-prevention-system",
+      "label": "Intrusion Detection/ Prevention System",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "inverse-algorithm",
+      "label": "Inverse algorithms",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-ahmar-rashid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "iot-security",
+      "label": "IOT Security",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-salman-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "islamic-and-esg-investment",
+      "label": "Islamic and ESG Investments",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "islamic-studie",
+      "label": "Islamic Studies",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-fida-ur-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "julia-function",
+      "label": "Julia functions",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "kingdom-of-saudi-arabia",
+      "label": "Kingdom of Saudi Arabia",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sarah-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "kinship-and-family-organization",
+      "label": "Kinship & Family Organization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "knowledge-based-systems-and-image-processing",
+      "label": "Knowledge based Systems and Image Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ahsan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "knowledge-distillation",
+      "label": "Knowledge distillation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ayaz-umer"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "krylov-subspace-methods-for-model-reduction-of-large-scale-system",
+      "label": "Krylov subspace methods for model reduction of large-scale systems",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-nisar-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs",
+        "fee"
+      ]
+    },
+    {
+      "id": "laser-and-wire-arc-metal-deposition",
+      "label": "laser and wire-arc metal deposition",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-massab-junaid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "laser-processing-and-surface-engineering",
+      "label": "Laser Processing & Surface Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "leadership-in-times-of-transformation",
+      "label": "Leadership in times of transformation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "light-emitting-diode",
+      "label": "Light-emitting diodes",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "llms-inference-engine",
+      "label": "LLMs inference engine",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "logistics",
+      "label": "Logistics",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-sabir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "logistics-and-transportation",
+      "label": "Logistics & Transportation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-amin-ullah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "low-power-digital-design",
+      "label": "Low power digital design",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waqar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "lyapunov-neural-network-based-control-system",
+      "label": "Lyapunov Neural Network based control system",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-sadiq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "machine-deep-learning",
+      "label": "Machine/deep learning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khurram-khan-jadoon"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "machine-learning-accelerator",
+      "label": "Machine Learning Accelerators",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-fahad-bin-muslim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "machine-learning-and-adaptive-neural-network",
+      "label": "Machine Learning and Adaptive Neural Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-sadiq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "machine-learning-and-digital-twin",
+      "label": "Machine Learning & Digital Twin",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sarah-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "machine-learning-application",
+      "label": "machine learning applications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waqar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "machine-learning-for-signal-processing",
+      "label": "Machine Learning for Signal Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "machine-learning-system",
+      "label": "Machine Learning Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "machining-and-joining-of-high-performance-alloy",
+      "label": "Machining and joining of high-performance alloys",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-fahd-nawaz-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "magnetic-material",
+      "label": "Magnetic Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "magnetron-sputtering-and-pvd-engineering-advanced-thin-films-with-tailored-properties-for-next-generation-technologie",
+      "label": "Magnetron Sputtering & PVD: Engineering advanced thin films with tailored properties for next-generation technologies",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "magnonics",
+      "label": "Magnonics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tahir-naseem"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "magnonics-and-spintronics",
+      "label": "Magnonics and Spintronics",
+      "aliases": [],
+      "faculty_ids": [
+        "arbab-abdur-rahim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "manufacturing-system",
+      "label": "Manufacturing Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "market-portfolio",
+      "label": "Market Portfolios",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "markov-chain",
+      "label": "Markov Chains",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "mass-concrete",
+      "label": "Mass Concrete",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-akmal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "materials-characterization-and-failure-analysis",
+      "label": "Materials’ Characterization and Failure Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ramzan-abdul-karim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "materials-processing",
+      "label": "Materials Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "maternal-health",
+      "label": "Maternal Health",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "maximum-power-point-tracking",
+      "label": "Maximum Power Point Tracking",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-hadeed-ahmed-sher"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "mechanical-design",
+      "label": "Mechanical Design",
+      "aliases": [],
+      "faculty_ids": [
+        "taimoor-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "mechanical-surface-texturing",
+      "label": "Mechanical Surface Texturing",
+      "aliases": [],
+      "faculty_ids": [
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "medical-diagnostic-device",
+      "label": "Medical Diagnostic Devices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "medical-image-processing",
+      "label": "Medical Image Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "medical-image-processing-and-analysis",
+      "label": "Medical Image Processing and Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-shahabuddin-ansari"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "mems-based-inertial-sensors-and-actuator",
+      "label": "MEMS based Inertial Sensors and Actuators",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-saqib"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "mesh-and-adhoc-network",
+      "label": "Mesh and Adhoc Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "metal",
+      "label": "metals",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "metal-joining",
+      "label": "Metal Joining",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-massab-junaid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "methanation",
+      "label": "Methanation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "micro-and-nanofabrication",
+      "label": "Micro and nanofabrication",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-saqib"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "micro-hydro-turbines",
+      "label": "micro-hydro turbines)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "microfluidics",
+      "label": "Microfluidics",
+      "aliases": [],
+      "faculty_ids": [
+        "faheem-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "microstructural-and-mechanical-characterization-probing-strength",
+      "label": "Microstructural & Mechanical Characterization: Probing strength",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "microwave-imaging",
+      "label": "Microwave Imaging",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-imran-sandhu"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "millimeter-wave-and-thz-antenna",
+      "label": "Millimeter-wave and THz antennas",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "mineral-processing-and-sustainable-material",
+      "label": "Mineral Processing and Sustainable Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "atteeq-uz-zaman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "ml-for-cyber-security",
+      "label": "ML for cyber security",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-salman-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "mobile-ad-hoc-networks-manets",
+      "label": "Mobile Ad hoc Networks (MANETs)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "mobile-edge-and-fog-computing",
+      "label": "mobile edge and fog computing",
+      "aliases": [],
+      "faculty_ids": [
+        "abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "mobile-edge-computing",
+      "label": "Mobile Edge Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "modal-analysis",
+      "label": "Modal Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "modeling-and-controls-of-physiological-system",
+      "label": "Modeling and controls of Physiological System",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-dur-e-zehra-baig"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "modeling-and-simulation",
+      "label": "modeling and simulation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "modelling-and-controls-of-the-dynamics-system",
+      "label": "Modelling and Controls of the dynamics System",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-dur-e-zehra-baig"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "motion-optimization",
+      "label": "Motion Optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "multi-agent-system",
+      "label": "Multi-Agent Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-salman-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "multi-objective-optimization",
+      "label": "Multi-Objective Optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "suhaib"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "multi-physics-numerical-pdes-with-interface-conditions-modeling-and-simulation-of-ocean-atmosphere-interaction",
+      "label": "Multi-Physics Numerical PDEs with interface conditions Modeling and simulation of Ocean-Atmosphere Interaction",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taj-munir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "multigrid-methods-and-preconditioning",
+      "label": "Multigrid methods and preconditioning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-danyal-ahmad-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "nano-mechanical-propertie",
+      "label": "nano-mechanical properties",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-massab-junaid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "nanomaterial",
+      "label": "nanomaterials",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "nanomaterials-synthesis-and-their-applications-in-electrochemical-sensing",
+      "label": "Nanomaterials synthesis and their applications in electrochemical sensing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nilam-khaliq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "nanomechanical-characterization",
+      "label": "Nanomechanical Characterization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tauheed-shehbaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "natural-language-disambiguation",
+      "label": "Natural language disambiguation",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-riaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "neocolonialism",
+      "label": "Neocolonialism",
+      "aliases": [],
+      "faculty_ids": [
+        "haseeb-ahsan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "network-security",
+      "label": "Network security",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-salman-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "neurorehabilitation",
+      "label": "Neurorehabilitation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "newtonian-and-non-newtonian-fluid",
+      "label": "Newtonian and Non-Newtonian Fluids",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mahnoor-sarfraz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "nlp-for-software-requirement-extraction",
+      "label": "NLP for software requirement extraction",
+      "aliases": [],
+      "faculty_ids": [
+        "israr-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "non-invasive-biomedical-sensor",
+      "label": "Non-invasive biomedical sensors",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "numerical-analysis",
+      "label": "Numerical Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-sirajul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "numerical-linear-algebra",
+      "label": "Numerical linear algebra",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-danyal-ahmad-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "numerical-method",
+      "label": "Numerical Methods",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-shahabuddin-ansari"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "numerical-methods-and-simulations-for-convection-diffusion-reaction-system",
+      "label": "Numerical Methods & Simulations for Convection-Diffusion-Reaction Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "qaiser-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "numerical-methods-for-fractional-differential-equation",
+      "label": "Numerical methods for fractional differential equations",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-danyal-ahmad-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "numerical-process-simulation",
+      "label": "Numerical Process Simulation",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "o-and-tribology",
+      "label": "O and Tribology",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-zafar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "object-detection-and-tracking",
+      "label": "Object Detection and Tracking",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-hanif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "omni-directional-antenna",
+      "label": "Omni-directional antennas",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "open-quantum-system",
+      "label": "Open Quantum Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tahir-naseem"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "operating-system",
+      "label": "Operating Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taj-muhammad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "operating-systems-for-iot-device",
+      "label": "Operating Systems for IoT Devices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-salman-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "operations-and-supply-chain",
+      "label": "Operations and Supply Chain",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-sabir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "operations-management",
+      "label": "Operations Management",
+      "aliases": [],
+      "faculty_ids": [
+        "suhaib"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "optical-communication",
+      "label": "Optical Communications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "optical-nano-antenna",
+      "label": "Optical/Nano Antennas",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "optimization-of-machine-learning-algorithm",
+      "label": "Optimization of Machine Learning Algorithms",
+      "aliases": [],
+      "faculty_ids": [
+        "19086"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "optoelectronics",
+      "label": "Optoelectronics",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "organic-optoelectronics",
+      "label": "organic optoelectronics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "organizational-behavior",
+      "label": "Organizational Behavior",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-saima-aftab-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "organizational-justice",
+      "label": "Organizational Justice",
+      "aliases": [],
+      "faculty_ids": [
+        "haroon-ur-rashid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "paper-based-microfluidics",
+      "label": "Paper-Based Microfluidics",
+      "aliases": [],
+      "faculty_ids": [
+        "hamza-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "parallel-robot",
+      "label": "Parallel Robots",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "particle-image-velocimetry-piv",
+      "label": "Particle Image Velocimetry (PIV)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "path-planning",
+      "label": "Path Planning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "pedagogical-theory",
+      "label": "Pedagogical Theory",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajid-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "penetration-testing",
+      "label": "Penetration Testing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "performance-modelling",
+      "label": "Performance Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-waqas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "personalized-travel-planning",
+      "label": "Personalized Travel Planning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shiraz-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "pervasive-media-delivery",
+      "label": "Pervasive Media delivery",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rashad-m-jillani"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "phased-array-antenna",
+      "label": "Phased Array Antennas",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-imran-sandhu"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "photocatalytic-co2-reduction-to-valuable-solar-fuel",
+      "label": "Photocatalytic CO2 reduction to valuable solar fuels",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-abdul-wahab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "photocatalytic-degradation",
+      "label": "Photocatalytic degradation",
+      "aliases": [],
+      "faculty_ids": [
+        "waqar-shaukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "photocatalytic-h2-production",
+      "label": "photocatalytic H2 production",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nilam-khaliq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "photocatalytic-hydrogen-production-from-water-splitting",
+      "label": "Photocatalytic hydrogen production from water splitting",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-abdul-wahab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "photocatalytic-water-treatment",
+      "label": "Photocatalytic water treatment",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-abdul-wahab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "photonics",
+      "label": "photonics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "photovoltaic-application",
+      "label": "Photovoltaic applications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-hadeed-ahmed-sher"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "photovoltaic-hosting-capacity-in-distribution-network",
+      "label": "Photovoltaic hosting capacity in distribution networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ammar-arshad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "photovoltaics",
+      "label": "Photovoltaics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shanza-rehan-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "physics-informed-machine-learning",
+      "label": "Physics Informed Machine Learning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-imran-sandhu"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "piezoelectrics-and-actuator",
+      "label": "Piezoelectrics and Actuators",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "piezophototronics",
+      "label": "Piezophototronics",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "piezotronics",
+      "label": "Piezotronics",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "point-cloud-scan-to-bim",
+      "label": "point-cloud/scan-to-BIM",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-bilawal-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "polarization-engineering",
+      "label": "Polarization Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "policy-research-in-energy-and-environment",
+      "label": "policy research in energy and environment",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "political-marketing",
+      "label": "Political Marketing",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-ayman-habib"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "polymer-nanocomposite",
+      "label": "Polymer Nanocomposites",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-mohsin-ali-marwat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "polymers-for-aerospace",
+      "label": "polymers for aerospace",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "porous-media",
+      "label": "Porous media",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "post-colonial-literature",
+      "label": "Post-Colonial Literature",
+      "aliases": [],
+      "faculty_ids": [
+        "haseeb-ahsan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "post-colonial-studie",
+      "label": "Post-Colonial Studies",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-hira-ahad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "post-quantum-cryptography",
+      "label": "Post-Quantum Cryptography",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "powder-metallurgy",
+      "label": "Powder Metallurgy",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tauheed-shehbaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "powder-metallurgy-and-additive-manufacturing",
+      "label": "Powder Metallurgy and Additive Manufacturing",
+      "aliases": [],
+      "faculty_ids": [
+        "atteeq-uz-zaman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "power-electronics",
+      "label": "Power Electronics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-hadeed-ahmed-sher"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "power-to-x-technologie",
+      "label": "Power-to-X technologies",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "precast-structure",
+      "label": "Precast Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-naveed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "preparation-of-magnetic-nanoparticles-modified-with-molecular-imprinted-polymer-mip-for-food-and-environment-security",
+      "label": "Preparation of Magnetic nanoparticles modified with molecular imprinted polymer (MIP) for food and environment security",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajjad-hussain-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "printed-and-flexible-device",
+      "label": "Printed and Flexible Devices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khalid-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "pro-environmental-and-pro-healthy-route-optimization",
+      "label": "Pro-environmental and Pro-healthy route optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shiraz-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "process-modeling-and-simulation",
+      "label": "Process Modeling and Simulation",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ramesha-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "progressive-collapse",
+      "label": "Progressive Collapse",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "psha",
+      "label": "PSHA",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "psychoanalysis",
+      "label": "Psychoanalysis",
+      "aliases": [],
+      "faculty_ids": [
+        "ibrar-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "pushover-analysis-of-beam-column-joint",
+      "label": "Pushover analysis of beam-column joints",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "quantum-computing",
+      "label": "Quantum Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tahir-naseem"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "quantum-computing-and-algorithm",
+      "label": "Quantum Computing & Algorithms",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "quantum-device",
+      "label": "Quantum Devices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tahir-naseem"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "quantum-electronics",
+      "label": "Quantum Electronics",
+      "aliases": [],
+      "faculty_ids": [
+        "mazhar-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "quantum-optics",
+      "label": "Quantum Optics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tahir-naseem"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "quantum-wells-engineering",
+      "label": "Quantum Wells Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "queer-theorie",
+      "label": "Queer Theories",
+      "aliases": [],
+      "faculty_ids": [
+        "ms-hira-ahad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "radar-absorber",
+      "label": "Radar Absorbers",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-noor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "rag-system",
+      "label": "RAG systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "random-processe",
+      "label": "Random Processes",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "reaction-engineering",
+      "label": "Reaction Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khurram-imran-khan-associate-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "reaction-kinetics",
+      "label": "Reaction Kinetics",
+      "aliases": [],
+      "faculty_ids": [
+        "qaiser-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "reaction-kinetics-and-heterogeneous-catalytic-modeling",
+      "label": "Reaction kinetics and heterogeneous catalytic modeling",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-ramesha-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "reactor-design-and-optimization",
+      "label": "Reactor Design & Optimization",
+      "aliases": [],
+      "faculty_ids": [
+        "qaiser-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "reconfigurable-computing",
+      "label": "Reconfigurable Computing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-irfan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "reconfigurable-structure",
+      "label": "Reconfigurable Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "taimoor-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "registration-and-segmentation",
+      "label": "Registration and Segmentation",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-hanif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "reliability-modeling",
+      "label": "Reliability Modeling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ahmad-kamal-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "remote-sensing-and-gis",
+      "label": "Remote Sensing and GIS",
+      "aliases": [],
+      "faculty_ids": [
+        "najam-us-saqi-fraz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "remote-sensing-of-the-cryosphere",
+      "label": "Remote Sensing of the Cryosphere",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-imran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "renewable-energy-fuel-cell",
+      "label": "Renewable Energy (Fuel Cells",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "renewable-energy-integration",
+      "label": "Renewable Energy Integration",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "reproductive-health",
+      "label": "Reproductive Health",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "research-in-processing-and-characterization-of-material",
+      "label": "Research in processing and characterization of materials",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-f-ahmad-khalid-sitara-i-imtiaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "residual-stresses-in-structure",
+      "label": "residual stresses in structure",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-massab-junaid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "resilience",
+      "label": "resilience",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "retrofitting-of-rc-structure",
+      "label": "Retrofitting of RC structures",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "rf-energy-harvesting-circuits-and-system",
+      "label": "RF energy harvesting circuits and systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "rfid",
+      "label": "RFID",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-waleed-tariq-sethi-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "risk-assessment-and-health-monitoring-of-existing-building",
+      "label": "Risk Assessment & Health Monitoring of Existing Buildings",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-naveed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "robotic-machining-processe",
+      "label": "Robotic Machining Processes",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-abid-imran"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "robotic-vision-and-bioinformatics",
+      "label": "Robotic Vision and Bioinformatics",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-ahmar-rashid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "robust-control-system-design-for-multivariable-system",
+      "label": "Robust control system design for multivariable systems",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-nisar-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs",
+        "fee"
+      ]
+    },
+    {
+      "id": "rock-engineering",
+      "label": "Rock Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "syed-aizaz-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "screened-investment",
+      "label": "Screened Investments",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "secure-and-efficient-cryptographic-implementation",
+      "label": "Secure & Efficient Cryptographic Implementation",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "secure-biometric-system",
+      "label": "Secure Biometric System",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shoukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "secure-communication",
+      "label": "Secure Communication",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "seismic-analysis-and-design-of-structure",
+      "label": "Seismic Analysis and Design of Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-haidar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "seismic-analysis-of-structure",
+      "label": "Seismic analysis of structures",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "seismic-retrofitting",
+      "label": "Seismic Retrofitting",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-naveed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "self-driving-cars",
+      "label": "Self Driving Cars",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ejaz-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "self-powered-electronics",
+      "label": "Self-Powered Electronics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-muqeet-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "semiconductor",
+      "label": "Semiconductors",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shanza-rehan-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "sensor-network",
+      "label": "Sensor Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zia-ul-haq-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "sentiment-analysis",
+      "label": "Sentiment Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "sentiment-evolution",
+      "label": "Sentiment Evolution",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ambreen-nazir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "services-marketing",
+      "label": "Services Marketing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shakir-sardar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "signal-processing-for-communication",
+      "label": "Signal Processing for Communications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "signal-processing-for-communications-network",
+      "label": "Signal processing for communications networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ahmad-kamal-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "simulation-and-modelling",
+      "label": "Simulation & Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khurram-imran-khan-associate-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "simulation-modelling",
+      "label": "Simulation Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-waqas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "smart-and-sustainable-material",
+      "label": "Smart & Sustainable Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "muntazir-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "smart-energy-system",
+      "label": "Smart Energy Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "sociology-of-religion",
+      "label": "Sociology of Religion",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-fida-ur-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "soft-robotics",
+      "label": "Soft Robotics",
+      "aliases": [],
+      "faculty_ids": [
+        "taimoor-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "soft-set",
+      "label": "Soft Set",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-muti-ur-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "software-architecture",
+      "label": "software architecture",
+      "aliases": [],
+      "faculty_ids": [
+        "israr-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "software-architectures-and-model",
+      "label": "Software Architectures & Models",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-riaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "software-requirement-analysis",
+      "label": "Software Requirement Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-qasim-riaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "software-requirement-engineering",
+      "label": "Software requirement engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "israr-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "software-security-and-privacy",
+      "label": "software security and privacy",
+      "aliases": [],
+      "faculty_ids": [
+        "israr-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "software-testing",
+      "label": "Software Testing",
+      "aliases": [],
+      "faculty_ids": [
+        "laraib-noor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "sol-gel-science-and-solution-derived-material",
+      "label": "Sol-Gel Science & Solution-Derived Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "solar-energy",
+      "label": "Solar Energy",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "solid-waste-management",
+      "label": "Solid Waste Management",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-ashraf-tanoli-hod"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "sparse-image-and-signal-representation",
+      "label": "Sparse Image and Signal Representation",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-hanif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "sparse-signal-processing",
+      "label": "Sparse Signal Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "spectral-analysis-of-matrix-sequence",
+      "label": "Spectral analysis of matrix-sequences",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-danyal-ahmad-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "statistical-and-experimental-design-applying-doe-and-data-analysis-to-optimize-coatings-and-thin-film-processe",
+      "label": "Statistical & Experimental Design: Applying DOE and data analysis to optimize coatings and thin film processes",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "statistical-process-control-tools-eg",
+      "label": "Statistical Process Control tools(e.g",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-babar-zaman-2"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "stigma",
+      "label": "Stigma",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rubeena-slamat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "structural-analysis",
+      "label": "Structural analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "adil-poshad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "structural-design-and-analysis",
+      "label": "Structural Design and Analysis",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-naveed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "structural-design-on-optimization-of-acoustic-transducers-and-arrays-bender",
+      "label": "Structural design on optimization of acoustic transducers and arrays (Bender",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shakeel-afzal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "structural-health-assessments-and-retrofitting-of-existing-structure",
+      "label": "Structural Health Assessments and Retrofitting of Existing Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-haidar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "structural-health-monitoring-shm",
+      "label": "Structural Health Monitoring (SHM)",
+      "aliases": [],
+      "faculty_ids": [
+        "muntazir-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "structure",
+      "label": "Structures",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "structured-matrice",
+      "label": "Structured matrices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-danyal-ahmad-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "studying-light-matter-interaction",
+      "label": "Studying light-matter interaction",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-nasir-javed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "subatomic-physics",
+      "label": "Subatomic Physics",
+      "aliases": [],
+      "faculty_ids": [
+        "sheharyar-pervaiz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "surface-charge-dynamics-on-polymeric-materials-for-hvdc-application",
+      "label": "Surface charge dynamics on polymeric materials for HVDC applications",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahid-alam"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "surface-electromagnetic-waves-spp",
+      "label": "Surface electromagnetic waves (SPP",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-husnul-maab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "surface-engineering",
+      "label": "Surface engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-tauheed-shehbaz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "surface-treatment",
+      "label": "Surface treatments",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ali-turab-jafry"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "surrogate-modelling",
+      "label": "Surrogate Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "sustainability-and-decision-science",
+      "label": "Sustainability & Decision Sciences",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-amin-ullah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "sustainable-construction-material",
+      "label": "Sustainable Construction Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-farjad-iqbal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "sustainable-development",
+      "label": "Sustainable Development",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-ashraf-tanoli-hod"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "sustainable-electronics",
+      "label": "Sustainable Electronics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-muqeet-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "sustainable-energy-system",
+      "label": "Sustainable energy system",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shakeel-afzal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "sustainable-energy-systems-nuclear-batterie",
+      "label": "sustainable energy systems (nuclear batteries",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "sustainable-hvac-system",
+      "label": "Sustainable HVAC Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "sustainable-inorganic-material",
+      "label": "Sustainable Inorganic Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "19805"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "sustainable-manufacturing",
+      "label": "Sustainable Manufacturing",
+      "aliases": [],
+      "faculty_ids": [
+        "professor-ghulam-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "sustainable-process-design",
+      "label": "sustainable process design",
+      "aliases": [],
+      "faculty_ids": [
+        "ahsan-jalal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "sustainable-urban-mobility",
+      "label": "Sustainable Urban Mobility",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shiraz-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "synchronization",
+      "label": "Synchronization",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-marwan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "system-level-design",
+      "label": "System-Level Design",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-fahad-bin-muslim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "tamm",
+      "label": "Tamm",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-husnul-maab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "technologies-in-supply-chain",
+      "label": "Technologies in Supply Chains",
+      "aliases": [],
+      "faculty_ids": [
+        "hassaan-tariq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "technology-in-language-teaching",
+      "label": "Technology in Language Teaching",
+      "aliases": [],
+      "faculty_ids": [
+        "atta-ur-rehman-jadoon"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "tem",
+      "label": "TEM",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "theoretical-computer-science",
+      "label": "Theoretical Computer Science",
+      "aliases": [],
+      "faculty_ids": [
+        "rabbia-hassan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "thermal-energy-storage",
+      "label": "Thermal Energy Storage",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "thermal-fluid",
+      "label": "Thermal Fluids",
+      "aliases": [],
+      "faculty_ids": [
+        "faheem-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "thermal-fluid-system",
+      "label": "Thermal-Fluid Systems",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-omer-ahmed-qureshi"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "thermo-fluids-thermodynamics",
+      "label": "Thermo-Fluids (Thermodynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-taqi-ahmad-cheema"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "thermo-mechanical-processing",
+      "label": "Thermo-mechanical processing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-massab-junaid"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "thermodynamics",
+      "label": "Thermodynamics",
+      "aliases": [],
+      "faculty_ids": [
+        "hamza-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "thin-film",
+      "label": "Thin films",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shanza-rehan-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "thin-film-processing",
+      "label": "Thin Film Processing",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-syed-zameer-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "thin-fim-solar-cell",
+      "label": "Thin fim solar cells",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shanza-rehan-assistant-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "time-serie",
+      "label": "time series",
+      "aliases": [],
+      "faculty_ids": [
+        "2-dr-farah-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "titanium-dioxide-tio2-modification",
+      "label": "Titanium dioxide (TiO2) modification",
+      "aliases": [],
+      "faculty_ids": [
+        "waqar-shaukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "tonpilz-and-multilayered-piezoelectric-biomorphs",
+      "label": "Tonpilz and Multilayered piezoelectric biomorphs)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-shakeel-afzal"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "topology",
+      "label": "Topology",
+      "aliases": [],
+      "faculty_ids": [
+        "muhammad-muti-ur-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "traffic-engineering",
+      "label": "Traffic Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-m-faizan-ul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "traffic-management",
+      "label": "Traffic Management",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-m-faizan-ul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "training",
+      "label": "Training",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-sajid-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "translational-research",
+      "label": "Translational Research",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-adnan-shah"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "transportation",
+      "label": "Transportation",
+      "aliases": [],
+      "faculty_ids": [
+        "prof-dr-muhammad-sabir"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "transportation-planning",
+      "label": "Transportation Planning",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-m-faizan-ul-haq"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "travel-behavior-modelling",
+      "label": "Travel Behavior Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shiraz-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "travel-choices-persuasive-intervention",
+      "label": "Travel Choices Persuasive Interventions",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shiraz-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "travel-demand-management",
+      "label": "Travel Demand Management",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shiraz-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "tribology",
+      "label": "Tribology",
+      "aliases": [],
+      "faculty_ids": [
+        "atteeq-uz-zaman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "tunneling-and-excavation",
+      "label": "Tunneling & Excavation",
+      "aliases": [],
+      "faculty_ids": [
+        "syed-aizaz-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "turbulence",
+      "label": "turbulence",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khawar-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "turbulence-modelling",
+      "label": "Turbulence Modelling",
+      "aliases": [],
+      "faculty_ids": [
+        "faheem-ahmed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "vector-database",
+      "label": "Vector databases",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-ghufran-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "vehicular-ad-hoc-networks-vanets",
+      "label": "Vehicular Ad hoc Networks (VANETs)",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-shahab-haider"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "vibration",
+      "label": "Vibration",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-haseeb-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "video-compression-and-communication",
+      "label": "Video Compression and Communication",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rashad-m-jillani"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "video-mining",
+      "label": "Video Mining",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-masroor-hussain"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "video-transcoding",
+      "label": "Video Transcoding",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-rashad-m-jillani"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "volatility-spillover",
+      "label": "Volatility Spillovers",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-noshaba-zulfiqar"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "voltage-control",
+      "label": "Voltage control",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ammar-arshad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "voltage-flicker",
+      "label": "Voltage flicker",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-ammar-arshad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "waste-heat-recovery",
+      "label": "Waste Heat Recovery",
+      "aliases": [],
+      "faculty_ids": [
+        "hamza-abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "waste-water-treatment",
+      "label": "Waste Water Treatment",
+      "aliases": [],
+      "faculty_ids": [
+        "waqar-shaukat"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "wastewater-treatment-and-purification",
+      "label": "Wastewater treatment and purification",
+      "aliases": [],
+      "faculty_ids": [
+        "fazal-wahab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "water-and-wastewater-treatment-processe",
+      "label": "Water & Wastewater Treatment Processes",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-hammad-amjad-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "water-electrolysis",
+      "label": "Water Electrolysis",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-majid-aziz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "water-resource-engineering",
+      "label": "Water Resource Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "najam-us-saqi-fraz"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "water-resources-and-environmental-systems-planning",
+      "label": "Water Resources and Environmental Systems Planning",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-muhammad-sayyam-asif"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dcve"
+      ]
+    },
+    {
+      "id": "water-treatment-and-energy-engineering",
+      "label": "Water Treatment and Energy Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khurram-imran-khan-associate-professor"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dche"
+      ]
+    },
+    {
+      "id": "wave-propagation-in-bi-isotropic-media",
+      "label": "Wave Propagation in Bi-isotropic Media",
+      "aliases": [],
+      "faculty_ids": [
+        "arbab-abdur-rahim"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "wave-propagation-in-complex-medium",
+      "label": "wave propagation in complex medium",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-husnul-maab"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "wear-and-surface-engineering",
+      "label": "Wear and Surface Engineering",
+      "aliases": [],
+      "faculty_ids": [
+        "atteeq-uz-zaman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    },
+    {
+      "id": "wearable-device",
+      "label": "Wearable Devices",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-khalid-rahman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fme"
+      ]
+    },
+    {
+      "id": "wearable-electronics-for-health-monitoring",
+      "label": "Wearable Electronics for Health Monitoring",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-muhammad-muqeet-rehman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "web-security-and-privacy",
+      "label": "Web Security and Privacy",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-zubair-ahmad"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "well-being-indexe",
+      "label": "Well-being Indexes",
+      "aliases": [],
+      "faculty_ids": [
+        "mr-muhammad-umer-saeed"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "mgs"
+      ]
+    },
+    {
+      "id": "wide-bandgap-material",
+      "label": "Wide Bandgap Materials",
+      "aliases": [],
+      "faculty_ids": [
+        "engr-dr-muhammad-usman"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fbs"
+      ]
+    },
+    {
+      "id": "wireless-and-mobile-communication",
+      "label": "wireless and mobile communications",
+      "aliases": [],
+      "faculty_ids": [
+        "abbas"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "wireless-sensor-network",
+      "label": "Wireless Sensor Networks",
+      "aliases": [],
+      "faculty_ids": [
+        "dr-asad-mahmood"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fcse"
+      ]
+    },
+    {
+      "id": "wireless-sensor-networks-wsns",
+      "label": "Wireless Sensor Networks (WSNs)",
+      "aliases": [],
+      "faculty_ids": [
+        "zaiwar-ali"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "fee"
+      ]
+    },
+    {
+      "id": "xrd-unraveling-structureproperty-relationships-from-nano-to-macro-scale",
+      "label": "XRD): Unraveling structure–property relationships from nano- to macro-scale",
+      "aliases": [],
+      "faculty_ids": [
+        "abdullah-khan"
+      ],
+      "faculty_count": 1,
+      "units": [
+        "dmse"
+      ]
+    }
+  ]
+}

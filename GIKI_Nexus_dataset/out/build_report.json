@@ -1,0 +1,36 @@
+{
+  "faculty_total": 181,
+  "faculty_per_unit": {
+    "dche": 12,
+    "dcve": 19,
+    "dmse": 13,
+    "fbs": 22,
+    "fee": 15,
+    "fcse": 48,
+    "fme": 19,
+    "mgs": 33
+  },
+  "verified": 161,
+  "status": {
+    "active": 165,
+    "on_study_leave": 10,
+    "on_leave": 6
+  },
+  "missing": {
+    "missing_research_interests": 16,
+    "missing_qualifications": 15,
+    "missing_email": 22
+  },
+  "prospectus_matched": 35,
+  "other_personnel": 20,
+  "research_areas": 657,
+  "publications": 2893,
+  "faculty_with_publications": 110,
+  "courses": 647,
+  "courses_with_description": 536,
+  "courses_in_live_catalog": 321,
+  "programs": 15,
+  "coursehub_instructors": 190,
+  "coursehub_instructors_matched": 124,
+  "needs_review": 36
+}

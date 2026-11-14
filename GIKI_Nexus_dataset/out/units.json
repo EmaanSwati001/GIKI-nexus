@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "generated_from": [
+      "giki.edu.pk faculty listing + personnel pages",
+      "GIKI Undergraduate Prospectus 2025",
+      "GIKI Course Hub repo (giki_course_hub-1) JSON data"
+    ],
+    "scraped_at": "2026-11-10T16:37:44.477Z"
+  },
+  "units": [
+    {
+      "id": "fcse",
+      "name": "Faculty of Computer Science and Engineering",
+      "short": "FCSE",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/fcse/faculty-profiles/",
+      "source_url": "https://giki.edu.pk/fcse/faculty-profiles/"
+    },
+    {
+      "id": "fee",
+      "name": "Faculty of Electrical Engineering",
+      "short": "FEE",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/fee/fee-faculty-profile/",
+      "source_url": "https://giki.edu.pk/fee/fee-faculty-profile/"
+    },
+    {
+      "id": "fme",
+      "name": "Faculty of Mechanical Engineering",
+      "short": "FME",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/fme/fme-faculty-profile/",
+      "source_url": "https://giki.edu.pk/fme/fme-faculty-profile/"
+    },
+    {
+      "id": "fbs",
+      "name": "Faculty of Basic Sciences",
+      "short": "FBS",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/fbs/es-faculty-profile/",
+      "source_url": "https://giki.edu.pk/fbs/es-faculty-profile/"
+    },
+    {
+      "id": "fmce",
+      "name": "Faculty of Materials and Chemical Engineering",
+      "short": "FMCE",
+      "type": "faculty",
+      "parent": null,
+      "listing": null,
+      "source_url": null
+    },
+    {
+      "id": "dmse",
+      "name": "Department of Materials Science and Engineering",
+      "short": "DMSE",
+      "type": "department",
+      "parent": "fmce",
+      "listing": "/fmce/dmse/dmse-faculty-profile/",
+      "source_url": "https://giki.edu.pk/fmce/dmse/dmse-faculty-profile/"
+    },
+    {
+      "id": "dche",
+      "name": "Department of Chemical Engineering",
+      "short": "DChE",
+      "type": "department",
+      "parent": "fmce",
+      "listing": "/fmce/dche/dche-faculty-profile/",
+      "source_url": "https://giki.edu.pk/fmce/dche/dche-faculty-profile/"
+    },
+    {
+      "id": "dcve",
+      "name": "Department of Civil Engineering",
+      "short": "DCvE",
+      "type": "department",
+      "parent": null,
+      "listing": "/dce/faculty-profile/",
+      "source_url": "https://giki.edu.pk/dce/faculty-profile/"
+    },
+    {
+      "id": "mgs",
+      "name": "School of Management Sciences",
+      "short": "MGS",
+      "type": "faculty",
+      "parent": null,
+      "listing": "/mgs/mgs-faculty-profile/",
+      "source_url": "https://giki.edu.pk/mgs/mgs-faculty-profile/"
+    }
+  ]
+}
