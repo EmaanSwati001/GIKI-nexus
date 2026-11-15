@@ -29,6 +29,19 @@ class PublicationType(str, Enum):
     UNSPECIFIED = "unspecified"
 
 
+class InstructorMatchStatus(str, Enum):
+    MATCHED = "matched"
+    SUGGESTED = "suggested"
+    UNMATCHED = "unmatched"
+    NEEDS_REVIEW = "needs_review"
+
+
+class CurationStatus(str, Enum):
+    RESOLVED = "resolved"
+    NEEDS_REVIEW = "needs_review"
+    INFORMATIONAL = "informational"
+
+
 class ProvenanceMetadata(BaseModel):
     model_config = ConfigDict(extra="ignore")
     sources: List[str] = Field(default_factory=list, description="Source URLs or reference document citations")
@@ -100,6 +113,12 @@ class FacultyMember(BaseModel):
     missing_fields: List[str] = Field(default_factory=list, description="List of missing expected fields")
     verified: bool = Field(default=False, description="True if unit and academic credentials confirmed")
     research_area_ids: List[str] = Field(default_factory=list, description="Slugs of linked research area nodes")
+    preferred_designation: Optional[str] = Field(default=None, description="Preferred display designation")
+    academic_rank: Optional[str] = Field(default=None, description="Extracted academic rank (e.g. Professor, Lecturer)")
+    administrative_role: Optional[str] = Field(default=None, description="Extracted administrative role (e.g. HoD, Dean)")
+    professional_credentials: List[str] = Field(default_factory=list, description="Professional credentials (e.g. HEC Approved PhD Supervisor)")
+    designation_discrepancy: bool = Field(default=False, description="True if listing designation differs from profile page")
+    designation_review_status: Optional[str] = Field(default=None, description="Resolution status of designation discrepancy")
 
 
 class Course(BaseModel):
@@ -114,6 +133,9 @@ class Course(BaseModel):
     prerequisites_raw: Optional[str] = Field(default=None, description="Unparsed prerequisite clause")
     description: Optional[str] = Field(default=None, description="Course syllabus and description")
     unit: Optional[str] = Field(default=None, description="Academic unit offering course (null if unassigned)")
+    unit_mapping_source: Optional[str] = Field(default=None, description="Source of unit mapping ('prospectus_verified' or 'prefix_based_mapping')")
+    unresolved_prerequisites: List[str] = Field(default_factory=list, description="Prerequisite codes not found in active catalog")
+    prerequisite_statuses: Dict[str, str] = Field(default_factory=dict, description="Status per prerequisite code ('resolved' or 'unresolved')")
     offered_in: List[CourseOffering] = Field(default_factory=list, description="Program curriculum placements")
     is_lab: bool = Field(default=False, description="True if course is a laboratory session")
     provenance: ProvenanceMetadata = Field(default_factory=ProvenanceMetadata, description="Sources of syllabus / curriculum")
@@ -178,3 +200,22 @@ class CourseHubInstructorLink(BaseModel):
     faculty_id: Optional[str] = Field(default=None, description="Matched GIKI Nexus faculty ID (null if unmatched)")
     match_method: Optional[str] = Field(default=None, description="Algorithm used for match (full_name, partial, null)")
     match_score: Optional[float] = Field(default=None, description="String similarity score (0.0 to 1.0)")
+    match_status: InstructorMatchStatus = Field(default=InstructorMatchStatus.UNMATCHED, description="Matching status (matched, suggested, unmatched, needs_review)")
+    suggested_faculty_id: Optional[str] = Field(default=None, description="Suggested faculty ID pending confirmation")
+    notes: Optional[str] = Field(default=None, description="Curation and resolution notes")
+
+
+class CurationQueueItem(BaseModel):
+    """Represents a standardized issue or decision item in the curation review queue."""
+    model_config = ConfigDict(extra="ignore")
+
+    entity_type: str = Field(..., description="Entity type ('course', 'faculty', 'coursehub_instructor')")
+    id: str = Field(..., description="Unique entity identifier")
+    name: Optional[str] = Field(default=None, description="Entity display name")
+    units: List[str] = Field(default_factory=list, description="Associated academic units")
+    category: str = Field(..., description="Issue category (e.g. 'missing_unit', 'broken_prerequisite')")
+    reasons: List[str] = Field(default_factory=list, description="Descriptions of the issue")
+    resolution_status: CurationStatus = Field(default=CurationStatus.NEEDS_REVIEW, description="Resolution status")
+    resolution_notes: Optional[str] = Field(default=None, description="Explanation of resolution or next steps")
+    source_info: Optional[Dict[str, Any]] = Field(default=None, description="Provenance or metadata context")
+    profile_url: Optional[str] = Field(default=None, description="Canonical web URL if available")

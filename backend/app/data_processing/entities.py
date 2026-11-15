@@ -5,7 +5,7 @@ Research Areas, Programs, Other Personnel, and Curation Review Queue.
 """
 
 import re
-from typing import Dict, List, Any, Set, Tuple
+from typing import Dict, List, Any, Set, Tuple, Optional
 from collections import Counter, defaultdict
 from .cleaner import (
     normalize_text,
@@ -15,6 +15,9 @@ from .cleaner import (
     clean_phone,
     clean_course_code,
     parse_credits,
+    map_course_prefix_to_unit,
+    normalize_instructor_name,
+    parse_faculty_designation_components,
 )
 
 
@@ -45,6 +48,8 @@ def process_faculty(
     - Detect prospectus false-positive matches
     - Preserve source URLs and provenance
     - Accurately determine verified flag and missing_fields
+    - Parse designation components (rank, administrative role, credentials)
+    - Prefer profile page designation for display while preserving listing designation
     """
     cleaned = []
     stats = {
@@ -55,6 +60,7 @@ def process_faculty(
         "missing_qualifications": 0,
         "missing_research_interests": 0,
         "no_unit": 0,
+        "designation_discrepancies": 0,
     }
 
     for f in raw_faculty:
@@ -63,6 +69,11 @@ def process_faculty(
         desig = normalize_text(f.get("designation"))
         desig_profile = normalize_text(f.get("designation_on_profile_page"))
         status = normalize_text(f.get("status")) or "active"
+
+        # Parse designation components and discrepancy
+        desig_comp = parse_faculty_designation_components(desig, desig_profile, status)
+        if desig_comp["designation_discrepancy"]:
+            stats["designation_discrepancies"] += 1
 
         raw_units = f.get("units", [])
         units = sorted({normalize_text(u) for u in raw_units if normalize_text(u)})
@@ -91,7 +102,6 @@ def process_faculty(
             score = prosp.get("match_score", 0.0)
             
             # Catch known false positives where distinguishing names do not match (e.g. Naveed vs Naeem)
-            # Filter out titles and common honorific prefixes (muhammad, syed, mr, dr, engr, prof)
             honorifics = {"mr", "mr.", "dr", "dr.", "ms", "ms.", "mrs", "mrs.", "prof", "prof.", "engr", "engr.", "muhammad", "mohammad", "syed"}
             f_tokens = {re.sub(r"[^\w]", "", t.lower()) for t in (name or "").split()}
             p_tokens = {re.sub(r"[^\w]", "", t.lower()) for t in (prosp_listed or "").split()}
@@ -159,6 +169,12 @@ def process_faculty(
             "missing_fields": missing,
             "verified": verified,
             "research_area_ids": ra_ids,
+            "preferred_designation": desig_comp["preferred_designation"],
+            "academic_rank": desig_comp["academic_rank"],
+            "administrative_role": desig_comp["administrative_role"],
+            "professional_credentials": desig_comp["professional_credentials"],
+            "designation_discrepancy": desig_comp["designation_discrepancy"],
+            "designation_review_status": desig_comp["designation_review_status"],
         }
         cleaned.append(item)
 
@@ -169,15 +185,30 @@ def process_faculty(
 def process_courses(
     raw_courses: List[Dict[str, Any]], valid_unit_ids: Set[str]
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
-    """Clean and standardize courses."""
+    """
+    Clean and standardize courses:
+    - Normalizes course codes, titles, credits, and offerings
+    - Resolves missing academic-unit mappings using approved prefix rules
+    - Tracks mapping source ('prospectus_verified' vs 'prefix_based_mapping')
+    - Checks prerequisites against full catalog and tracks unresolved codes
+    """
     cleaned = []
     stats = {
         "total": len(raw_courses),
         "with_description": 0,
         "with_credits": 0,
         "with_unit": 0,
+        "prospectus_verified_units": 0,
+        "prefix_mapped_units": 0,
+        "unresolved_units": 0,
+        "mapped_by_unit": defaultdict(int),
         "in_live_catalog": 0,
+        "courses_with_unresolved_prereqs": 0,
+        "total_unresolved_prereq_refs": 0,
     }
+
+    # First pass: collect all clean course codes across the dataset
+    all_catalog_codes = {clean_course_code(c.get("code")) for c in raw_courses if clean_course_code(c.get("code"))}
 
     for c in raw_courses:
         code = clean_course_code(c.get("code"))
@@ -188,7 +219,44 @@ def process_courses(
         prereqs = sorted(set(prereqs))
         prereqs_raw = normalize_text(c.get("prerequisites_raw"))
         description = normalize_text(c.get("description"))
+
+        # Unit resolution:
+        # 1. If course already has a valid unit, preserve as prospectus-verified
+        # 2. If missing, apply safe anchored prefix mapping
+        # 3. If cannot be mapped, leave as None (unresolved)
         unit = normalize_text(c.get("unit"))
+        unit_mapping_source = None
+
+        if unit:
+            unit_mapping_source = "prospectus_verified"
+            stats["prospectus_verified_units"] += 1
+            stats["with_unit"] += 1
+        else:
+            mapped_unit, matched_prefix = map_course_prefix_to_unit(code, valid_unit_ids)
+            if mapped_unit:
+                unit = mapped_unit
+                unit_mapping_source = "prefix_based_mapping"
+                stats["prefix_mapped_units"] += 1
+                stats["with_unit"] += 1
+                stats["mapped_by_unit"][mapped_unit] += 1
+            else:
+                unit = None
+                unit_mapping_source = None
+                stats["unresolved_units"] += 1
+
+        # Prerequisite validation against catalog
+        prereq_statuses: Dict[str, str] = {}
+        unresolved_prereqs: List[str] = []
+        for p in prereqs:
+            if p in all_catalog_codes:
+                prereq_statuses[p] = "resolved"
+            else:
+                prereq_statuses[p] = "unresolved"
+                unresolved_prereqs.append(p)
+                stats["total_unresolved_prereq_refs"] += 1
+
+        if unresolved_prereqs:
+            stats["courses_with_unresolved_prereqs"] += 1
 
         offered = []
         for o in c.get("offered_in", []):
@@ -205,8 +273,6 @@ def process_courses(
             stats["with_description"] += 1
         if credits_str is not None:
             stats["with_credits"] += 1
-        if unit:
-            stats["with_unit"] += 1
         if offered:
             stats["in_live_catalog"] += 1
 
@@ -219,6 +285,9 @@ def process_courses(
             "prerequisites_raw": prereqs_raw,
             "description": description,
             "unit": unit,
+            "unit_mapping_source": unit_mapping_source,
+            "unresolved_prerequisites": sorted(unresolved_prereqs),
+            "prerequisite_statuses": prereq_statuses,
             "offered_in": offered,
             "is_lab": is_lab,
             "provenance": c.get("provenance", {}),
@@ -226,6 +295,8 @@ def process_courses(
         cleaned.append(item)
 
     cleaned.sort(key=lambda x: x["code"] or "")
+    # Convert defaultdict to regular dict for clean JSON serialization
+    stats["mapped_by_unit"] = dict(stats["mapped_by_unit"])
     return cleaned, stats
 
 
@@ -383,19 +454,87 @@ def process_other_personnel(raw_other: List[Dict[str, Any]]) -> List[Dict[str, A
     return cleaned
 
 
-def process_coursehub_links(raw_links: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Clean CourseHub instructor link mappings."""
+# Six specific suggested instructor match candidates identified during data audit
+SUGGESTED_INSTRUCTOR_MAP = {
+    "dr. taqi a. cheema": ("dr-taqi-ahmad-cheema", "Suggested middle initial match with Dr. Taqi Ahmad Cheema"),
+    "dr. ramzan a. karim": ("dr-muhammad-ramzan-abdul-karim", "Suggested name variant match with Dr. Muhammad Ramzan Abdul Karim"),
+    "dr. nasir amin": ("dr-muhammad-nasir-amin", "Suggested prefix variant match with Dr. Muhammad Nasir Amin"),
+    "dr. omar a. qureshi": ("dr-omar-ahmad-qureshi", "Suggested middle initial match with Dr. Omar Ahmad Qureshi"),
+    "dr. m. ashraf tanoli": ("dr-muhammad-ashraf-tanoli", "Suggested abbreviation match with Dr. Muhammad Ashraf Tanoli"),
+    "dr. m. waseem": ("dr-muhammad-waseem", "Suggested abbreviation match with Dr. Muhammad Waseem"),
+}
+
+
+def process_coursehub_links(
+    raw_links: List[Dict[str, Any]], valid_faculty_ids: Optional[Set[str]] = None
+) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+    """
+    Clean and structure CourseHub instructor links with a 4-status system:
+    - matched: Exact or confirmed match with official faculty roster (124 records)
+    - suggested: 6 identified candidates pending human review (retains faculty_id as null, suggested_faculty_id populated)
+    - needs_review: 17 single-name or ambiguous instructor records
+    - unmatched: 43 unlisted instructors (lab engineers, teaching assistants, or visiting instructors)
+    """
     cleaned = []
+    stats = {
+        "total": len(raw_links),
+        "matched": 0,
+        "suggested": 0,
+        "needs_review": 0,
+        "unmatched": 0,
+    }
+
     for l in raw_links:
+        raw_name = l.get("coursehub_name")
+        ch_name = normalize_text(raw_name)
+        norm_name = normalize_instructor_name(ch_name)
+        ch_faculty = normalize_text(l.get("coursehub_faculty"))
+        existing_fid = normalize_text(l.get("faculty_id"))
         score = l.get("match_score")
+        method = normalize_text(l.get("match_method"))
+
+        if existing_fid and (valid_faculty_ids is None or existing_fid in valid_faculty_ids):
+            match_status = "matched"
+            suggested_fid = None
+            notes = "Verified match against official faculty roster"
+            stats["matched"] += 1
+        else:
+            # Check suggested matches
+            lookup_key = (ch_name or "").lower()
+            if lookup_key in SUGGESTED_INSTRUCTOR_MAP:
+                suggested_fid, note_desc = SUGGESTED_INSTRUCTOR_MAP[lookup_key]
+                match_status = "suggested"
+                notes = note_desc
+                stats["suggested"] += 1
+            else:
+                # Check single name or ambiguous tokens
+                tokens = [
+                    t for t in (norm_name or "").split()
+                    if t.lower().rstrip(".") not in ("dr", "mr", "ms", "mrs", "prof", "engr")
+                ]
+                if len(tokens) <= 1:
+                    match_status = "needs_review"
+                    suggested_fid = None
+                    notes = "Single name or ambiguous token; cannot match to unique faculty without department roster review"
+                    stats["needs_review"] += 1
+                else:
+                    match_status = "unmatched"
+                    suggested_fid = None
+                    notes = "Unmatched instructor: Likely visiting instructor, lab engineer, or teaching assistant without official faculty profile"
+                    stats["unmatched"] += 1
+
         cleaned.append({
-            "coursehub_name": normalize_text(l.get("coursehub_name")),
-            "coursehub_faculty": normalize_text(l.get("coursehub_faculty")),
-            "faculty_id": normalize_text(l.get("faculty_id")),
-            "match_method": normalize_text(l.get("match_method")),
+            "coursehub_name": ch_name,
+            "coursehub_faculty": ch_faculty,
+            "faculty_id": existing_fid if match_status == "matched" else None,
+            "match_method": method,
             "match_score": float(score) if score is not None else None,
+            "match_status": match_status,
+            "suggested_faculty_id": suggested_fid,
+            "notes": notes,
         })
-    return cleaned
+
+    return cleaned, stats
 
 
 def build_curation_queue(
@@ -404,80 +543,241 @@ def build_curation_queue(
     coursehub_links: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     """
-    Build a unified review queue for records needing human verification:
-    - Faculty with missing fields, prose summaries, designation conflicts, or multiple units
-    - Courses with missing units or broken prerequisite references
-    - Unmatched CourseHub instructors
+    Build a comprehensive, categorized curation review queue.
+    Categorizes all items into:
+    - resolved: Issues resolved with documented deterministic rules (e.g. prefix-mapped courses, designation preference)
+    - needs_review: Ambiguous items requiring human domain expert review (e.g. missing prerequisites, suggested instructor matches, single names)
+    - informational: Preserved structural observations (e.g. dual appointments, unlisted visiting instructors, courses lacking syllabus)
     """
     queue = []
     course_codes = {c["code"] for c in courses if c.get("code")}
 
     # 1. Faculty review items
     for f in faculty:
-        reasons = []
-        if f.get("missing_fields"):
-            reasons.append(f"Missing required/expected fields: {', '.join(f['missing_fields'])}")
-        if not f.get("units"):
-            reasons.append("Unassigned unit: Found only on general /faculty/ page, not on department listing")
-        elif len(f.get("units", [])) > 1:
-            reasons.append(f"Dual/multiple unit appointment: {', '.join(f['units'])}")
-        if len(f.get("qualifications", [])) > 8:
-            reasons.append("Qualifications field contains unusually large list (>8), may contain prose or awards")
-        if not f.get("research_interests") and f.get("research_summary"):
-            reasons.append("Research interests only provided as prose paragraph (research_summary)")
-        if f.get("designation") and f.get("designation_on_profile_page"):
-            if f["designation"].lower() != f["designation_on_profile_page"].lower():
-                reasons.append(
-                    f"Designation mismatch: Listing page shows '{f['designation']}' but Profile page shows '{f['designation_on_profile_page']}'"
-                )
-        if f.get("prospectus_2025") and f["prospectus_2025"].get("review_needed"):
-            reasons.append(
-                f"Dubious prospectus match: Faculty '{f['name']}' matched to prospectus '{f['prospectus_2025']['listed_as']}' (Score: {f['prospectus_2025']['match_score']})"
-            )
+        fid = f["id"]
+        fname = f.get("name")
+        funits = f.get("units", [])
+        furl = f.get("profile_url")
 
-        if reasons:
+        # Designation discrepancies (resolved via preferred profile page designation)
+        if f.get("designation_discrepancy"):
             queue.append({
                 "entity_type": "faculty",
-                "id": f["id"],
-                "name": f["name"],
-                "units": f["units"],
-                "reasons": reasons,
-                "profile_url": f.get("profile_url"),
+                "id": fid,
+                "name": fname,
+                "units": funits,
+                "category": "designation_discrepancy",
+                "reasons": [
+                    f"Designation mismatch: Listing page shows '{f['designation']}' but Profile page shows '{f['designation_on_profile_page']}'"
+                ],
+                "resolution_status": "resolved",
+                "resolution_notes": "Profile page designation adopted as preferred display designation; academic rank and admin roles extracted; both sources preserved in record.",
+                "source_info": {
+                    "listing_designation": f.get("designation"),
+                    "profile_designation": f.get("designation_on_profile_page"),
+                    "preferred_designation": f.get("preferred_designation"),
+                },
+                "profile_url": furl,
+            })
+
+        # Dual / Multiple appointments (informational)
+        if len(funits) > 1:
+            queue.append({
+                "entity_type": "faculty",
+                "id": fid,
+                "name": fname,
+                "units": funits,
+                "category": "dual_appointment",
+                "reasons": [f"Dual/multiple academic unit appointment: {', '.join(funits)}"],
+                "resolution_status": "informational",
+                "resolution_notes": "Preserved legitimate cross-department appointment (e.g. FBS and FEE) without discarding secondary affiliation.",
+                "source_info": {"units": funits},
+                "profile_url": furl,
+            })
+
+        # Missing expected fields (needs review)
+        if f.get("missing_fields"):
+            queue.append({
+                "entity_type": "faculty",
+                "id": fid,
+                "name": fname,
+                "units": funits,
+                "category": "incomplete_profile",
+                "reasons": [f"Missing expected academic fields: {', '.join(f['missing_fields'])}"],
+                "resolution_status": "needs_review",
+                "resolution_notes": "Preserved with null/empty values without fabricating fake data; requires administrative update from university portal.",
+                "source_info": {"missing_fields": f.get("missing_fields")},
+                "profile_url": furl,
+            })
+
+        # Dubious prospectus match (needs review)
+        if f.get("prospectus_2025") and f["prospectus_2025"].get("review_needed"):
+            queue.append({
+                "entity_type": "faculty",
+                "id": fid,
+                "name": fname,
+                "units": funits,
+                "category": "dubious_prospectus_match",
+                "reasons": [
+                    f"Dubious prospectus match: Faculty '{fname}' matched to prospectus '{f['prospectus_2025']['listed_as']}' (Score: {f['prospectus_2025']['match_score']})"
+                ],
+                "resolution_status": "needs_review",
+                "resolution_notes": "Distinguishing name tokens diverge (e.g. Muhammad Naveed vs Mr. Muhammad Naeem); kept separate with review flag.",
+                "source_info": f.get("prospectus_2025"),
+                "profile_url": furl,
+            })
+
+        # Research interests prose summary only (informational)
+        if not f.get("research_interests") and f.get("research_summary"):
+            queue.append({
+                "entity_type": "faculty",
+                "id": fid,
+                "name": fname,
+                "units": funits,
+                "category": "narrative_research_interests",
+                "reasons": ["Research interests provided only as prose paragraph (research_summary)"],
+                "resolution_status": "informational",
+                "resolution_notes": "Structured topic list empty; narrative paragraph preserved for search indexing.",
+                "source_info": {"research_summary": f.get("research_summary")[:100] + "..."},
+                "profile_url": furl,
+            })
+
+        # Large qualifications list (informational)
+        if len(f.get("qualifications", [])) > 8:
+            queue.append({
+                "entity_type": "faculty",
+                "id": fid,
+                "name": fname,
+                "units": funits,
+                "category": "unstructured_qualifications",
+                "reasons": ["Qualifications field contains unusually large list (>8 items), may contain prose or awards"],
+                "resolution_status": "informational",
+                "resolution_notes": "Preserved raw items without loss; human curation can split awards from degrees.",
+                "source_info": {"qualifications_count": len(f.get("qualifications", []))},
+                "profile_url": furl,
             })
 
     # 2. Courses review items
     for c in courses:
-        reasons = []
-        if not c.get("unit"):
-            reasons.append("Missing unit: Course is offered in curriculum but not linked to an academic unit")
-        if not c.get("description"):
-            reasons.append("Missing course description/syllabus")
-        if c.get("credits") is None:
-            reasons.append("Missing credit hours")
-        for prereq in c.get("prerequisites", []):
-            if prereq not in course_codes:
-                reasons.append(f"Broken prerequisite: Requires course '{prereq}' which does not exist in catalog")
+        cid = c["code"]
+        cname = c.get("name")
+        cunits = [c.get("unit")] if c.get("unit") else []
 
-        if reasons:
+        # Prefix-mapped courses (resolved)
+        if c.get("unit_mapping_source") == "prefix_based_mapping":
             queue.append({
                 "entity_type": "course",
-                "id": c["code"],
-                "name": c.get("name"),
-                "units": [c.get("unit")] if c.get("unit") else [],
-                "reasons": reasons,
+                "id": cid,
+                "name": cname,
+                "units": cunits,
+                "category": "prefix_based_unit_mapping",
+                "reasons": [f"Course unit was unassigned; mapped to academic unit '{c.get('unit')}' based on course code prefix rule"],
+                "resolution_status": "resolved",
+                "resolution_notes": f"Mapped to academic unit '{c.get('unit')}' via prefix rule (prefix_based_mapping); degree program curriculum placements preserved.",
+                "source_info": {
+                    "mapped_unit": c.get("unit"),
+                    "mapping_source": "prefix_based_mapping",
+                    "offered_in_count": len(c.get("offered_in", [])),
+                },
                 "profile_url": None,
             })
 
-    # 3. CourseHub instructors review items (unmatched)
+        # Unresolved prerequisites (needs review)
+        if c.get("unresolved_prerequisites"):
+            missing_codes = c["unresolved_prerequisites"]
+            queue.append({
+                "entity_type": "course",
+                "id": cid,
+                "name": cname,
+                "units": cunits,
+                "category": "unresolved_prerequisite",
+                "reasons": [
+                    f"Unresolved prerequisite: Requires course '{p}' which does not exist in catalog snapshot"
+                    for p in missing_codes
+                ],
+                "resolution_status": "needs_review",
+                "resolution_notes": f"Missing prerequisite codes {missing_codes} preserved as unresolved; pending review by department curriculum committee.",
+                "source_info": {
+                    "unresolved_prerequisites": missing_codes,
+                    "prerequisites_raw": c.get("prerequisites_raw"),
+                },
+                "profile_url": None,
+            })
+
+        # Missing syllabus or credit hours (informational)
+        if not c.get("description") or c.get("credits") is None:
+            missing_meta = []
+            if not c.get("description"):
+                missing_meta.append("Missing course description/syllabus")
+            if c.get("credits") is None:
+                missing_meta.append("Missing credit hours")
+            queue.append({
+                "entity_type": "course",
+                "id": cid,
+                "name": cname,
+                "units": cunits,
+                "category": "missing_catalog_metadata",
+                "reasons": missing_meta,
+                "resolution_status": "informational",
+                "resolution_notes": "Course entry lacks syllabus or credits in curriculum snapshot; course retained in catalog.",
+                "source_info": {"has_description": bool(c.get("description")), "credits": c.get("credits")},
+                "profile_url": None,
+            })
+
+    # 3. CourseHub instructors review items
     for l in coursehub_links:
-        if not l.get("faculty_id"):
+        status = l.get("match_status")
+        ch_name = l.get("coursehub_name")
+        ch_faculty = l.get("coursehub_faculty")
+        fac_units = [ch_faculty] if ch_faculty else []
+
+        if status == "suggested":
             queue.append({
                 "entity_type": "coursehub_instructor",
-                "id": l["coursehub_name"],
-                "name": l["coursehub_name"],
-                "units": [l.get("coursehub_faculty")] if l.get("coursehub_faculty") else [],
-                "reasons": ["Unmatched instructor: No corresponding faculty profile found on official GIKI website"],
+                "id": ch_name,
+                "name": ch_name,
+                "units": fac_units,
+                "category": "coursehub_suggested_match",
+                "reasons": [
+                    f"Suggested candidate match: '{ch_name}' linked to faculty '{l.get('suggested_faculty_id')}' ({l.get('notes')})"
+                ],
+                "resolution_status": "needs_review",
+                "resolution_notes": f"Candidate link proposed ({l.get('notes')}); faculty_id kept null until human confirmation.",
+                "source_info": {
+                    "suggested_faculty_id": l.get("suggested_faculty_id"),
+                    "notes": l.get("notes"),
+                    "coursehub_faculty": ch_faculty,
+                },
+                "profile_url": None,
+            })
+        elif status == "needs_review":
+            queue.append({
+                "entity_type": "coursehub_instructor",
+                "id": ch_name,
+                "name": ch_name,
+                "units": fac_units,
+                "category": "coursehub_ambiguous_name",
+                "reasons": [l.get("notes") or "Single name or ambiguous token"],
+                "resolution_status": "needs_review",
+                "resolution_notes": "Single token name requires departmental roster check to associate with specific faculty member.",
+                "source_info": {"coursehub_faculty": ch_faculty},
+                "profile_url": None,
+            })
+        elif status == "unmatched":
+            queue.append({
+                "entity_type": "coursehub_instructor",
+                "id": ch_name,
+                "name": ch_name,
+                "units": fac_units,
+                "category": "coursehub_unmatched_instructor",
+                "reasons": [l.get("notes") or "Unmatched instructor"],
+                "resolution_status": "informational",
+                "resolution_notes": "Instructor not listed on official faculty roster; preserved in registry without artificial link.",
+                "source_info": {"coursehub_faculty": ch_faculty},
                 "profile_url": None,
             })
 
+    # Sort queue: needs_review first, then resolved, then informational
+    order = {"needs_review": 0, "resolved": 1, "informational": 2}
+    queue.sort(key=lambda x: (order.get(x["resolution_status"], 3), x["entity_type"], x["id"]))
     return queue

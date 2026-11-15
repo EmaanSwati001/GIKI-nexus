@@ -143,3 +143,158 @@ def clean_course_code(code: Optional[str]) -> Optional[str]:
     if "/" not in collapsed and "xx" not in collapsed.lower():
         return collapsed.upper()
     return collapsed
+
+
+# -------------------------------------------------------------------------
+# Academic Unit Prefix Rules & Curation Cleaners
+# -------------------------------------------------------------------------
+
+# Approved department mapping rules per GIKI catalog conventions
+COURSE_PREFIX_TO_UNIT_MAP: Dict[str, str] = {
+    "HMXYZ": "fbs",
+    "CYS": "fcse",
+    "AI": "fcse",
+    "CS": "fcse",
+    "CE": "fcse",
+    "DS": "fcse",
+    "CY": "fcse",
+    "SE": "fcse",
+    "ME": "fme",
+    "MT": "fbs",
+    "ES": "fbs",
+    "HM": "fbs",
+    "EE": "fee",
+    "MM": "dmse",
+    "CH": "dche",
+    "CV": "dcve",
+    "MS": "mgs",
+}
+
+
+def map_course_prefix_to_unit(
+    code: Optional[str], valid_unit_ids: Optional[Any] = None
+) -> Tuple[Optional[str], Optional[str]]:
+    """
+    Match course code prefixes safely at the beginning of the string.
+    Does NOT use unsafe substring matching.
+    Checks that mapped unit exists in valid_unit_ids.
+    Returns (unit_id, matched_prefix) or (None, None).
+    """
+    if not code:
+        return None, None
+
+    clean_code = clean_course_code(code)
+    if not clean_code:
+        return None, None
+
+    # Sort prefixes by length descending so longer prefixes match first (e.g. HMXYZ, CYS)
+    sorted_prefixes = sorted(COURSE_PREFIX_TO_UNIT_MAP.keys(), key=len, reverse=True)
+
+    for prefix in sorted_prefixes:
+        # Match prefix at start, bounded by digits, 'L', hyphen, slash, space, or end
+        pattern = r"^" + re.escape(prefix) + r"(?=[0-9L\-\s/]|$)"
+        if re.match(pattern, clean_code, re.I):
+            target_unit = COURSE_PREFIX_TO_UNIT_MAP[prefix]
+            if valid_unit_ids is None or target_unit in valid_unit_ids:
+                return target_unit, prefix
+            return None, None
+
+    return None, None
+
+
+def normalize_instructor_name(name: Optional[str]) -> Optional[str]:
+    """
+    Normalize instructor names:
+    - Unicode NFKC normalization
+    - Strip trailing periods from common honorifics (e.g. 'Dr.' -> 'Dr')
+    - Collapse whitespace
+    """
+    if not name:
+        return None
+    cleaned = normalize_text(name)
+    if not cleaned:
+        return None
+    # Normalize common honorifics: 'Dr.' -> 'Dr', 'Mr.' -> 'Mr', etc.
+    cleaned = re.sub(r"\b(Dr|Mr|Ms|Mrs|Prof|Engr)\.", r"\1", cleaned)
+    # Collapse any leftover spaces
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned if cleaned else None
+
+
+def parse_faculty_designation_components(
+    listing_desig: Optional[str],
+    profile_desig: Optional[str],
+    status: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    Analyze and parse faculty designation discrepancies without inventing information.
+    Distinguishes:
+    - academic_rank (Professor, Associate Professor, Assistant Professor, Lecturer, Lab Engineer)
+    - administrative_role (HoD, Dean, Director)
+    - professional_credentials (HEC Approved PhD Supervisor, MIEEE, EUR ING)
+    - preferred_designation: profile page designation is preferred display designation
+      as established by project documentation, while preserving listing designation.
+    """
+    list_clean = normalize_text(listing_desig)
+    prof_clean = normalize_text(profile_desig)
+    combined = f"{list_clean or ''} {prof_clean or ''}"
+
+    # 1. Academic Rank
+    rank = None
+    ranks = [
+        "Associate Professor",
+        "Assistant Professor",
+        "Professor",
+        "Lecturer",
+        "Lab Engineer",
+    ]
+    # Check profile designation first as preferred source
+    for r in ranks:
+        if prof_clean and re.search(r"\b" + re.escape(r) + r"\b", prof_clean, re.I):
+            rank = r
+            break
+    if not rank and list_clean:
+        for r in ranks:
+            if re.search(r"\b" + re.escape(r) + r"\b", list_clean, re.I):
+                rank = r
+                break
+
+    # 2. Administrative Role
+    admin_role = None
+    if re.search(r"\b(HoD|Head of Department)\b", combined, re.I):
+        m = re.search(r"\b(HoD|Head of Department)\s*(?:\([^)]+\)|[A-Za-z &/]+)?", combined, re.I)
+        admin_role = m.group(0).strip(" -:,") if m else "Head of Department"
+    elif re.search(r"\bDean\b", combined, re.I):
+        m = re.search(r"\bDean(?:\s*,\s*[^,]+|\s*-\s*[A-Za-z &/]+)?", combined, re.I)
+        admin_role = m.group(0).strip(" -:,") if m else "Dean"
+    elif re.search(r"\bDirector\b", combined, re.I):
+        admin_role = "Director / PI"
+
+    # 3. Professional Credentials
+    creds = []
+    if "hec approved" in combined.lower():
+        creds.append("HEC Approved PhD Supervisor")
+    if "mieee" in combined.lower() or "eur ing" in combined.lower():
+        creds.append("MIEEE, EUR ING")
+
+    # 4. Discrepancy Detection
+    has_discrepancy = bool(
+        list_clean and prof_clean and list_clean.lower() != prof_clean.lower()
+    )
+
+    # 5. Preferred display designation
+    preferred = prof_clean if prof_clean else list_clean
+
+    # 6. Review Status
+    review_status = "resolved"
+    if has_discrepancy and not rank and not admin_role:
+        review_status = "needs_review"
+
+    return {
+        "preferred_designation": preferred,
+        "academic_rank": rank,
+        "administrative_role": admin_role,
+        "professional_credentials": creds,
+        "designation_discrepancy": has_discrepancy,
+        "designation_review_status": review_status if has_discrepancy else None,
+    }

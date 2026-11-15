@@ -7,6 +7,8 @@ from .domain import (
     UnitType,
     EmploymentStatus,
     PublicationType,
+    InstructorMatchStatus,
+    CurationStatus,
     ProvenanceMetadata,
     ProspectusCrossCheck,
     CourseOffering,
@@ -18,12 +20,15 @@ from .domain import (
     Publication,
     OtherPersonnel,
     CourseHubInstructorLink,
+    CurationQueueItem,
 )
 
 __all__ = [
     "UnitType",
     "EmploymentStatus",
     "PublicationType",
+    "InstructorMatchStatus",
+    "CurationStatus",
     "ProvenanceMetadata",
     "ProspectusCrossCheck",
     "CourseOffering",
@@ -35,4 +40,5 @@ __all__ = [
     "Publication",
     "OtherPersonnel",
     "CourseHubInstructorLink",
+    "CurationQueueItem",
 ]

@@ -8,6 +8,7 @@ Leaves raw input files strictly untouched.
 import json
 import logging
 from pathlib import Path
+from collections import Counter
 from typing import Dict, Any, Optional
 
 from .validator import (
@@ -101,10 +102,12 @@ class DataPipeline:
         other_personnel = process_other_personnel(raw_other)
 
         # 9. Process CourseHub Links
-        coursehub_links = process_coursehub_links(raw_ch_links)
+        coursehub_links, ch_stats = process_coursehub_links(raw_ch_links, valid_faculty_ids)
 
         # 10. Build Review Queue
         review_queue = build_curation_queue(faculty, courses, coursehub_links)
+        queue_by_status = Counter(q["resolution_status"] for q in review_queue)
+        queue_by_category = Counter(q["category"] for q in review_queue)
 
         # 11. Run Validations on Cleaned Data
         report = ValidationReport()
@@ -195,6 +198,11 @@ class DataPipeline:
                 "courses": courses_stats,
                 "publications": pub_stats,
                 "research_areas": area_stats,
+                "instructor_links": ch_stats,
+                "curation_queue": {
+                    "by_status": dict(queue_by_status),
+                    "by_category": dict(queue_by_category),
+                },
             },
             "validation": report.to_dict(),
         }

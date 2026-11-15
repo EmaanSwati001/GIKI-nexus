@@ -56,8 +56,27 @@ def main():
     print(f"  - Publications duplicate citations removed : {stats['publications']['duplicates_removed']}")
     print(f"  - Research Areas ID collisions resolved    : {stats['research_areas']['id_collisions_resolved']}")
     print(f"  - Faculty verified                         : {stats['faculty']['verified']} / {summary['counts']['faculty']}")
+    print(f"  - Faculty designation discrepancies parsed : {stats['faculty']['designation_discrepancies']}")
     print(f"  - Prospectus false-positive flags          : {stats['faculty']['prospectus_flags']}")
-    print(f"  - Review Queue items aggregated            : {summary['counts']['review_queue_items']}")
+    print(f"  - Courses prefix-mapped to units           : {stats['courses']['prefix_mapped_units']} (Unresolved: {stats['courses']['unresolved_units']})")
+    print("    Mapped by unit:")
+    for uid, cnt in sorted(stats['courses']['mapped_by_unit'].items()):
+        print(f"      * {uid:<8}: {cnt:>3} courses")
+    print(f"  - Courses with unresolved prerequisites    : {stats['courses']['courses_with_unresolved_prereqs']} (Total refs: {stats['courses']['total_unresolved_prereq_refs']})")
+    print(f"  - CourseHub instructors categorized        :")
+    ch_s = stats['instructor_links']
+    print(f"      * Matched      : {ch_s['matched']}")
+    print(f"      * Suggested    : {ch_s['suggested']}")
+    print(f"      * Needs Review : {ch_s['needs_review']}")
+    print(f"      * Unmatched    : {ch_s['unmatched']}")
+    print(f"  - Curation Queue items aggregated          : {summary['counts']['review_queue_items']}")
+    q_stats = stats['curation_queue']
+    print("    By status:")
+    for status, cnt in sorted(q_stats['by_status'].items()):
+        print(f"      * {status:<15}: {cnt:>3} items")
+    print("    By category:")
+    for cat, cnt in sorted(q_stats['by_category'].items()):
+        print(f"      * {cat:<32}: {cnt:>3} items")
 
     print("\nCleaned datasets successfully generated in data/processed/.")
     print("=" * 60)

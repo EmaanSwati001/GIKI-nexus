@@ -10,6 +10,11 @@ from .cleaner import (
     sanitize_email,
     clean_phone,
     clean_course_code,
+    parse_credits,
+    COURSE_PREFIX_TO_UNIT_MAP,
+    map_course_prefix_to_unit,
+    normalize_instructor_name,
+    parse_faculty_designation_components,
 )
 from .validator import (
     ValidationReport,
