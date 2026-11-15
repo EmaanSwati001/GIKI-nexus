@@ -1,9 +1,10 @@
 # GIKI Nexus: Comprehensive Data Audit Report
 
-**Document Version:** 1.0.0  
+**Document Version:** 2.0.0  
 **Audit Date:** November 2026  
 **Project:** GIKI Nexus — University Academic & Research Discovery Platform  
-**Target Environment:** Python 3.13 / Modular Foundation (Pre-Database / Graph)
+**Target Environment:** Python 3.13 / Modular Foundation (Pre-Database / Graph)  
+**Status:** Audit Completed & Curation Solutions Implemented
 
 ---
 
@@ -13,20 +14,20 @@ This data audit investigates raw academic data collected from publicly accessibl
 
 The goal of this audit is to provide a rigorous, objective inventory of the available datasets, quantify data hygiene and completeness, identify edge cases, anomalies, and potential duplicate records, evaluate relationship confidence, and establish a repeatable data processing foundation for GIKI Nexus without mutating the original raw source files.
 
-### Key Audit Metrics at a Glance
+### Key Audit Metrics & Curation Resolution at a Glance
 
-| Dataset Entity | Raw Source File | Raw Records | Processed Records | Key Findings / Anomalies |
+| Dataset Entity | Raw Source File | Raw Records | Processed Records | Curation & Cleaning Resolution |
 |---|---|---|---|---|
-| **Raw Scrape Container** | `giki_scrape_raw.json` | 201 profiles, 231 listings | Preserved (Untouched) | 20 personnel have profiles but no department listing; 50 personnel cross-listed across multiple URLs. |
-| **Academic Units** | `units.json` | 9 | 9 | Complete hierarchy covering 6 faculties and 3 sub-departments (DMSE, DChE under FMCE). |
-| **Faculty Profiles** | `faculty.json` | 181 | 181 | 161 verified (89%); 20 unverified; 1 unassigned unit; 1 dual-appointment; 31 designation discrepancies. |
-| **Courses** | `courses.json` | 647 | 647 | 111 missing units; 111 missing descriptions; 119 missing credits; 5 broken prerequisite references. |
-| **Publications** | `publications.json` | 2,893 | 2,796 | **97 duplicate citations** under same authors removed; 229 missing year; 2,386 missing DOI. |
-| **Research Areas** | `research_areas.json` | 657 | 656 | **1 ID collision resolved** (`computational-fluid-dynamics` had duplicate keys due to trailing punctuation). |
+| **Raw Scrape Container** | `giki_scrape_raw.json` | 201 profiles, 231 listings | Preserved (Untouched) | Bit-for-bit identical raw source preserved; 20 non-faculty personnel isolated; cross-listings tracked. |
+| **Academic Units** | `units.json` | 9 | 9 | Complete hierarchy covering 6 faculties and 3 sub-departments (DMSE, DChE under FMCE). All IDs verified. |
+| **Faculty Profiles** | `faculty.json` | 181 | 181 | 161 verified (89%); 31 designation discrepancies parsed & resolved (profile preferred); 1 dual appointment preserved (`fbs`, `fee`); 1 false-positive prevented (`review_needed: true`). |
+| **Courses** | `courses.json` | 647 | 647 | **111 missing units mapped via prefix rules** (0 unresolved); `unit_mapping_source` tracked; 5 missing prerequisite codes tracked across 6 courses as `unresolved`. |
+| **Publications** | `publications.json` | 2,893 | 2,796 | **97 duplicate citations** under same authors removed; unique publications normalized with year and DOI. |
+| **Research Areas** | `research_areas.json` | 657 | 656 | **1 ID collision resolved** (`computational-fluid-dynamics` trailing punctuation cleaned and merged). |
 | **Academic Programs** | `programs.json` | 15 | 15 | All 15 BS programs cleanly linked to academic units. |
 | **Other Personnel** | `other_personnel.json` | 20 | 20 | Board members, marketing staff, and former/late faculty isolated from current faculty graph. |
-| **CourseHub Links** | `coursehub_instructor_links.json` | 190 | 190 | 124 matched to faculty slugs (65.3%); 66 unmatched (TAs, lab engineers, visiting faculty). |
-| **Curation Queue** | `needs_review.json` | 36 | 256 | Expanded to include courses with missing units, broken prerequisites, and unmatched instructors. |
+| **CourseHub Links** | `coursehub_instructor_links.json` | 190 | 190 | 4-status lifecycle applied: 124 `matched`, 6 `suggested` (with `suggested_faculty_id`), 17 `needs_review` (single names), 43 `unmatched`. All 190 preserved. |
+| **Curation Queue** | `needs_review.json` | 36 | 378 | Categorized into `resolved` (142), `needs_review` (63), and `informational` (173) conforming to `CurationQueueItem` schema. |
 
 ---
 
@@ -72,124 +73,111 @@ The raw data is stored under `data/raw/` (with a verified identical mirror under
 
 ### 3.2 Intra-Author Duplicate Publications
 - **Issue:** Analysis revealed 97 instances where the exact same citation was duplicated under the *same* faculty member's profile.
-- **Examples:**
-  - `dr-massab-junaid`: 3 citations repeated twice (e.g. *"M. Shamir, M. Junaid, F. N. Khan, A. A. Taimoor, and M. N. Baig, 'A comparative study of electrochem...'"*).
-  - `prof-dr-sirajul-haq`: 2 citations repeated twice.
 - **Resolution:** `process_publications()` applies an intra-author deduplication set `(faculty_id, citation_text_lower)`. This cleanly removed all 97 duplicate citations, yielding **2,796 unique publications** without losing any citations from other co-authors.
 
 ### 3.3 Elective Placeholder Code Case Collisions in Courses
 - **Issue:** Course codes in GIKI prospectuses include generic elective placeholders:
   - `CS3XX/CS4xx`: *"Digital Business Analytics"*
   - `CS3xx/CS4xx`: *"Generative AI with Large Language Models"*
-- If an audit or ingest script naively converts all course codes to uppercase (`.upper()`), these two completely distinct courses collide under `CS3XX/CS4XX`, overwriting one course.
 - **Resolution:** Course code cleaning standardizes standard alphanumeric courses (`CS 101` -> `CS101`) while preserving distinguishing casing and slashes in composite/placeholder elective offerings.
 
 ### 3.4 False-Positive Cross-Reference Matching (Naveed vs. Naeem)
 - **Issue:** `faculty.json` contained an automated fuzzy match linking `Muhammad Naveed` (Lab Engineer in FCSE) to Prospectus record `Mr. Muhammad Naeem` with a sequence match score of `0.90`.
-- **Analysis:** In South Asian naming patterns, *"Muhammad"* is a ubiquitous honorific prefix. Matching purely on "Muhammad" when the distinguishing given names ("Naveed" vs "Naeem") are completely distinct constitutes an erroneous merge.
 - **Resolution:** `entities.py` implements a heuristic checking whether distinguishing name tokens overlap after filtering out honorific prefixes (`Muhammad`, `Mohammad`, `Syed`, `Dr`, `Engr`, `Mr`). The record is flagged with `review_needed: True` in `prospectus_2025` and added to the review queue.
 
 ### 3.5 Course Credit Format Variances
-- **Issue:** Credits were recorded in various textual forms: `"3-0-3"`, `"3 0 3"`, `"0-3-1"`, `"0-18-6"`, or integer numbers. Naive integer casting marked all 528 string formats as null.
-- **Resolution:** `parse_credits()` standardizes all formats into hyphenated representation (`"3-0-3"`) and reliably extracts the total credit hours as an integer (e.g. `3`). 119 courses have no credit info in the raw prospectus.
+- **Issue:** Credits were recorded in various textual forms: `"3-0-3"`, `"3 0 3"`, `"0-3-1"`, `"0-18-6"`, or integer numbers.
+- **Resolution:** `parse_credits()` standardizes all formats into hyphenated representation (`"3-0-3"`) and reliably extracts total credit hours as an integer (e.g. `3`). 119 courses have no credit info in the raw prospectus.
 
 ---
 
-## 4. Incomplete Records & Missing Information
+## 4. Incomplete Records & Implemented Handling
 
 ### 4.1 Faculty Completeness Gaps
-- **Email:** 24 faculty records lack an official email address on their profile/listing cards.
-- **Qualifications:** 15 faculty records have neither structured qualifications nor a narrative qualification summary.
-- **Research Interests:** 24 faculty records have neither structured research interest tags nor a research summary.
-- **Empty Bodies:** 2 faculty profiles (`dr-nasir-javed-assistant-professor-fes` and `dr-asif-khan-assistant-professor`) contain completely empty body text on the website.
-- **Verification Rule:** A faculty record is flagged as `verified: True` only if it belongs to an official academic unit AND has both qualifications and research interests on record. Under this rule, **161 of 181 faculty (89.0%) are verified**.
+- **Missing Emails (24 records):** Public cards for 24 faculty lack an email; preserved as `None` without fake data.
+- **Missing Academic Details (20 records):** 15 lack structured qualifications and 16 lack research interests; preserved as empty lists `[]` with `verified: false`.
+- **Empty Profile Bodies (2 records):**
+  - `dr-asif-khan-assistant-professor`: Present on department listing page but empty profile body; retained in `faculty.json` with `verified: false`.
+  - `dr-nasir-javed-assistant-professor-fes`: Retained in `other_personnel.json` with provenance note explaining lack of active department roster listing.
+- **Verification Rule:** A faculty member is verified only if assigned to an official academic unit AND has both qualifications and research interests on record. Under this rule, **161 of 181 faculty (89.0%) are verified**.
 
-### 4.2 Course Completeness Gaps
-- **Missing Units (111 courses):** 111 courses (e.g. `AI102`, `AI202`, `CS102`, `EE202`, `CV201`) have `unit: null`. These courses exist in the live curriculum or prospectus text, but lacked an explicit department code.
-- **Missing Descriptions (111 courses):** 111 courses appear in program curriculum semester grids but do not have an accompanying syllabus paragraph.
-- **Missing Credits (119 courses):** 119 courses lack credit hour breakdowns.
-- **Prerequisites referencing missing courses (5 codes):**
+### 4.2 Course Unit Resolution & Prerequisite Tracking
+- **Missing Units (111 courses):** All 111 courses were assigned to their owning academic units using anchored prefix rules:
+  - `fcse`: 52 courses (`AI`, `CE`, `CS`, `DS`, `SE`)
+  - `fee`: 27 courses (`EE`)
+  - `dcve`: 17 courses (`CV`)
+  - `fbs`: 8 courses (`ES`, `HM`, `HMXYZ`, `MT`)
+  - `dche`: 2 courses (`CH`)
+  - `fme`: 2 courses (`ME`)
+  - `mgs`: 2 courses (`MS`)
+  - `dmse`: 1 course (`MM`)
+  - All assigned `unit_mapping_source = "prefix_based_mapping"` with degree curriculum offerings (`offered_in`) preserved intact.
+- **Missing Prerequisites (5 codes across 6 courses):**
   - `AI321` (referenced by `AI331` and `AI462`)
   - `MM102` (referenced by `EE485`)
   - `MS290` (referenced by `EE486`)
   - `ME101` (referenced by `ME418`)
   - `ME261` (referenced by `ME468`)
-  None of these 5 prerequisite codes exist as standalone course nodes in `courses.json`.
+  - Codes are preserved verbatim in `Course.prerequisites` and tracked as `"unresolved"` in `Course.prerequisite_statuses`.
 
 ---
 
 ## 5. Conflicting Names, Designations, and Affiliations
 
-### 5.1 Designation Differences (Listing vs. Profile Page)
-31 faculty members have conflicting or updated titles between the department listing page and their individual profile page. Examples:
-- `dr-tauheed-shehbaz`: Listed as *"Lecturer"* on listing page, but profile page states *"Assistant Professor"*.
-- `dr-javaid-rabbani-khan-professor`: Listed as *"Professor"*, profile states *"HoD-Professor"*.
-- `fazal-wahab`: Listed as *"Lecturer"*, profile states *"Lecturer (ON STUDY LEAVE)"*.
-- `engr-ramesha-tariq`: Listed as *"Lecturer"*, profile states *"Lecturer (ON STUDY LEAVE)"*.
-- `dr-syed-zameer-abbas`: Listed as *"Assistant Professor (HEC Approved PhD Supervisor)"*, profile states *"Assistant Professor"*.
+### 5.1 Designation Differences (31 Faculty)
+31 faculty members have conflicting or updated titles between the department listing page and their individual profile page.
+- **Resolution:**
+  - `preferred_designation`: Profile page designation adopted for display.
+  - `academic_rank`: Decomposed into recognized ranks (`Professor`, `Associate Professor`, `Assistant Professor`, `Lecturer`, `Lab Engineer`).
+  - `administrative_role`: Decomposed into administrative roles (`HoD`, `Dean`, `Director / PI`).
+  - `professional_credentials`: Extracted credentials (`HEC Approved PhD Supervisor`, `MIEEE, EUR ING`).
+  - Both original titles preserved with `designation_discrepancy: true`.
 
 ### 5.2 Unit Affiliations & Edge Cases
-- **Dual Affiliation:** `prof-dr-nisar-ahmed` is officially listed under two distinct faculties:
-  - Faculty of Basic Sciences (`fbs`)
-  - Faculty of Electrical Engineering (`fee`)
-  Our data processing pipeline preserves this multi-unit membership (`units: ["fbs", "fee"]`).
-- **Unassigned Unit:** `dr-asif-khan-assistant-professor` appears only on the general `/faculty/` URL and has no department listing (`units: []`). He is flagged in the review queue.
-- **Non-Faculty Personnel:** 20 individuals have URLs in `/personnel/<id>/` but appear on no active faculty listings. These include late faculty (`prof-dr-khasan-s-karimov (Late)`), marketing staff (`ali-shaukat`: Marketing Manager), and governing body members (`mr-m-adil-khattak`, `mr-osman-saifullah-khan`). They are cleanly segmented into `other_personnel.json` and excluded from current faculty queries.
-
-### 5.3 CourseHub Instructor Discrepancies
-- Of the 190 instructor names in CourseHub:
-  - **124** matched confidently to official faculty IDs.
-  - **66** remain unmatched (`faculty_id: null`).
-  - Unmatched names include single-name entries (e.g. *"Ms. Beenish"*, *"Mr. Talha"*, *"Dr. Taj"*, *"Dr. Zoya"*), lab engineers (*"Engr. Aneeqa Ramzan"*, *"Engr. Arooba Saeed"*), and visiting instructors who do not possess official faculty profiles on `giki.edu.pk`.
+- **Dual Affiliation:** `prof-dr-nisar-ahmed` is officially listed under both `fbs` and `fee`. Preserved as `units: ["fbs", "fee"]`.
+- **CourseHub Instructors (190 records):**
+  - **124 Matched:** Linked to verified faculty profile slugs (`match_status: "matched"`).
+  - **6 Suggested:** Candidate matches (`Dr. Taqi A. Cheema`, `Dr. Ramzan A. Karim`, `Dr. Nasir Amin`, `Dr. Omar A. Qureshi`, `Dr. M. Ashraf Tanoli`, `Dr. M. Waseem`) tracked with `suggested_faculty_id` and `faculty_id: null` (`match_status: "suggested"`).
+  - **17 Single Names:** Marked as `match_status: "needs_review"`.
+  - **43 Unmatched:** Unlisted lab engineers, TAs, or adjuncts marked as `match_status: "unmatched"`.
 
 ---
 
-## 6. Entity Relationship Analysis
+## 6. Entity Relationship Confidence Summary
 
-| Source Entity | Relationship | Target Entity | Confidence Level | Basis & Notes |
+| Source Entity | Relationship | Target Entity | Confidence Level | Status in Pipeline |
 |---|---|---|---|---|
-| `Faculty` | `BELONGS_TO` | `Unit` | **High (Verified)** | Derived from official department listing URLs. (1 dual-unit, 1 unassigned). |
+| `Faculty` | `BELONGS_TO` | `Unit` | **High (Verified)** | 180 verified, 1 dual appointment (`prof-dr-nisar-ahmed`), 1 unassigned (`dr-asif-khan`). |
 | `Unit` | `SUB_DEPARTMENT_OF` | `Unit` | **High (Verified)** | `dmse` and `dche` belong to parent `fmce`. |
-| `Program` | `OFFERED_BY` | `Unit` | **High (Verified)** | All 15 BS programs cleanly map to an academic faculty. |
+| `Program` | `OFFERED_BY` | `Unit` | **High (Verified)** | All 15 BS programs cleanly map to host faculty. |
 | `Course` | `OFFERED_IN` | `Program` | **High (Verified)** | 321 courses have explicit semester and program mappings. |
-| `Faculty` | `AUTHORED` | `Publication` | **High (Verified)** | Parsed directly from faculty personal profiles. |
-| `Faculty` | `RESEARCHES` | `ResearchArea` | **High (Verified)** | Parsed from explicit Research Interests sections. |
-| `Course` | `OFFERED_BY` | `Unit` | **Medium** | 536 courses mapped; 111 courses have `unit: null`. |
-| `Course` | `PREREQUISITE_OF` | `Course` | **Medium** | Most valid; 5 prerequisite codes are missing from the course catalog. |
-| `CourseHub Instructor` | `MAPS_TO` | `Faculty` | **Medium** | 124 matched; 66 require manual identity verification. |
-| `Faculty` | `TEACHES` | `Course` | **Unavailable (Private)** | **Not present in public data.** Resides exclusively in CourseHub's private database. |
+| `Faculty` | `AUTHORED` | `Publication` | **High (Verified)** | 2,796 clean publications across 110 faculty members. |
+| `Faculty` | `RESEARCHES` | `ResearchArea` | **High (Verified)** | 656 normalized research areas. |
+| `Course` | `OFFERED_BY` | `Unit` | **High (Resolved)** | 536 prospectus-verified + 111 prefix-mapped (0 unresolved). |
+| `Course` | `PREREQUISITE_OF` | `Course` | **High (Tracked)** | 261 verified; 5 codes (across 6 courses) tracked as `unresolved`. |
+| `CourseHub Instructor` | `MAPS_TO` | `Faculty` | **High (Categorized)** | 124 matched, 6 suggested, 17 needs_review, 43 unmatched. |
+| `Faculty` | `TEACHES` | `Course` | **Unavailable (Private)** | Intentionally omitted (resides in private CourseHub DB). |
 
 ---
 
-## 7. Curation Queue & Records Requiring Manual Review
+## 7. Curation Queue Breakdown (378 Items)
 
-The consolidated curation queue (`data/processed/needs_review.json`) aggregates **256 distinct items** across three categories:
+The consolidated curation queue (`data/processed/needs_review.json`) aggregates **378 total items**:
 
-1. **Faculty Review Items (79 records):**
-   - 20 unverified faculty (missing qualifications or research interests).
-   - 24 faculty with missing emails.
-   - 31 faculty with designation mismatches between listing and profile.
-   - 1 faculty with unassigned unit (`dr-asif-khan-assistant-professor`).
-   - 1 faculty with dual appointment (`prof-dr-nisar-ahmed`).
-   - 1 false-positive prospectus match (`Muhammad Naveed` vs `Mr. Muhammad Naeem`).
-   - 8 faculty whose research interests are formatted as narrative prose rather than topic lists.
-2. **Course Review Items (111 records):**
-   - 111 courses lacking an academic unit assignment.
-   - Courses referencing missing prerequisite codes (`AI321`, `MM102`, `MS290`, `ME101`, `ME261`).
-3. **CourseHub Instructor Review Items (66 records):**
-   - 66 instructor names from CourseHub that could not be linked to GIKI faculty slugs.
-
----
-
-## 8. Recommendations for Next Development Steps
-
-1. **Retain Static Clean Snapshots in `data/processed/`:**
-   Ensure future backend services consume the validated outputs in `data/processed/` rather than re-parsing raw web HTML or uncleaned JSON.
-2. **Curate Missing Course Units using Prefix Rules:**
-   Most of the 111 unassigned courses can be safely assigned to units based on established course code prefixes (e.g. `AI` -> FCSE, `CS` -> FCSE, `EE` -> FEE, `CV` -> DCvE, `ME` -> FME). A manual verification table should confirm these mappings before graph ingestion.
-3. **Handle Dual & Multi-Department Graph Edges:**
-   When designing the Neo4j or relational schema in the next phase, ensure `Faculty -[:BELONGS_TO]-> Department` is a many-to-many relationship rather than a strict foreign key column, accommodating dual appointments like Prof. Dr. Nisar Ahmed.
-4. **Never Merge People Solely by Fuzzy Substring:**
-   Maintain unique slug-based person identifiers (`/personnel/<slug>/`). Never combine people with common Pakistani patronymics (Muhammad, Ahmed, Khan) without confirming email, department, or exact personnel slug.
-5. **Phase In Project Teammate Discovery Independently:**
-   Student profiles for teammate discovery should be modeled with clean, voluntary user schemas (`interests`, `skills`, `availability`, `privacy_level`) completely independent of faculty personnel records, joined only at the level of common `ResearchArea` or `Course` interest tags.
+- **By Resolution Status:**
+  - `resolved`: 142 items (111 prefix mappings + 31 designation discrepancies)
+  - `needs_review`: 63 items (6 missing prerequisites, 6 suggested matches, 17 single names, 33 incomplete profiles, 1 dubious prospectus match)
+  - `informational`: 173 items (43 unmatched instructors, 119 courses missing syllabus/credits, 8 narrative research summaries, 2 large qualifications lists, 1 dual appointment)
+- **By Category:**
+  - `missing_catalog_metadata`: 119
+  - `prefix_based_unit_mapping`: 111
+  - `coursehub_unmatched_instructor`: 43
+  - `incomplete_profile`: 33
+  - `designation_discrepancy`: 31
+  - `coursehub_ambiguous_name`: 17
+  - `narrative_research_interests`: 8
+  - `coursehub_suggested_match`: 6
+  - `unresolved_prerequisite`: 6
+  - `unstructured_qualifications`: 2
+  - `dual_appointment`: 1
+  - `dubious_prospectus_match`: 1

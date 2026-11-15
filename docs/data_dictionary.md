@@ -1,7 +1,7 @@
 # GIKI Nexus: Data Dictionary
 
-**Document Version:** 1.0.0  
-**Target Environment:** GIKI Nexus Pipeline & Storage Models  
+**Document Version:** 2.0.0  
+**Target Environment:** GIKI Nexus Pipeline, Storage Models & Curation Lifecycle  
 **Reference Directory:** `data/processed/` (and raw references in `data/raw/`)
 
 ---
@@ -12,7 +12,7 @@ Represents faculties and academic departments within GIKI.
 
 | Field Name | Type | Nullable | Description | Example Value |
 |---|---|---|---|---|
-| `id` | `string` | No | Unique slug identifier for the academic unit | `"fcse"`, `"dmse"` |
+| `id` | `string` | No | Unique slug identifier for the academic unit | `"fcse"`, `"dmse"`, `"fee"` |
 | `name` | `string` | No | Full official name of the faculty or department | `"Faculty of Computer Science and Engineering"` |
 | `short` | `string` | No | Standard official acronym/abbreviation | `"FCSE"`, `"FEE"`, `"DMSE"` |
 | `type` | `string` | No | Unit classification (`faculty` or `department`) | `"faculty"`, `"department"` |
@@ -30,13 +30,19 @@ Represents academic faculty members currently listed on official GIKI department
 |---|---|---|---|---|
 | `id` | `string` | No | Stable slug identifier derived from personal profile URL | `"dr-zahid-ahmed"`, `"prof-dr-nisar-ahmed"` |
 | `name` | `string` | No | Sanitized full name (status markers removed) | `"Dr. Zahid Ahmed"`, `"Muhammad Naveed"` |
-| `designation` | `string` | Yes | Primary academic rank/position from department listing | `"Associate Professor"`, `"Lecturer"` |
+| `designation` | `string` | Yes | Primary academic rank/position from department roster | `"Associate Professor"`, `"Lecturer"` |
 | `designation_on_profile_page` | `string` | Yes | Designation as stated on individual profile page | `"HoD-Professor"`, `"Lecturer (ON STUDY LEAVE)"` |
+| `preferred_designation` | `string` | Yes | Preferred display designation (profile page preferred over listing) | `"Associate Professor & HoD"`, `"Assistant Professor"` |
+| `academic_rank` | `string` | Yes | Decomposed academic rank (`Professor`, `Associate Professor`, `Assistant Professor`, `Lecturer`, `Lab Engineer`) | `"Associate Professor"`, `"Professor"` |
+| `administrative_role` | `string` | Yes | Decomposed administrative appointment (`HoD`, `Dean`, `Director / PI`) | `"HoD"`, `"Dean"` |
+| `professional_credentials` | `list[string]` | No | Recognized credentials (`HEC Approved PhD Supervisor`, `MIEEE`, `EUR ING`) | `["HEC Approved PhD Supervisor"]` |
+| `designation_discrepancy` | `boolean` | No | Flag indicating difference between listing and profile designation | `true`, `false` |
+| `designation_review_status` | `string` | Yes | Status of designation discrepancy resolution | `"resolved"`, `"needs_review"`, `null` |
 | `status` | `string` | No | Employment status (`active`, `on_leave`, `on_study_leave`) | `"active"`, `"on_study_leave"` |
-| `units` | `list[string]` | No | List of unit IDs the faculty belongs to | `["fcse"]`, `["fbs", "fee"]` |
-| `email` | `string` | Yes | Official email address (lowercased, spaces removed) | `"zahid.ahmed@giki.edu.pk"` |
-| `phone_or_ext` | `string` | Yes | Phone extension or direct line | `"Ext: 2341"` |
-| `office` | `string` | Yes | Office room number or building location | `"Room 214, CS Building"` |
+| `units` | `list[string]` | No | List of unit IDs the faculty belongs to (supports dual appointments) | `["fcse"]`, `["fbs", "fee"]` |
+| `email` | `string` | Yes | Official email address (lowercased, spaces removed; `null` if missing) | `"zahid.ahmed@giki.edu.pk"`, `null` |
+| `phone_or_ext` | `string` | Yes | Phone extension or direct line | `"Ext: 2341"`, `null` |
+| `office` | `string` | Yes | Office room number or building location | `"Room 214, CS Building"`, `null` |
 | `qualifications_raw` | `string` | Yes | Unparsed qualifications text from web page | `"PhD (Computer Science), MSc ..."` |
 | `qualifications` | `list[string]` | No | Structured list of degrees and qualifications | `["PhD Computer Science", "MS Software Eng"]` |
 | `qualifications_summary` | `string` | Yes | Narrative biography if qualifications are in prose | `"Dr. X received his doctorate from..."` |
@@ -71,7 +77,10 @@ Represents undergraduate and graduate courses offered at GIKI.
 | `prerequisites` | `list[string]` | No | List of required prerequisite course codes | `["CS101", "MT101"]` |
 | `prerequisites_raw` | `string` | Yes | Unparsed prerequisite string from prospectus | `"CS101 or Equivalent / MT101"` |
 | `description` | `string` | Yes | Course syllabus, topics, and objectives paragraph | `"Covers data structures, arrays, linked lists..."` |
-| `unit` | `string` | Yes | ID of the offering academic unit (`null` if unassigned) | `"fcse"`, `"fee"`, `null` |
+| `unit` | `string` | Yes | ID of the offering academic unit (`null` if unassigned) | `"fcse"`, `"fee"`, `"dcve"` |
+| `unit_mapping_source` | `string` | Yes | Source of unit assignment: `"prospectus_verified"` or `"prefix_based_mapping"` | `"prefix_based_mapping"` |
+| `unresolved_prerequisites` | `list[string]` | No | Prerequisite codes that do not exist in the active course catalog | `["AI321"]`, `[]` |
+| `prerequisite_statuses` | `dict[str, str]` | No | Dictionary mapping each prerequisite code to `"resolved"` or `"unresolved"` | `{"AI321": "unresolved"}` |
 | `offered_in` | `list[object]`| No | Degree program offerings (`program_id`, `year`, `semester`, `name_in_catalog`) | `[{"program_id": "bs-computer-science", "year": 1, "semester": 1}]` |
 | `is_lab` | `boolean` | No | Indicates whether the course is a dedicated laboratory | `false`, `true` |
 | `provenance` | `object` | No | Provenance metadata detailing sources (prospectus, Course Hub) | `{"sources": ["GIKI Prospectus 2025, p. 89"]}` |
@@ -88,7 +97,7 @@ Represents academic citations and research papers published by GIKI faculty.
 | `citation` | `string` | No | Full citation string as extracted from faculty profile | `"M. Shamir, M. Junaid... (2023) Journal of Materials..."` |
 | `type` | `string` | No | Classification (`journal`, `conference`, `book_or_chapter`, `patent`, `unspecified`) | `"journal"`, `"conference"` |
 | `section_heading` | `string` | Yes | Original heading on profile page under which citation appeared | `"Selected Journal Publications"` |
-| `year` | `int` | Yes | Best-effort parsed publication year | `2023`, `2021`, `null` |
+| `year` | `int` | Yes | Best-effort parsed publication year (1950–2030) | `2023`, `2021`, `null` |
 | `doi` | `string` | Yes | Extracted Digital Object Identifier (DOI) string | `"10.1016/j.matdes.2023.111822"`, `null` |
 
 ---
@@ -131,7 +140,7 @@ Personnel records that exist in the web scrape but are excluded from active facu
 | `name` | `string` | No | Full name of individual | `"Prof. Dr. Khasan S. Karimov (Late)"` |
 | `designation` | `string` | Yes | Role stated on profile page | `"Professor"`, `"Marketing Manager"` |
 | `email` | `string` | Yes | Email address if available | `"ali.shaukat@giki.edu.pk"`, `null` |
-| `office` | `string` | Yes | Office location if available | `"Administration Block"` |
+| `office` | `string` | Yes | Office location if available | `"Administration Block"`, `null` |
 | `website_categories` | `list[string]` | No | Category slugs | `[]` |
 | `profile_sections` | `list[string]` | No | Headings present on profile page | `["Profile", "Contact"]` |
 | `profile_url` | `string` | No | Web URL of profile | `"https://giki.edu.pk/personnel/ali-shaukat/"` |
@@ -142,27 +151,34 @@ Personnel records that exist in the web scrape but are excluded from active facu
 
 ## 8. CourseHub Instructor Links (`coursehub_instructor_links.json`)
 
-Mappings linking CourseHub instructor strings to GIKI Nexus faculty IDs.
+Mappings linking CourseHub instructor strings to GIKI Nexus faculty IDs via a 4-status matching lifecycle.
 
 | Field Name | Type | Nullable | Description | Example Value |
 |---|---|---|---|---|
 | `coursehub_name` | `string` | No | Instructor name string as stored in CourseHub | `"Dr. Zahid Ahmed"`, `"Ms. Beenish"` |
 | `coursehub_faculty` | `string` | Yes | Faculty name in CourseHub | `"FCSE"`, `"FME"` |
-| `faculty_id` | `string` | Yes | Matched GIKI Nexus faculty slug (`null` if unmatched) | `"dr-zahid-ahmed"`, `null` |
+| `faculty_id` | `string` | Yes | Matched GIKI Nexus faculty slug (`null` for suggested, unmatched, needs_review) | `"dr-zahid-ahmed"`, `null` |
 | `match_method` | `string` | Yes | Strategy used (`full_name`, `unique_partial_name`, `null`) | `"full_name"`, `"unique_partial_name"` |
 | `match_score` | `float` | Yes | Fuzzy string similarity score (0.0 to 1.0) | `1.0`, `0.9`, `null` |
+| `match_status` | `string` | No | Lifecycle status: `"matched"`, `"suggested"`, `"unmatched"`, `"needs_review"` | `"matched"`, `"suggested"` |
+| `suggested_faculty_id` | `string` | Yes | Candidate faculty ID pending human confirmation | `"dr-taqi-ahmad-cheema"`, `null` |
+| `notes` | `string` | Yes | Curation explanation or candidate match rationale | `"Suggested middle initial match with Dr. Taqi Ahmad Cheema"` |
 
 ---
 
 ## 9. Curation Review Queue (`needs_review.json`)
 
-Unified queue of entities requiring human inspection and verification.
+Unified queue of entities requiring human inspection, verification, or audit tracking.
 
 | Field Name | Type | Nullable | Description | Example Value |
 |---|---|---|---|---|
-| `entity_type` | `string` | No | Type of entity (`faculty`, `course`, `coursehub_instructor`)| `"faculty"`, `"course"` |
-| `id` | `string` | No | Identifier of the entity requiring review | `"dr-asif-khan-assistant-professor"`, `"AI102"` |
-| `name` | `string` | Yes | Display name or title | `"Dr. Asif Khan"`, `"AI102"` |
+| `entity_type` | `string` | No | Type of entity (`"faculty"`, `"course"`, `"coursehub_instructor"`)| `"faculty"`, `"course"` |
+| `id` | `string` | No | Identifier of the entity | `"dr-asif-khan-assistant-professor"`, `"AI102"` |
+| `name` | `string` | Yes | Display name or title | `"Dr. Asif Khan"`, `"Introduction to Artificial Intelligence"` |
 | `units` | `list[string]` | No | Associated units if known | `[]`, `["fcse"]` |
-| `reasons` | `list[string]` | No | Explicit reasons why review is required | `["Unassigned unit: Found only on general /faculty/ page"]` |
+| `category` | `string` | No | Issue classification category (`"prefix_based_unit_mapping"`, `"unresolved_prerequisite"`, `"designation_discrepancy"`, `"incomplete_profile"`, `"coursehub_suggested_match"`, etc.) | `"prefix_based_unit_mapping"` |
+| `reasons` | `list[string]` | No | Explicit reasons why review is required or what was modified | `["Course unit was unassigned; mapped based on prefix rule"]` |
+| `resolution_status` | `string` | No | Curation lifecycle status: `"resolved"`, `"needs_review"`, `"informational"` | `"resolved"`, `"needs_review"` |
+| `resolution_notes` | `string` | Yes | Explanation of applied resolution or pending action | `"Mapped to academic unit via course prefix rule"` |
+| `source_info` | `object` | Yes | Provenance, mapping metadata, or related record context | `{"mapped_unit": "fcse", "mapping_source": "prefix_based_mapping"}` |
 | `profile_url` | `string` | Yes | URL to original source for verification | `"https://giki.edu.pk/personnel/..."`, `null` |

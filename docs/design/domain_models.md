@@ -1,8 +1,8 @@
 # GIKI Nexus: Domain Model Specifications
 
-**Document Version:** 1.0.0  
-**Status:** Proposed & Validated via Pydantic Schemas  
-**Target Architecture:** GIKI Nexus Backend (Pre-Persistence Specification)  
+**Document Version:** 2.0.0  
+**Status:** Validated via Pydantic Schemas & Production Pipeline  
+**Target Architecture:** GIKI Nexus Backend & Future Knowledge Graph  
 **Implementation Reference:** `backend/app/schemas/domain.py`
 
 ---
@@ -12,10 +12,11 @@
 This document specifies the core domain entities for **GIKI Nexus**, derived from actual scraped and cross-referenced GIKI academic datasets (`data/processed/`). 
 
 ### Key Design Principles:
-1. **Decoupled from Persistence:** These models represent the logical domain entities and API schemas. They do not introduce database-specific drivers, ORM ties, or graph engine dependencies (e.g., Neo4j, SQLAlchemy, SQLite) in this initial phase.
+1. **Decoupled from Persistence:** These models represent the logical domain entities, ingestion validation, and API schemas. They do not introduce database-specific drivers or ORM lock-in (e.g., Neo4j, SQLAlchemy) prematurely.
 2. **Zero-Invention Guarantee:** Fields that are absent in the source data remain nullable (`Optional[T] = None`) or empty collections (`List[T] = []`). Missing information is flagged explicitly rather than fabricated.
-3. **Many-to-Many Support:** Models support real-world university complexities, such as faculty members holding joint/dual appointments across multiple faculties (e.g., Prof. Dr. Nisar Ahmed affiliated with FBS and FEE).
+3. **Many-to-Many Support:** Models accommodate real-world university relationships, such as faculty members holding joint/dual appointments across multiple faculties (e.g., Prof. Dr. Nisar Ahmed affiliated with FBS and FEE).
 4. **Preserved Provenance:** Every top-level entity maintains origin URLs and scrape timestamps to preserve traceability back to official GIKI web pages and catalog snapshots.
+5. **Lifecycle-Aware Curation:** Entities track their verification and mapping provenance (e.g. `Course.unit_mapping_source = "prefix_based_mapping"` vs `"prospectus_verified"`, `CourseHubInstructorLink.match_status`).
 
 ---
 
@@ -38,6 +39,12 @@ classDiagram
         +string name
         +string designation
         +string designation_on_profile_page
+        +string preferred_designation
+        +string academic_rank
+        +string administrative_role
+        +list[string] professional_credentials
+        +bool designation_discrepancy
+        +string designation_review_status
         +EmploymentStatus status
         +list[string] units [FK]
         +string email
@@ -58,6 +65,9 @@ classDiagram
         +list[string] prerequisites [FK]
         +string description
         +string unit [FK]
+        +string unit_mapping_source
+        +list[string] unresolved_prerequisites
+        +dict prerequisite_statuses
         +list[CourseOffering] offered_in
         +bool is_lab
     }
@@ -98,6 +108,21 @@ classDiagram
         +string faculty_id [FK]
         +string match_method
         +float match_score
+        +InstructorMatchStatus match_status
+        +string suggested_faculty_id
+        +string notes
+    }
+    class CurationQueueItem {
+        +string entity_type
+        +string id [PK]
+        +string name
+        +list[string] units
+        +string category
+        +list[string] reasons
+        +CurationStatus resolution_status
+        +string resolution_notes
+        +dict source_info
+        +string profile_url
     }
 
     AcademicUnit "1" <-- "0..*" AcademicUnit : parent
@@ -108,6 +133,7 @@ classDiagram
     FacultyMember "1" <-- "0..*" Publication : authored_by
     Course "0..*" <--> "0..*" Course : prerequisite_of
     Program "0..*" <--> "0..*" Course : contains_course
+    CourseHubInstructorLink "0..1" --> "0..1" FacultyMember : links_to
 ```
 
 ---
@@ -145,9 +171,15 @@ Represents academic personnel (Professors, Associate Professors, Assistant Profe
 | `name` | `str` | **Yes** | No | Sanitized full name with status markers removed. |
 | `designation` | `Optional[str]` | No | No | Academic position title from department listing page. |
 | `designation_on_profile_page` | `Optional[str]` | No | No | Position title stated on personal profile page. |
+| `preferred_designation` | `Optional[str]` | No | No | Preferred display designation (profile preferred over listing). |
+| `academic_rank` | `Optional[str]` | No | No | Decomposed academic rank (`Professor`, `Associate Professor`, etc.). |
+| `administrative_role` | `Optional[str]` | No | No | Decomposed administrative appointment (`HoD`, `Dean`, etc.). |
+| `professional_credentials` | `List[str]` | **Yes** | No | Extracted professional credentials (`HEC Approved PhD Supervisor`). |
+| `designation_discrepancy` | `bool` | **Yes** | No | True if listing title differs from profile page title. |
+| `designation_review_status` | `Optional[str]` | No | No | Discrepancy resolution status (`"resolved"`, `"needs_review"`). |
 | `status` | `EmploymentStatus` | **Yes** | No | Enum: `active`, `on_leave`, `on_study_leave`. |
 | `units` | `List[str]` | **Yes** | Foreign Key | List of `AcademicUnit.id` affiliations (supports joint/dual appointments). |
-| `email` | `Optional[str]` | No | No | Cleaned, lowercased official email address. |
+| `email` | `Optional[str]` | No | No | Cleaned, lowercased official email address (`None` if missing). |
 | `phone_or_ext` | `Optional[str]` | No | No | Telephone direct line or internal extension. |
 | `office` | `Optional[str]` | No | No | Room number or building location. |
 | `qualifications_raw` | `Optional[str]` | No | No | Unparsed qualifications text from profile page. |
@@ -190,7 +222,10 @@ Represents academic courses across undergraduate and graduate curricula.
 | `prerequisites` | `List[str]` | **Yes** | Foreign Key | List of prerequisite `Course.code` values. |
 | `prerequisites_raw` | `Optional[str]` | No | No | Verbatim prerequisite clause from catalog. |
 | `description` | `Optional[str]` | No | No | Course syllabus and topic summary. |
-| `unit` | `Optional[str]` | No | Foreign Key | Foreign key to `AcademicUnit.id` (nullable for 111 unassigned courses). |
+| `unit` | `Optional[str]` | No | Foreign Key | Foreign key to `AcademicUnit.id` (100% assigned in cleaned catalog). |
+| `unit_mapping_source` | `Optional[str]` | No | No | Mapping source: `"prospectus_verified"` (536) or `"prefix_based_mapping"` (111). |
+| `unresolved_prerequisites` | `List[str]` | **Yes** | No | List of prerequisite codes not in active catalog (`["AI321"]`). |
+| `prerequisite_statuses` | `Dict[str, str]` | **Yes** | No | Status map per prerequisite (`{"AI321": "unresolved"}`). |
 | `offered_in` | `List[CourseOffering]` | **Yes** | Composite | Program curricula offering this course with year & semester. |
 | `is_lab` | `bool` | **Yes** | No | True if course represents a laboratory session. |
 | `provenance` | `ProvenanceMetadata` | **Yes** | No | Origin document citations (Prospectus page, live catalog). |
@@ -251,18 +286,18 @@ Represents citations of papers, book chapters, conference presentations, and pat
 | `citation` | `str` | **Yes** | Composite Key | Verbatim citation string as listed on faculty profile. |
 | `type` | `PublicationType` | **Yes** | No | Enum: `journal`, `conference`, `book_or_chapter`, `patent`, `unspecified`. |
 | `section_heading` | `Optional[str]` | No | No | Heading on profile page under which paper appeared. |
-| `year` | `Optional[int]` | No | No | Extracted publication year (4 digits). |
+| `year` | `Optional[int]` | No | No | Extracted publication year (1950–2030). |
 | `doi` | `Optional[str]` | No | No | Digital Object Identifier string. |
 
 - **Relationships:**
-  - `author`: Many-to-One with `FacultyMember` (future multi-author expansion supported).
+  - `author`: Many-to-One with `FacultyMember`.
 - **Source / Provenance:** `publications.json`, extracted from faculty profile pages.
 
 ---
 
 ### 2.7 OtherPersonnel
 
-Represents personnel profiles present on `giki.edu.pk/personnel/` that do not belong to active faculty rosters (board members, marketing staff, former or deceased faculty).
+Represents personnel profiles present on `giki.edu.pk/personnel/` that do not belong to active faculty rosters.
 
 | Field Name | Type | Required | Unique ID | Description |
 |---|---|---|---|---|
@@ -281,16 +316,40 @@ Represents personnel profiles present on `giki.edu.pk/personnel/` that do not be
 
 ### 2.8 CourseHubInstructorLink
 
-Represents the alignment mapping between CourseHub instructor name strings and GIKI Nexus faculty IDs.
+Represents alignment mappings between CourseHub instructor name strings and GIKI Nexus faculty IDs across a 4-status matching lifecycle.
 
 | Field Name | Type | Required | Unique ID | Description |
 |---|---|---|---|---|
 | `coursehub_name` | `str` | **Yes** | **Primary Key** | Exact instructor name string from CourseHub catalog. |
 | `coursehub_faculty` | `Optional[str]` | No | No | Faculty department string in CourseHub. |
-| `faculty_id` | `Optional[str]` | No | Foreign Key | Matched `FacultyMember.id` (`None` if unmatched). |
+| `faculty_id` | `Optional[str]` | No | Foreign Key | Matched `FacultyMember.id` (`None` for suggested/unmatched). |
 | `match_method` | `Optional[str]` | No | No | Matching strategy (`full_name`, `unique_partial_name`, `None`). |
 | `match_score` | `Optional[float]` | No | No | Similarity confidence score (0.0 to 1.0). |
+| `match_status` | `InstructorMatchStatus` | **Yes** | No | Enum: `matched`, `suggested`, `unmatched`, `needs_review`. |
+| `suggested_faculty_id` | `Optional[str]` | No | Foreign Key | Candidate faculty ID pending confirmation. |
+| `notes` | `Optional[str]` | No | No | Resolution explanation or candidate rationale. |
 
 - **Relationships:**
   - `faculty`: Optional Many-to-One with `FacultyMember`.
 - **Source / Provenance:** `coursehub_instructor_links.json`.
+
+---
+
+### 2.9 CurationQueueItem
+
+Represents a standardized issue or decision item in the curation review queue.
+
+| Field Name | Type | Required | Unique ID | Description |
+|---|---|---|---|---|
+| `entity_type` | `str` | **Yes** | No | Entity type (`"course"`, `"faculty"`, `"coursehub_instructor"`). |
+| `id` | `str` | **Yes** | **Primary Key** | Unique entity identifier (e.g. course code, faculty slug). |
+| `name` | `Optional[str]` | No | No | Display name or course title. |
+| `units` | `List[str]` | **Yes** | No | Associated academic units. |
+| `category` | `str` | **Yes** | No | Issue category (`"prefix_based_unit_mapping"`, `"unresolved_prerequisite"`, etc.). |
+| `reasons` | `List[str]` | **Yes** | No | Detailed bullet points explaining the curation flag. |
+| `resolution_status` | `CurationStatus` | **Yes** | No | Enum: `resolved`, `needs_review`, `informational`. |
+| `resolution_notes` | `Optional[str]` | No | No | Summary of resolution applied or human action requested. |
+| `source_info` | `Optional[Dict[str, Any]]` | No | No | Structured provenance and metadata context. |
+| `profile_url` | `Optional[str]` | No | No | Web URL of original record if available. |
+
+- **Source / Provenance:** `needs_review.json`.

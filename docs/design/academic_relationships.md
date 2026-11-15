@@ -1,8 +1,8 @@
 # GIKI Nexus: Academic Knowledge Graph Relationships
 
-**Document Version:** 1.0.0  
-**Status:** Graph Relationship Architecture Specification  
-**Target:** Graph Modeling (Neo4j / NetworkX / RDF / Relational Joint Tables)
+**Document Version:** 2.0.0  
+**Status:** Graph Relationship Architecture Specification (Updated with Implemented Mappings)  
+**Target:** Graph Modeling (Neo4j / NetworkX / Relational Join Tables)
 
 ---
 
@@ -12,8 +12,8 @@ The academic component of GIKI Nexus is conceptually structured as a directed pr
 
 This document evaluates each proposed relationship against the actual source data in `data/processed/`, specifies its cardinality, documents its supporting data sources, and classifies its verification status into:
 - **Verified:** Fully substantiated by official website listings or validated catalog structures.
-- **Inferred:** Derived via deterministic matching algorithms, requiring sanity checks.
-- **Requires Manual Review:** Ambiguities, unassigned mappings, or broken dependencies identified during audit.
+- **Derived / Prefix-Mapped:** Resolved via deterministic, anchored prefix matching rules (`unit_mapping_source = "prefix_based_mapping"`), pending human administrative confirmation.
+- **Requires Manual Review:** Ambiguities, candidate matches, or broken dependencies identified during audit.
 - **Unsupported (Private):** Data that is absent from public web pages and exists only in external/private databases.
 
 ---
@@ -29,6 +29,7 @@ flowchart TD
     Pub["Publication<br/>(Paper / Patent)"]
     Prog["Program<br/>(BS Degree)"]
     Course["Course<br/>(Curriculum Subject)"]
+    CHLink["CourseHubInstructorLink<br/>(External Link)"]
 
     %% Edge Definitions
     Unit -- "SUB_DEPARTMENT_OF [Verified]<br/>(e.g. DMSE -> FMCE)" --> Unit
@@ -37,8 +38,9 @@ flowchart TD
     Faculty -- "AUTHORED [Verified, 1:N]" --> Pub
     Prog -- "OFFERED_BY [Verified, N:1]" --> Unit
     Prog -- "CONTAINS_COURSE [Verified, M:N]<br/>(Props: year, semester)" --> Course
-    Course -- "PREREQUISITE_OF [Verified/Review, M:N]" --> Course
-    Course -- "BELONGS_TO_UNIT [Verified/Review, N:1]<br/>(111 courses need approval)" --> Unit
+    Course -- "PREREQUISITE_OF [Verified/Tracked, M:N]" --> Course
+    Course -- "BELONGS_TO_UNIT [Verified: 536 / Prefix-Mapped: 111, N:1]" --> Unit
+    CHLink -- "MAPS_TO_FACULTY [Matched: 124 / Suggested: 6, N:1]" --> Faculty
 ```
 
 ---
@@ -64,9 +66,9 @@ flowchart TD
 - **Meaning:** Represents an instructor's or researcher's formal affiliation with one or more academic departments.
 - **Source Data:** `faculty.json` (`units` list), scraped from official faculty roster pages (e.g. `/fcse/faculty-profiles/`).
 - **Real-World University Complexity:**
-  - Most faculty (179) belong to exactly one unit.
+  - Most faculty (180) belong to exactly one unit.
   - **Dual Appointment:** `prof-dr-nisar-ahmed` is officially affiliated with both the Faculty of Basic Sciences (`fbs`) and Faculty of Electrical Engineering (`fee`). The graph schema cleanly supports this via multiple `BELONGS_TO` edges.
-  - **Unassigned Member:** `dr-asif-khan-assistant-professor` was listed only on the general `/faculty/` directory without a department card (`units: []`).
+  - **Unassigned Member:** `dr-asif-khan-assistant-professor` was listed on the general directory without a department card (`units: []`).
 - **Status:** **Verified** for 180 faculty; **Requires Manual Review** for 1 faculty (`dr-asif-khan`).
 
 ---
@@ -115,12 +117,13 @@ flowchart TD
 - **Source Data:** `courses.json` (`prerequisites` list, parsed from `prerequisites_raw`).
 - **Status:**
   - **Verified** for 261 course prerequisite dependencies.
-  - **Requires Manual Review** for 5 prerequisite codes referenced in course descriptions that do not exist as top-level courses in the catalog:
-    1. `AI321` (Prerequisite for `AI331` and `AI462`)
-    2. `MM102` (Prerequisite for `EE485`)
-    3. `MS290` (Prerequisite for `EE486`)
-    4. `ME101` (Prerequisite for `ME418`)
-    5. `ME261` (Prerequisite for `ME468`)
+  - **Preserved as Unresolved (Tracked in Catalog & Review Queue):** 5 prerequisite codes referenced across 6 courses that do not exist as top-level courses in the catalog snapshot:
+    1. `AI321` (Prerequisite for `AI331` and `AI462` — FCSE curriculum renumbered Machine Learning to `AI221`)
+    2. `MM102` (Prerequisite for `EE485` — possible variant of `MM101`)
+    3. `MS290` (Prerequisite for `EE486` — MGS economics sequence)
+    4. `ME101` (Prerequisite for `ME418` — introductory graphics/CAD)
+    5. `ME261` (Prerequisite for `ME468` — machine design sequence)
+- **Policy:** The 5 missing codes are retained verbatim in `Course.prerequisites`, marked as `"unresolved"` in `Course.prerequisite_statuses`, and logged in `needs_review.json` pending curriculum committee review.
 
 ---
 
@@ -131,8 +134,11 @@ flowchart TD
 - **Meaning:** Identifies the academic department responsible for administering, staffing, and maintaining the course syllabus.
 - **Source Data:** `courses.json` (`unit` field).
 - **Status:**
-  - **Verified** for 536 courses mapped from prospectus faculty headings.
-  - **Unassigned / Requires Human Approval** for 111 courses (`unit: null`). (A deterministic prefix-based proposal table is provided in `data_mapping_review.md`, pending human confirmation).
+  - **Prospectus-Verified:** 536 courses (`unit_mapping_source: "prospectus_verified"`).
+  - **Derived via Prefix Rules:** 111 courses (`unit_mapping_source: "prefix_based_mapping"`).
+  - **Unresolved:** 0 courses.
+  - **Breakdown by Unit for Prefix Mappings:** `fcse`: 52, `fee`: 27, `dcve`: 17, `fbs`: 8, `dche`: 2, `fme`: 2, `mgs`: 2, `dmse`: 1.
+  - **Administrative Note:** Prefix mappings are fully documented and marked in the review queue as resolved pending final human confirmation.
 
 ---
 
@@ -153,8 +159,11 @@ flowchart TD
 - **Meaning:** Joins CourseHub instructor name strings with GIKI Nexus faculty profile slugs.
 - **Source Data:** `coursehub_instructor_links.json`.
 - **Status:**
-  - **Verified / Confidently Inferred:** 124 instructor mappings (match score $\ge 0.88$).
-  - **Requires Manual Review:** 66 unmatched instructor names (`faculty_id: null`).
+  - **Matched:** 124 instructor mappings verified against official faculty profiles (`match_status: "matched"`).
+  - **Suggested Candidates:** 6 high-probability matches (`match_status: "suggested"` with `suggested_faculty_id`, `faculty_id: null`).
+  - **Needs Review:** 17 single-name instructor records (`match_status: "needs_review"`).
+  - **Unmatched:** 43 unlisted instructors/TAs (`match_status: "unmatched"`).
+  - All 190 records preserved without truncation.
 
 ---
 

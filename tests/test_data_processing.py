@@ -15,6 +15,7 @@ import json
 import shutil
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 
 from backend.app.data_processing.cleaner import (
@@ -24,6 +25,10 @@ from backend.app.data_processing.cleaner import (
     sanitize_email,
     clean_course_code,
     parse_credits,
+    map_course_prefix_to_unit,
+    normalize_instructor_name,
+    parse_faculty_designation_components,
+    COURSE_PREFIX_TO_UNIT_MAP,
 )
 from backend.app.data_processing.validator import (
     ValidationReport,
@@ -301,6 +306,153 @@ class TestDataProcessing(unittest.TestCase):
         with open(proc_dir / "courses.json", "r", encoding="utf-8") as f:
             for c in json.load(f)["courses"][:20]:
                 Course.model_validate(c)
+
+    def test_prefix_based_course_mapping(self):
+        """Verify prefix mapping rules match correctly without unsafe substrings."""
+        valid_units = {"fcse", "fee", "dcve", "dche", "dmse", "fme", "mgs", "fbs"}
+        
+        # Test FCSE prefixes
+        for p in ["AI101", "CS201", "CE301", "DS101", "CY201", "CYS301", "SE401"]:
+            unit, matched = map_course_prefix_to_unit(p, valid_units)
+            self.assertEqual(unit, "fcse", f"Failed for {p}")
+
+        # Test other faculties
+        self.assertEqual(map_course_prefix_to_unit("EE101", valid_units)[0], "fee")
+        self.assertEqual(map_course_prefix_to_unit("CV201", valid_units)[0], "dcve")
+        self.assertEqual(map_course_prefix_to_unit("CH301", valid_units)[0], "dche")
+        self.assertEqual(map_course_prefix_to_unit("MM401", valid_units)[0], "dmse")
+        self.assertEqual(map_course_prefix_to_unit("ME101", valid_units)[0], "fme")
+        self.assertEqual(map_course_prefix_to_unit("MS101", valid_units)[0], "mgs")
+        self.assertEqual(map_course_prefix_to_unit("MT101", valid_units)[0], "fbs")
+        self.assertEqual(map_course_prefix_to_unit("ES101", valid_units)[0], "fbs")
+        self.assertEqual(map_course_prefix_to_unit("HM101", valid_units)[0], "fbs")
+        self.assertEqual(map_course_prefix_to_unit("HMXYZ", valid_units)[0], "fbs")
+
+        # Test unknown prefix returns None
+        self.assertIsNone(map_course_prefix_to_unit("UNKNOWN999", valid_units)[0])
+
+        # Test anchored prefix: ensure prefix in middle is NOT matched
+        self.assertIsNone(map_course_prefix_to_unit("XCS101", valid_units)[0])
+
+        # Check full courses dataset in data/processed
+        with open(self.project_root / "data" / "processed" / "courses.json", "r", encoding="utf-8") as f:
+            courses = json.load(f)["courses"]
+        
+        # Check all 647 courses have units and valid mapping source
+        for c in courses:
+            self.assertIsNotNone(c["unit"], f"Course {c['code']} has null unit")
+            self.assertIn(c["unit_mapping_source"], ["prospectus_verified", "prefix_based_mapping"])
+            # Ensure offered_in is preserved as list
+            self.assertIsInstance(c["offered_in"], list)
+
+        prefix_mapped = [c for c in courses if c["unit_mapping_source"] == "prefix_based_mapping"]
+        self.assertEqual(len(prefix_mapped), 111)
+
+    def test_unresolved_prerequisites_tracking(self):
+        """Verify tracking of the 5 missing prerequisite codes without inventing data."""
+        with open(self.project_root / "data" / "processed" / "courses.json", "r", encoding="utf-8") as f:
+            courses = json.load(f)["courses"]
+
+        expected_missing = {"AI321", "MM102", "MS290", "ME101", "ME261"}
+        courses_with_unresolved = [c for c in courses if c["unresolved_prerequisites"]]
+        self.assertEqual(len(courses_with_unresolved), 6)
+
+        observed_missing = set()
+        for c in courses_with_unresolved:
+            for p in c["unresolved_prerequisites"]:
+                observed_missing.add(p)
+                self.assertEqual(c["prerequisite_statuses"][p], "unresolved")
+
+        self.assertEqual(observed_missing, expected_missing)
+
+    def test_coursehub_instructor_statuses(self):
+        """Verify 4-status CourseHub instructor matching and preservation."""
+        with open(self.project_root / "data" / "processed" / "coursehub_instructor_links.json", "r", encoding="utf-8") as f:
+            links = json.load(f)["links"]
+
+        status_counts = Counter(l["match_status"] for l in links)
+        self.assertEqual(status_counts["matched"], 124)
+        self.assertEqual(status_counts["suggested"], 6)
+        self.assertEqual(status_counts["needs_review"], 17)
+        self.assertEqual(status_counts["unmatched"], 43)
+
+        # Check the 6 suggested candidates have suggested_faculty_id and null faculty_id
+        suggested = [l for l in links if l["match_status"] == "suggested"]
+        self.assertEqual(len(suggested), 6)
+        for s in suggested:
+            self.assertIsNone(s["faculty_id"], "Suggested match must keep faculty_id null")
+            self.assertIsNotNone(s["suggested_faculty_id"], "Suggested match must have suggested_faculty_id")
+
+        # Check name normalization
+        self.assertEqual(normalize_instructor_name("Dr.  Taqi A. Cheema"), "Dr Taqi A. Cheema")
+        self.assertEqual(normalize_instructor_name("Engr.  Hamza"), "Engr Hamza")
+
+    def test_faculty_designation_components(self):
+        """Verify designation parsing preserves listing and profile designations."""
+        # Case 1: Discrepancy between listing and profile
+        comp = parse_faculty_designation_components(
+            listing_desig="Assistant Professor",
+            profile_desig="Associate Professor & HoD",
+            status="active"
+        )
+        self.assertTrue(comp["designation_discrepancy"])
+        self.assertEqual(comp["preferred_designation"], "Associate Professor & HoD")
+        self.assertEqual(comp["academic_rank"], "Associate Professor")
+        self.assertEqual(comp["administrative_role"], "HoD")
+
+        # Case 2: In processed faculty dataset, verify 31 discrepancies detected
+        with open(self.project_root / "data" / "processed" / "faculty.json", "r", encoding="utf-8") as f:
+            faculty = json.load(f)["faculty"]
+
+        discrepancies = [f for f in faculty if f["designation_discrepancy"]]
+        self.assertEqual(len(discrepancies), 31)
+
+    def test_incomplete_faculty_profiles_preserved(self):
+        """Verify incomplete profiles are preserved with null/empty values without errors."""
+        with open(self.project_root / "data" / "processed" / "faculty.json", "r", encoding="utf-8") as f:
+            faculty = json.load(f)["faculty"]
+        with open(self.project_root / "data" / "processed" / "other_personnel.json", "r", encoding="utf-8") as f:
+            other = json.load(f)["people"]
+
+        # Check empty profile in faculty.json: dr-asif-khan-assistant-professor
+        asif = next((f for f in faculty if f["id"] == "dr-asif-khan-assistant-professor"), None)
+        self.assertIsNotNone(asif)
+        self.assertIsNone(asif["email"])
+        self.assertEqual(asif["qualifications"], [])
+        self.assertEqual(asif["research_interests"], [])
+        self.assertFalse(asif["verified"])
+        self.assertIn("email", asif["missing_fields"])
+
+        # Check isolated empty personnel in other_personnel.json: dr-nasir-javed-assistant-professor-fes
+        nasir_fes = next((o for o in other if o["id"] == "dr-nasir-javed-assistant-professor-fes"), None)
+        self.assertIsNotNone(nasir_fes)
+        self.assertIsNone(nasir_fes["email"])
+        self.assertIsNotNone(nasir_fes["note"])
+
+        # Check active Dr. Nasir Javed exists in faculty.json with complete credentials
+        nasir_fac = next((f for f in faculty if f["id"] == "dr-nasir-javed"), None)
+        self.assertIsNotNone(nasir_fac)
+        self.assertTrue(nasir_fac["verified"])
+
+    def test_curation_queue_categorization(self):
+        """Verify curation queue structure, categories, and resolution statuses."""
+        from backend.app.schemas.domain import CurationQueueItem
+
+        with open(self.project_root / "data" / "processed" / "needs_review.json", "r", encoding="utf-8") as f:
+            records = json.load(f)["records"]
+
+        self.assertEqual(len(records), 378)
+        statuses = Counter(r["resolution_status"] for r in records)
+        self.assertEqual(statuses["resolved"], 142)
+        self.assertEqual(statuses["needs_review"], 63)
+        self.assertEqual(statuses["informational"], 173)
+
+        # Validate every record conforms to CurationQueueItem schema
+        for r in records:
+            item = CurationQueueItem.model_validate(r)
+            self.assertIn(item.resolution_status.value, ["resolved", "needs_review", "informational"])
+            self.assertTrue(len(item.reasons) > 0)
+
 
 
 if __name__ == "__main__":
