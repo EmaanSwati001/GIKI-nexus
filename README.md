@@ -105,7 +105,7 @@ python scripts/validate_data.py --target data/raw
 ```
 
 ### Running Automated Tests
-The automated test suite verifies JSON loading, missing field safety, malformed record handling, duplicate detection, URL preservation, credit parsing, and raw file immutability:
+The automated test suite verifies JSON loading, missing field safety, malformed record handling, duplicate detection, URL preservation, credit parsing, prefix-to-unit mapping, missing prerequisite tracking, instructor lifecycle matching, designation component parsing, and raw file immutability:
 
 Using Python's built-in `unittest`:
 ```bash
@@ -114,8 +114,10 @@ python -m unittest discover tests
 
 Or using `pytest`:
 ```bash
-python -m pytest tests
+python -m pytest tests -v
 ```
+
+All 18 automated tests pass with a 100% success rate.
 
 ---
 
@@ -124,14 +126,15 @@ python -m pytest tests
 | Entity | Raw Records | Processed Records | Key Characteristics |
 |---|---|---|---|
 | **Academic Units** | 9 | 9 | FCSE, FEE, FME, FBS, FMCE (with DMSE & DChE), DCvE, MGS |
-| **Faculty Profiles** | 181 | 181 | 161 verified; 24 missing email; 15 missing qualifications |
-| **Courses** | 647 | 647 | 528 with credits & descriptions; 111 unassigned units |
+| **Faculty Profiles** | 181 | 181 | 161 verified; 31 designation discrepancies parsed; 1 dual appointment (`fbs`, `fee`) |
+| **Courses** | 647 | 647 | 100% assigned to units (536 prospectus-verified + 111 prefix-mapped; 0 unresolved); 5 missing prerequisite codes tracked |
 | **Publications** | 2,893 | 2,796 | 97 duplicate citations removed; 2,663 with verified years |
 | **Research Areas** | 657 | 656 | 1 ID collision resolved; normalized topic labels |
 | **Programs** | 15 | 15 | Bachelor of Science degree programs |
 | **Other Personnel** | 20 | 20 | Non-faculty / former staff isolated from active faculty graph |
-| **Instructor Links** | 190 | 190 | 124 matched to faculty slugs; 66 flagged for manual review |
-| **Curation Queue** | 36 | 256 | Comprehensive queue for human verification |
+| **Instructor Links** | 190 | 190 | 124 matched, 6 suggested, 17 needs_review, 43 unmatched (100% preserved) |
+| **Curation Queue** | 36 | 378 | Categorized into 142 resolved, 63 needs_review, 173 informational |
 
+For comprehensive master documentation of the entire project, refer to [PROJECT_MASTER_DOCUMENTATION.md](file:///c:/Users/ek139/OneDrive/Desktop/GIKI%20nexus/PROJECT_MASTER_DOCUMENTATION.md).  
 For detailed field descriptions, refer to [docs/data_dictionary.md](file:///c:/Users/ek139/OneDrive/Desktop/GIKI%20nexus/docs/data_dictionary.md).  
 For the complete data quality analysis, refer to [docs/data_audit_report.md](file:///c:/Users/ek139/OneDrive/Desktop/GIKI%20nexus/docs/data_audit_report.md).

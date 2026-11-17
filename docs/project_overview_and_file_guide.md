@@ -164,7 +164,7 @@ The backend is structured for clean modularity, following standard layered archi
 - **`tests/__init__.py`**  
   Marks the test directory as a Python package.
 - **`tests/test_data_processing.py`**  
-  Comprehensive unit test suite containing **12 test cases**:
+  Comprehensive unit test suite containing **18 test cases**:
   1. `test_read_valid_json`: Validates JSON loading from disk.
   2. `test_handle_missing_fields_safely`: Verifies missing fields do not crash the pipeline and correctly trigger `missing_fields` flags.
   3. `test_handle_malformed_records`: Tests trailing punctuation trimming, zero-width space removal, and bad email handling.
@@ -173,10 +173,16 @@ The backend is structured for clean modularity, following standard layered archi
   6. `test_raw_files_remain_untouched`: Verifies that pipeline execution does not mutate files in `data/raw/`.
   7. `test_credits_parsing_variations`: Tests `"3-0-3"`, `"3 0 3"`, `"0-3-1"`, integer, and `None` credit formats.
   8. `test_prospectus_false_positive_detection`: Verifies that false-positive matches (Naveed vs. Naeem) are caught and flagged for review.
-  9. `test_unmatched_instructors_preserved`: Confirms all 66 unmatched CourseHub instructors are preserved.
+  9. `test_unmatched_instructors_preserved`: Confirms all 190 CourseHub instructors are preserved across 4 statuses.
   10. `test_dual_appointment_preserved`: Confirms Prof. Dr. Nisar Ahmed retains both `fbs` and `fee` affiliations.
   11. `test_no_silent_record_discarding`: Asserts that no records were dropped between raw and processed datasets across all entities.
   12. `test_pydantic_domain_model_validation`: Validates processed data against the formal Pydantic domain models.
+  13. `test_prefix_based_course_mapping`: Validates all prefix rules, anchored matching, and preservation of `offered_in`.
+  14. `test_unresolved_prerequisites_tracking`: Validates tracking of the 5 missing prerequisite codes across 6 courses.
+  15. `test_coursehub_instructor_statuses`: Validates 4-status matching lifecycle (124 matched, 6 suggested, 17 needs_review, 43 unmatched) and name normalization.
+  16. `test_faculty_designation_components`: Validates distinction between academic rank, administrative role, and professional credentials with profile preference.
+  17. `test_incomplete_faculty_profiles_preserved`: Validates safe preservation of empty profiles without fake data.
+  18. `test_curation_queue_categorization`: Validates categorization of 378 queue items into `resolved` (142), `needs_review` (63), and `informational` (173).
 
 ---
 
