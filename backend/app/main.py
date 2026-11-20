@@ -14,9 +14,11 @@ from fastapi.responses import JSONResponse
 
 from backend.app.core.config import settings
 from backend.app.database.academic_repository import AcademicRepository
+from backend.app.database.session import init_db
 from backend.app.graph.service import AcademicGraphService
 from backend.app.services.academic_service import AcademicService
 from backend.app.api.routes.academic import router as academic_router
+from backend.app.api.routes.teammates import router as teammates_router
 
 # Configure logging
 logging.basicConfig(
@@ -48,18 +50,20 @@ async def lifespan(app: FastAPI):
     academic_service = AcademicService(repo=repo, graph_service=graph_service)
     app.state.academic_service = academic_service
 
-    logger.info("GIKI Nexus Academic Backend initialization complete.")
+    # 4. Initialize Teammate Finder SQLite Database
+    init_db()
+
+    logger.info("GIKI Nexus Academic & Teammate Backend initialization complete.")
     yield
 
-    logger.info("Shutting down GIKI Nexus Academic Backend...")
+    logger.info("Shutting down GIKI Nexus Backend...")
 
 
 app = FastAPI(
-    title="GIKI Nexus Academic Discovery API",
+    title="GIKI Nexus API",
     description=(
-        "Institutional academic and research discovery platform for Ghulam Ishaq Khan Institute (GIKI). "
-        "Provides course exploration, prerequisite tracking, faculty profiles, research areas, "
-        "and knowledge graph discovery."
+        "Institutional academic and research discovery platform for Ghulam Ishaq Khan Institute (GIKI), "
+        "including Academic Knowledge Graph and Student Project Teammate Finder."
     ),
     version=settings.VERSION,
     lifespan=lifespan,
@@ -88,6 +92,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
 
 # Register API Routers
 app.include_router(academic_router, prefix=settings.API_V1_PREFIX)
+app.include_router(teammates_router, prefix=settings.API_V1_PREFIX)
 
 
 # System Health Check Endpoint
@@ -110,6 +115,7 @@ async def health_check(request: Request) -> Dict[str, Any]:
         "version": settings.VERSION,
         "datasets_loaded": is_repo_ready,
         "graph_initialized": is_graph_ready,
+        "database_initialized": True,
         "entity_counts": {
             "units": len(repo.units) if is_repo_ready else 0,
             "faculty": len(repo.faculty) if is_repo_ready else 0,

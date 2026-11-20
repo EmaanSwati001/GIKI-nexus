@@ -34,6 +34,12 @@ class Settings:
         "http://127.0.0.1:8000",
     ]
     
+    # Database configuration (SQLite for Teammate Finder)
+    DATABASE_URL: str = os.getenv(
+        "DATABASE_URL",
+        f"sqlite:///{(PROJECT_ROOT / 'data' / 'teammates.db').as_posix()}"
+    )
+
     # Graph Engine Selection (defaults to networkx for zero-dep local execution)
     GRAPH_BACKEND: str = os.getenv("GRAPH_BACKEND", "networkx")
 
