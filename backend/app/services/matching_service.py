@@ -197,7 +197,7 @@ class MatchingEngine:
             programme=candidate.programme,
             academic_year=candidate.academic_year,
             is_anonymous=is_anon,
-            availability=candidate.availability,
+            availability=candidate.availability or "Not specified",
             skills_offered=candidate.technical_skills or [],
             overall_score=total_score,
             score_breakdown={

@@ -2,11 +2,17 @@
 Pydantic v2 schemas for GIKI Nexus Teammate Finder.
 Defines contracts for profile CRUD, project management, privacy enforcement,
 contact workflows, and explainable match recommendations.
+
+PROTOTYPE AUTHENTICATION NOTICE
+================================
+Mutation endpoints require an `ownership_key` header (X-Ownership-Key).
+This key is returned once at resource creation and must be stored by the caller.
+See backend/app/models/teammates.py for the full prototype authentication notice.
 """
 
 from datetime import datetime
 from typing import List, Optional, Dict, Any
-from pydantic import BaseModel, Field, EmailStr, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict
 
 from backend.app.models.teammates import (
     ProfileVisibility,
@@ -26,27 +32,26 @@ class ProfileBase(BaseModel):
     display_name: str = Field(..., min_length=2, max_length=100, description="Full student display name")
     programme: str = Field(..., description="Academic degree programme (e.g. 'BS Computer Science')")
     academic_year: int = Field(..., ge=1, le=4, description="Current academic year (1-4)")
-    technical_skills: List[str] = Field(default_factory=list, description="Technical skill tags (e.g. Python, PyTorch)")
+    technical_skills: List[str] = Field(default_factory=list, description="Technical skill tags")
     research_interests: List[str] = Field(default_factory=list, description="Academic/research interest domains")
-    preferred_domains: List[str] = Field(default_factory=list, description="Preferred project domains (e.g. AI/ML, Web)")
-    preferred_roles: List[str] = Field(default_factory=list, description="Preferred project roles (e.g. Backend Developer)")
-    availability: str = Field(default="flexible", description="Weekly time commitment or flexibility")
-    previous_experience: Optional[str] = Field(default=None, description="Summary of past projects, hackathons, or coursework")
+    preferred_domains: List[str] = Field(default_factory=list, description="Preferred project domains")
+    preferred_roles: List[str] = Field(default_factory=list, description="Preferred project roles")
+    availability: Optional[str] = Field(default="flexible", description="Weekly time commitment or flexibility")
+    previous_experience: Optional[str] = Field(default=None, description="Summary of past projects or coursework")
     bio: Optional[str] = Field(default=None, description="Brief student introduction")
-    project_ideas: Optional[str] = Field(default=None, description="Ideas student wishes to work on")
+    project_ideas: Optional[str] = Field(default=None, description="Ideas the student wishes to work on")
     visibility: ProfileVisibility = Field(default=ProfileVisibility.PUBLIC, description="Public, Anonymous, or Unlisted")
-    contact_preference: ContactPreference = Field(default=ContactPreference.UPON_REQUEST, description="Contact sharing policy")
+    contact_preference: ContactPreference = Field(default=ContactPreference.UPON_REQUEST)
 
 
 class ProfileCreate(ProfileBase):
-    email: str = Field(..., description="Official GIKI student email (stored privately)")
+    email: str = Field(..., description="Official GIKI student email (stored privately, never exposed publicly)")
 
 
 class ProfileUpdate(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
     display_name: Optional[str] = None
-    email: Optional[str] = None
     programme: Optional[str] = None
     academic_year: Optional[int] = Field(default=None, ge=1, le=4)
     technical_skills: Optional[List[str]] = None
@@ -59,7 +64,6 @@ class ProfileUpdate(BaseModel):
     project_ideas: Optional[str] = None
     visibility: Optional[ProfileVisibility] = None
     contact_preference: Optional[ContactPreference] = None
-    is_active: Optional[bool] = None
 
 
 class ProfileVisibilityUpdate(BaseModel):
@@ -69,7 +73,8 @@ class ProfileVisibilityUpdate(BaseModel):
 class ProfilePublicResponse(BaseModel):
     """
     Public discovery view of a student profile.
-    Email is NEVER exposed here. Anonymous profiles mask their display name.
+    Email is NEVER present. Anonymous profiles mask display_name and suppress bio.
+    ownership_key is NEVER present.
     """
     model_config = ConfigDict(from_attributes=True)
 
@@ -81,7 +86,7 @@ class ProfilePublicResponse(BaseModel):
     research_interests: List[str] = Field(default_factory=list)
     preferred_domains: List[str] = Field(default_factory=list)
     preferred_roles: List[str] = Field(default_factory=list)
-    availability: str
+    availability: Optional[str] = "flexible"
     previous_experience: Optional[str] = None
     bio: Optional[str] = None
     project_ideas: Optional[str] = None
@@ -94,8 +99,22 @@ class ProfilePublicResponse(BaseModel):
 
 
 class ProfilePrivateResponse(ProfilePublicResponse):
-    """Full profile returned to the owner, including private contact info."""
+    """
+    Full profile response returned to the resource owner at creation.
+    Includes private contact info and the one-time ownership key.
+
+    SECURITY NOTE: Store the ownership_key securely. It is required for all
+    subsequent mutations (update, deactivate, delete). It cannot be recovered
+    if lost and is not equivalent to institutional authentication.
+    """
     email: str
+    ownership_key: str = Field(
+        ...,
+        description=(
+            "PROTOTYPE ONLY — store this key securely. Required for all profile mutations. "
+            "NOT equivalent to production authentication."
+        ),
+    )
 
 
 # -------------------------------------------------------------------------
@@ -137,6 +156,10 @@ class ProjectMemberResponse(BaseModel):
 
 
 class ProjectResponse(BaseModel):
+    """
+    Project response. ownership_key is NEVER included here (not even for the owner).
+    The key is returned once at creation via ProjectCreateResponse.
+    """
     model_config = ConfigDict(from_attributes=True)
 
     id: str
@@ -152,6 +175,23 @@ class ProjectResponse(BaseModel):
     members: List[ProjectMemberResponse] = Field(default_factory=list)
     created_at: datetime
     updated_at: datetime
+
+
+class ProjectCreateResponse(ProjectResponse):
+    """
+    Returned only at project creation. Contains the one-time ownership key.
+
+    SECURITY NOTE: Store the ownership_key securely. It is required for all
+    subsequent project mutations (update, close, delete, approve interests).
+    It is NOT equivalent to institutional authentication.
+    """
+    ownership_key: str = Field(
+        ...,
+        description=(
+            "PROTOTYPE ONLY — store this key securely. Required for all project mutations. "
+            "NOT equivalent to production authentication."
+        ),
+    )
 
 
 # -------------------------------------------------------------------------
@@ -182,22 +222,33 @@ class InterestResponse(BaseModel):
     updated_at: datetime
     shared_contact_email: Optional[str] = Field(
         default=None,
-        description="Revealed ONLY upon owner approval for mutual contact",
+        description="Revealed ONLY upon owner approval for mutual contact. Never present in PENDING state.",
     )
 
 
 class InterestRespondRequest(BaseModel):
+    """Request body for approving or rejecting an interest request."""
     model_config = ConfigDict(extra="ignore")
 
-    status: Optional[InterestStatus] = Field(default=None, description="APPROVED or REJECTED")
-    action: Optional[InterestStatus] = Field(default=None, description="Alias for status")
+    action: InterestStatus = Field(
+        ...,
+        description="Must be APPROVED or REJECTED. PENDING is not a valid response action.",
+    )
+
+    def validated_action(self) -> InterestStatus:
+        """Return the action, raising ValueError if PENDING is submitted."""
+        if self.action == InterestStatus.PENDING:
+            raise ValueError("Cannot respond with PENDING — use APPROVED or REJECTED.")
+        return self.action
+
+    # Backward-compatibility alias used in existing tests
+    @property
+    def status(self) -> InterestStatus:
+        return self.action
 
     @property
     def target_status(self) -> InterestStatus:
-        res = self.status or self.action
-        if res is None:
-            raise ValueError("Either status or action must be provided.")
-        return res
+        return self.validated_action()
 
 
 # -------------------------------------------------------------------------
@@ -205,7 +256,10 @@ class InterestRespondRequest(BaseModel):
 # -------------------------------------------------------------------------
 
 class CandidateRecommendation(BaseModel):
-    """Explainable candidate recommendation for a project."""
+    """
+    Explainable candidate recommendation for a project.
+    Does NOT include email, ownership_key, or any private profile information.
+    """
     model_config = ConfigDict(extra="ignore")
 
     profile_id: str
@@ -213,9 +267,9 @@ class CandidateRecommendation(BaseModel):
     programme: str
     academic_year: int
     is_anonymous: bool
-    availability: str
+    availability: Optional[str] = "flexible"
     skills_offered: List[str]
-    overall_score: float = Field(..., description="Rule-based alignment score from 0.0 to 100.0 (not a guarantee)")
+    overall_score: float = Field(..., description="Rule-based alignment score 0.0–100.0 (not a guarantee)")
     score_breakdown: Dict[str, float] = Field(..., description="Criterion-by-criterion scores")
     shared_interests: List[str] = Field(default_factory=list)
     matching_skills: List[str] = Field(default_factory=list)
@@ -223,8 +277,9 @@ class CandidateRecommendation(BaseModel):
     matched_roles: List[str] = Field(default_factory=list)
     role_compatibility: bool = False
     availability_compatibility: bool = False
-    explanation: str = Field(..., description="Clear human-readable breakdown of match rationale")
+    explanation: str = Field(..., description="Human-readable breakdown of match rationale")
 
+    # Convenience property aliases used by test suite
     @property
     def matched_skills(self) -> List[str]:
         return self.matching_skills
@@ -261,7 +316,10 @@ class CandidateRecommendation(BaseModel):
 
 
 class ProjectRecommendation(BaseModel):
-    """Explainable project recommendation for a student looking for a team."""
+    """
+    Explainable project recommendation for a student looking for a team.
+    Does NOT include ownership_key or any private project management information.
+    """
     model_config = ConfigDict(extra="ignore")
 
     project_id: str
@@ -269,7 +327,7 @@ class ProjectRecommendation(BaseModel):
     domains: List[str]
     required_skills: List[str]
     preferred_roles: List[str]
-    overall_score: float = Field(..., description="Rule-based alignment score from 0.0 to 100.0")
+    overall_score: float = Field(..., description="Rule-based alignment score 0.0–100.0")
     score_breakdown: Dict[str, float]
     shared_interests: List[str] = Field(default_factory=list)
     matching_skills: List[str] = Field(default_factory=list)
