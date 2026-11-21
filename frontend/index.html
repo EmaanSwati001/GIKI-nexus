@@ -1298,7 +1298,7 @@
       const container = document.getElementById('coursesGrid');
       container.innerHTML = '<div style="color: #94a3b8; font-size: 0.85rem; padding: 20px;">Loading courses...</div>';
       try {
-        let url = '/api/v1/academic/courses?limit=60';
+        let url = '/api/v1/courses?limit=60';
         if (unit !== 'all') url += `&unit=${unit}`;
         if (query) url += `&query=${encodeURIComponent(query)}`;
         const res = await fetch(url);
@@ -1391,7 +1391,7 @@
       const container = document.getElementById('facultyGrid');
       container.innerHTML = '<div style="color: #94a3b8; font-size: 0.85rem; padding: 20px;">Loading faculty directory...</div>';
       try {
-        let url = '/api/v1/academic/faculty?limit=60';
+        let url = '/api/v1/faculty?limit=60';
         if (unit !== 'all') url += `&unit=${unit}`;
         if (query) url += `&query=${encodeURIComponent(query)}`;
         const res = await fetch(url);
@@ -1459,7 +1459,7 @@
       openModal('facultyDetailModal');
 
       try {
-        const res = await fetch(`/api/v1/academic/faculty/${f.id}/publications`);
+        const res = await fetch(`/api/v1/faculty/${f.id}/publications`);
         const pubs = await res.json();
         const pList = Array.isArray(pubs) ? pubs : pubs.items || [];
         if (pList.length) {
@@ -1854,49 +1854,34 @@
       area.innerHTML = '<div style="color:#38bdf8; padding:20px;">Searching academic datasets and teammate registries...</div>';
 
       try {
-        const res = await fetch(`/api/v1/academic/search?query=${encodeURIComponent(query)}`);
-        const data = await res.json();
+        const res = await fetch(`/api/v1/search?q=${encodeURIComponent(query)}`);
+        const items = await res.json();
         let html = '';
 
-        if (data.courses && data.courses.length) {
-          html += `<h3 style="font-size:1rem; font-weight:700; color:white; margin:16px 0 10px;">Courses Matching "${query}"</h3>`;
-          html += '<div class="grid-cards">' + data.courses.slice(0, 6).map(c => `
-            <div class="nexus-card" onclick="openCourseModal('${c.id}')" style="cursor:pointer;">
-              <span class="card-code-tag">${c.code}</span>
-              <h4 style="font-weight:700; color:white; margin:6px 0;">${c.title}</h4>
-              <p style="font-size:0.78rem; color:#94a3b8;">${(c.unit || 'GIKI').toUpperCase()}</p>
-            </div>
-          `).join('') + '</div>';
-        }
-
-        if (data.faculty && data.faculty.length) {
-          html += `<h3 style="font-size:1rem; font-weight:700; color:white; margin:24px 0 10px;">Faculty Matching "${query}"</h3>`;
-          html += '<div class="grid-cards">' + data.faculty.slice(0, 6).map(f => `
-            <div class="nexus-card" onclick="openFacultyModal('${f.id}')" style="cursor:pointer;">
-              <span class="tag-item emerald">Faculty</span>
-              <h4 style="font-weight:700; color:white; margin:6px 0;">${f.name}</h4>
-              <p style="font-size:0.78rem; color:#94a3b8;">${f.designation || 'Faculty Member'}</p>
-            </div>
-          `).join('') + '</div>';
-        }
-
-        if (data.publications && data.publications.length) {
-          html += `<h3 style="font-size:1rem; font-weight:700; color:white; margin:24px 0 10px;">Verified Publications</h3>`;
-          html += '<div style="display:flex; flex-direction:column; gap:8px;">' + data.publications.slice(0, 5).map(p => `
-            <div style="background:#090e1a; padding:12px; border-radius:8px; border:1px solid #1e293b;">
-              <div style="color:white; font-size:0.82rem; font-weight:600;">${p.title || p.citation}</div>
-              <div style="color:#64748b; font-size:0.72rem; margin-top:4px;">${p.faculty_name || ''} • ${p.venue || ''}</div>
-            </div>
-          `).join('') + '</div>';
-        }
-
-        if (!html) {
-          html = `<div style="color:#94a3b8; padding:20px;">No records matched "${query}". Try another keyword.</div>`;
+        if (Array.isArray(items) && items.length) {
+          html += `<h3 style="font-size:1rem; font-weight:700; color:white; margin:16px 0 12px;">Top Results for "${query}" (${items.length} matches)</h3>`;
+          html += '<div class="grid-cards">' + items.map(item => {
+            const typeColor = item.entity_type === 'course' ? 'primary' : item.entity_type === 'faculty' ? 'emerald' : 'tag-item';
+            return `
+              <div class="nexus-card" style="cursor:default;">
+                <div>
+                  <div class="card-top">
+                    <span class="tag-item ${typeColor}">${(item.entity_type || 'item').toUpperCase()}</span>
+                    <span class="card-credit-badge">Score: ${item.score || 0}</span>
+                  </div>
+                  <h4 style="font-weight:700; color:white; margin:6px 0; font-size:1rem;">${item.title || item.id}</h4>
+                  <p style="font-size:0.78rem; color:#94a3b8; line-height:1.4;">${item.subtitle || ''}</p>
+                </div>
+              </div>
+            `;
+          }).join('') + '</div>';
+        } else {
+          html = `<div style="color:#94a3b8; padding:20px;">No records matched "${query}". Try another keyword like 'Machine Learning', 'CS102', or 'FCSE'.</div>`;
         }
 
         area.innerHTML = html;
       } catch (err) {
-        area.innerHTML = '<div style="color:#f43f5e; padding:20px;">Search failed to execute.</div>';
+        area.innerHTML = `<div style="color:#f43f5e; padding:20px;">Search failed: ${err.message}</div>`;
       }
     }
 

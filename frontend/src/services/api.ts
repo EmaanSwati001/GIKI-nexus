@@ -51,7 +51,7 @@ export async function getHealthStatus(): Promise<{ status: string; dataset_stats
 // Academic Discovery
 // ---------------------------------------------------------------------------
 export async function getUnits(): Promise<Unit[]> {
-  const data = await fetchJson<any>(`${BASE_URL}/academic/units`);
+  const data = await fetchJson<any>(`${BASE_URL}/units`);
   return Array.isArray(data) ? data : data.items || [];
 }
 
@@ -60,12 +60,12 @@ export async function getCourses(params?: { unit?: string; search?: string; limi
   if (params?.unit) query.set('unit', params.unit);
   if (params?.search) query.set('query', params.search);
   if (params?.limit) query.set('limit', params.limit.toString());
-  const data = await fetchJson<any>(`${BASE_URL}/academic/courses?${query.toString()}`);
+  const data = await fetchJson<any>(`${BASE_URL}/courses?${query.toString()}`);
   return Array.isArray(data) ? data : data.items || [];
 }
 
 export async function getCourseDetail(courseId: string): Promise<Course> {
-  return fetchJson<Course>(`${BASE_URL}/academic/courses/${courseId}`);
+  return fetchJson<Course>(`${BASE_URL}/courses/${courseId}`);
 }
 
 export async function getCoursePrerequisites(courseId: string): Promise<{
@@ -75,7 +75,7 @@ export async function getCoursePrerequisites(courseId: string): Promise<{
   unresolved_prerequisites: string[];
   prerequisite_tree: any;
 }> {
-  return fetchJson(`${BASE_URL}/academic/courses/${courseId}/prerequisites`);
+  return fetchJson(`${BASE_URL}/courses/${courseId}/prerequisites`);
 }
 
 export async function getFaculty(params?: { unit?: string; search?: string; rank?: string }): Promise<Faculty[]> {
@@ -83,34 +83,34 @@ export async function getFaculty(params?: { unit?: string; search?: string; rank
   if (params?.unit) query.set('unit', params.unit);
   if (params?.search) query.set('query', params.search);
   if (params?.rank) query.set('rank', params.rank);
-  const data = await fetchJson<any>(`${BASE_URL}/academic/faculty?${query.toString()}`);
+  const data = await fetchJson<any>(`${BASE_URL}/faculty?${query.toString()}`);
   return Array.isArray(data) ? data : data.items || [];
 }
 
 export async function getFacultyDetail(facultyId: string): Promise<Faculty> {
-  return fetchJson<Faculty>(`${BASE_URL}/academic/faculty/${facultyId}`);
+  return fetchJson<Faculty>(`${BASE_URL}/faculty/${facultyId}`);
 }
 
 export async function getFacultyPublications(facultyId: string): Promise<Publication[]> {
-  const data = await fetchJson<any>(`${BASE_URL}/academic/faculty/${facultyId}/publications`);
+  const data = await fetchJson<any>(`${BASE_URL}/faculty/${facultyId}/publications`);
   return Array.isArray(data) ? data : data.items || [];
 }
 
 export async function getPrograms(): Promise<Program[]> {
-  const data = await fetchJson<any>(`${BASE_URL}/academic/programs`);
+  const data = await fetchJson<any>(`${BASE_URL}/programs`);
   return Array.isArray(data) ? data : data.items || [];
 }
 
 export async function getGraphStats(): Promise<GraphStats> {
-  return fetchJson<GraphStats>(`${BASE_URL}/academic/graph/stats`);
+  return fetchJson<GraphStats>(`${BASE_URL}/graph/stats`);
 }
 
 export async function getGraphSubgraph(entityType: string, entityId: string, depth = 1): Promise<GraphData> {
-  return fetchJson<GraphData>(`${BASE_URL}/academic/graph/subgraph?entity_type=${entityType}&entity_id=${entityId}&depth=${depth}`);
+  return fetchJson<GraphData>(`${BASE_URL}/graph/subgraph?entity_type=${entityType}&entity_id=${entityId}&depth=${depth}`);
 }
 
 export async function searchAcademic(query: string): Promise<SearchResult> {
-  return fetchJson<SearchResult>(`${BASE_URL}/academic/search?query=${encodeURIComponent(query)}`);
+  return fetchJson<SearchResult>(`${BASE_URL}/search?query=${encodeURIComponent(query)}`);
 }
 
 // ---------------------------------------------------------------------------
