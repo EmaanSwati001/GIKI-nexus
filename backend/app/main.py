@@ -10,7 +10,7 @@ from typing import Dict, Any
 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
 
 from backend.app.core.config import settings
 from backend.app.database.academic_repository import AcademicRepository
@@ -93,6 +93,21 @@ async def generic_exception_handler(request: Request, exc: Exception):
 # Register API Routers
 app.include_router(academic_router, prefix=settings.API_V1_PREFIX)
 app.include_router(teammates_router, prefix=settings.API_V1_PREFIX)
+
+
+# Root Frontend Web Application Endpoint
+@app.get("/", tags=["Frontend"], include_in_schema=False)
+async def serve_frontend():
+    frontend_index = settings.BASE_DIR / "frontend" / "index.html"
+    if frontend_index.exists():
+        return FileResponse(frontend_index)
+    return JSONResponse(
+        content={
+            "app_name": settings.PROJECT_NAME,
+            "version": settings.VERSION,
+            "message": "GIKI Nexus API is running. Access /docs for interactive Swagger UI.",
+        }
+    )
 
 
 # System Health Check Endpoint
