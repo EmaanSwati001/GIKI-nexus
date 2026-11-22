@@ -31,7 +31,7 @@ const NODE_COLORS: Record<string, { bg: string; border: string; text: string }> 
 export const KnowledgeGraphPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialType = searchParams.get('entity') || 'course';
-  const initialId = searchParams.get('id') || 'CS102';
+  const initialId = searchParams.get('id') || 'CS112';
 
   const [stats, setStats] = useState<GraphStats | null>(null);
   const [entityType, setEntityType] = useState(initialType);
@@ -179,8 +179,11 @@ export const KnowledgeGraphPage: React.FC = () => {
       ctx.fillStyle = '#64748b';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      const edgeLabel = edge.type.replace(/_/g, ' ').toLowerCase();
-      ctx.fillText(edgeLabel, midX, midY - 6);
+      const rawRel = edge.relationship || edge.type || '';
+      const edgeLabel = rawRel ? rawRel.replace(/_/g, ' ').toLowerCase() : '';
+      if (edgeLabel) {
+        ctx.fillText(edgeLabel, midX, midY - 6);
+      }
       ctx.restore();
     });
 
@@ -189,7 +192,8 @@ export const KnowledgeGraphPage: React.FC = () => {
       const nx = node.x || 0;
       const ny = node.y || 0;
       const isSelected = selectedNode?.id === node.id;
-      const colors = NODE_COLORS[node.type] || { bg: '#64748b', border: '#475569', text: '#fff' };
+      const rawType = (node.entity_type || node.type || 'unknown').toLowerCase();
+      const colors = NODE_COLORS[rawType] || { bg: '#64748b', border: '#475569', text: '#fff' };
       const radius = isSelected ? 24 : 18;
 
       // Selection Halo
@@ -217,7 +221,7 @@ export const KnowledgeGraphPage: React.FC = () => {
       ctx.fillStyle = colors.text;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      const initial = node.label ? node.label.slice(0, 3) : node.type[0].toUpperCase();
+      const initial = node.label ? node.label.slice(0, 3) : rawType ? rawType[0].toUpperCase() : '?';
       ctx.fillText(initial, nx, ny);
 
       // Node Label Below
@@ -302,11 +306,11 @@ export const KnowledgeGraphPage: React.FC = () => {
         {stats && (
           <div className="flex items-center gap-2 flex-wrap text-xs text-slate-500">
             <span className="font-semibold text-slate-700">
-              {stats.node_count.toLocaleString()} Nodes
+              {(stats.total_nodes ?? stats.node_count ?? 0).toLocaleString()} Nodes
             </span>
             <span>•</span>
             <span className="font-semibold text-slate-700">
-              {stats.edge_count.toLocaleString()} Relationships
+              {(stats.total_edges ?? stats.edge_count ?? 0).toLocaleString()} Relationships
             </span>
             <span>•</span>
             <span className="text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
@@ -398,9 +402,9 @@ export const KnowledgeGraphPage: React.FC = () => {
             </span>
             <div className="flex flex-wrap gap-1.5">
               {[
-                { type: 'course', id: 'CS102', label: 'CS102' },
-                { type: 'course', id: 'CS201', label: 'CS201' },
+                { type: 'course', id: 'CS112', label: 'CS112' },
                 { type: 'course', id: 'AI311', label: 'AI311' },
+                { type: 'course', id: 'CS231', label: 'CS231' },
                 { type: 'unit', id: 'fcse', label: 'FCSE Unit' },
                 { type: 'program', id: 'bs_ai', label: 'BS AI' },
               ].map((s) => (
@@ -495,82 +499,87 @@ export const KnowledgeGraphPage: React.FC = () => {
           </div>
 
           {/* Node Inspector Drawer / Box */}
-          {selectedNode && (
-            <div className="card p-4 bg-slate-50 border-slate-200">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <Badge variant="default" size="sm">
-                      {selectedNode.type}
-                    </Badge>
-                    <span className="font-mono text-xs font-bold text-slate-700">
-                      ID: {selectedNode.id}
-                    </span>
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900">
-                    {selectedNode.label || selectedNode.id}
-                  </h3>
+          {selectedNode && (() => {
+            const nodeKind = (selectedNode.entity_type || selectedNode.type || 'entity').toLowerCase();
+            const rawId = selectedNode.id.includes(':') ? selectedNode.id.split(':')[1] : selectedNode.id;
 
-                  {/* Render Node Details if present */}
-                  {selectedNode.details && (
-                    <div className="mt-2 text-xs text-slate-600 flex flex-wrap gap-x-4 gap-y-1">
-                      {Object.entries(selectedNode.details)
-                        .filter(([k, v]) => typeof v === 'string' || typeof v === 'number')
-                        .slice(0, 4)
-                        .map(([k, v]) => (
-                          <span key={k}>
-                            <strong className="capitalize">{k.replace('_', ' ')}:</strong>{' '}
-                            {String(v)}
-                          </span>
-                        ))}
+            return (
+              <div className="card p-4 bg-slate-50 border-slate-200">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Badge variant="default" size="sm">
+                        {nodeKind}
+                      </Badge>
+                      <span className="font-mono text-xs font-bold text-slate-700">
+                        ID: {selectedNode.id}
+                      </span>
                     </div>
-                  )}
-                </div>
+                    <h3 className="text-base font-bold text-slate-900">
+                      {selectedNode.label || selectedNode.id}
+                    </h3>
 
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <button
-                    onClick={() => {
-                      setEntityType(selectedNode.type);
-                      setEntityId(selectedNode.id);
-                    }}
-                    className="btn-secondary text-xs py-1 px-2.5"
-                  >
-                    Center Graph
-                  </button>
+                    {/* Render Node Details if present */}
+                    {selectedNode.details && (
+                      <div className="mt-2 text-xs text-slate-600 flex flex-wrap gap-x-4 gap-y-1">
+                        {Object.entries(selectedNode.details)
+                          .filter(([k, v]) => typeof v === 'string' || typeof v === 'number')
+                          .slice(0, 4)
+                          .map(([k, v]) => (
+                            <span key={k}>
+                              <strong className="capitalize">{k.replace('_', ' ')}:</strong>{' '}
+                              {String(v)}
+                            </span>
+                          ))}
+                      </div>
+                    )}
+                  </div>
 
-                  {selectedNode.type === 'course' && (
-                    <Link
-                      to={`/courses/${selectedNode.id}`}
-                      className="btn-primary text-xs py-1 px-2.5 inline-flex items-center gap-1"
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <button
+                      onClick={() => {
+                        setEntityType(nodeKind);
+                        setEntityId(rawId);
+                      }}
+                      className="btn-secondary text-xs py-1 px-2.5"
                     >
-                      <span>Course Page</span>
-                      <ChevronRight className="w-3 h-3" />
-                    </Link>
-                  )}
+                      Center Graph
+                    </button>
 
-                  {selectedNode.type === 'faculty' && (
-                    <Link
-                      to={`/faculty/${selectedNode.id}`}
-                      className="btn-primary text-xs py-1 px-2.5 inline-flex items-center gap-1"
-                    >
-                      <span>Faculty Page</span>
-                      <ChevronRight className="w-3 h-3" />
-                    </Link>
-                  )}
+                    {nodeKind === 'course' && (
+                      <Link
+                        to={`/courses/${rawId}`}
+                        className="btn-primary text-xs py-1 px-2.5 inline-flex items-center gap-1"
+                      >
+                        <span>Course Page</span>
+                        <ChevronRight className="w-3 h-3" />
+                      </Link>
+                    )}
 
-                  {selectedNode.type === 'program' && (
-                    <Link
-                      to={`/programs/${selectedNode.id}`}
-                      className="btn-primary text-xs py-1 px-2.5 inline-flex items-center gap-1"
-                    >
-                      <span>Program Page</span>
-                      <ChevronRight className="w-3 h-3" />
-                    </Link>
-                  )}
+                    {nodeKind === 'faculty' && (
+                      <Link
+                        to={`/faculty/${rawId}`}
+                        className="btn-primary text-xs py-1 px-2.5 inline-flex items-center gap-1"
+                      >
+                        <span>Faculty Page</span>
+                        <ChevronRight className="w-3 h-3" />
+                      </Link>
+                    )}
+
+                    {nodeKind === 'program' && (
+                      <Link
+                        to={`/programs/${rawId}`}
+                        className="btn-primary text-xs py-1 px-2.5 inline-flex items-center gap-1"
+                      >
+                        <span>Program Page</span>
+                        <ChevronRight className="w-3 h-3" />
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
         </div>
       </div>
     </div>

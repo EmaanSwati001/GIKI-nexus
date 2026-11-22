@@ -73,16 +73,22 @@ export interface Program {
 }
 
 export interface GraphStats {
-  node_count: number;
-  edge_count: number;
-  node_types: Record<string, number>;
-  edge_types: Record<string, number>;
+  total_nodes?: number;
+  total_edges?: number;
+  node_count?: number;
+  edge_count?: number;
+  node_counts?: Record<string, number>;
+  relationship_counts?: Record<string, number>;
+  node_types?: Record<string, number>;
+  edge_types?: Record<string, number>;
 }
 
 export interface GraphNode {
   id: string;
   label: string;
-  type: 'course' | 'faculty' | 'unit' | 'program' | 'publication' | 'research_area';
+  type?: string;
+  entity_type?: string;
+  is_center?: boolean;
   details?: Record<string, any>;
   x?: number;
   y?: number;
@@ -93,7 +99,9 @@ export interface GraphNode {
 export interface GraphEdge {
   source: string;
   target: string;
-  type: string;
+  type?: string;
+  relationship?: string;
+  verification_status?: string;
   metadata?: Record<string, any>;
 }
 

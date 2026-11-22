@@ -107,7 +107,7 @@ export const HomePage: React.FC = () => {
           {/* Quick Filter Tags */}
           <div className="flex flex-wrap items-center justify-center gap-2 mt-3.5 text-xs text-slate-500">
             <span className="font-medium text-slate-400">Popular:</span>
-            {['CS102', 'Data Structures', 'Artificial Intelligence', 'Faculty of CSE', 'Robotics'].map(
+            {['CS112', 'Data Structures', 'Artificial Intelligence', 'Faculty of CSE', 'Robotics'].map(
               (tag) => (
                 <button
                   key={tag}
