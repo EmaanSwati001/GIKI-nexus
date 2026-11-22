@@ -53,6 +53,16 @@ export interface Publication {
   doi?: string;
 }
 
+export interface ResearchArea {
+  id: string;
+  name: string;
+  slug?: string;
+  faculty_count?: number;
+  faculty_ids?: string[];
+  unit_ids?: string[];
+  unit_names?: string[];
+}
+
 export interface Program {
   id: string;
   name: string;

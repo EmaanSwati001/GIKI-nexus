@@ -8,7 +8,7 @@ import logging
 from contextlib import asynccontextmanager
 from typing import Dict, Any
 
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI, Request, status, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 
@@ -90,14 +90,24 @@ async def generic_exception_handler(request: Request, exc: Exception):
     )
 
 
+from fastapi.staticfiles import StaticFiles
+
 # Register API Routers
 app.include_router(academic_router, prefix=settings.API_V1_PREFIX)
 app.include_router(teammates_router, prefix=settings.API_V1_PREFIX)
+
+# Mount built frontend static assets if available
+dist_assets = settings.BASE_DIR / "frontend" / "dist" / "assets"
+if dist_assets.exists():
+    app.mount("/assets", StaticFiles(directory=str(dist_assets)), name="static_assets")
 
 
 # Root Frontend Web Application Endpoint
 @app.get("/", tags=["Frontend"], include_in_schema=False)
 async def serve_frontend():
+    dist_index = settings.BASE_DIR / "frontend" / "dist" / "index.html"
+    if dist_index.exists():
+        return FileResponse(dist_index)
     frontend_index = settings.BASE_DIR / "frontend" / "index.html"
     if frontend_index.exists():
         return FileResponse(frontend_index)
@@ -141,3 +151,19 @@ async def health_check(request: Request) -> Dict[str, Any]:
         },
         "graph": stats,
     }
+
+
+# Client-side SPA Route Fallback (Deep Linking)
+@app.get("/{client_route:path}", tags=["Frontend"], include_in_schema=False)
+async def serve_client_spa(client_route: str):
+    """Serve SPA index.html for client-side routed paths, preserving API 404s."""
+    if client_route.startswith("api/") or client_route in ("health", "docs", "redoc", "openapi.json"):
+        raise HTTPException(status_code=404, detail="Not Found")
+    dist_index = settings.BASE_DIR / "frontend" / "dist" / "index.html"
+    if dist_index.exists():
+        return FileResponse(dist_index)
+    frontend_index = settings.BASE_DIR / "frontend" / "index.html"
+    if frontend_index.exists():
+        return FileResponse(frontend_index)
+    raise HTTPException(status_code=404, detail="Not Found")
+
