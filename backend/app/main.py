@@ -52,6 +52,11 @@ async def lifespan(app: FastAPI):
 
     # 4. Initialize Teammate Finder SQLite Database
     init_db()
+    try:
+        from scripts.seed_teammates import seed
+        seed()
+    except Exception as e:
+        logger.warning(f"Auto-seed check: {e}")
 
     logger.info("GIKI Nexus Academic & Teammate Backend initialization complete.")
     yield
@@ -118,6 +123,15 @@ async def serve_frontend():
             "message": "GIKI Nexus API is running. Access /docs for interactive Swagger UI.",
         }
     )
+
+
+@app.get("/dashboard", tags=["Frontend"], include_in_schema=False)
+@app.get("/standalone_dashboard.html", tags=["Frontend"], include_in_schema=False)
+async def serve_standalone_dashboard():
+    dashboard = settings.BASE_DIR / "frontend" / "standalone_dashboard.html"
+    if dashboard.exists():
+        return FileResponse(dashboard)
+    raise HTTPException(status_code=404, detail="Dashboard not found")
 
 
 # System Health Check Endpoint

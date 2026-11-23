@@ -196,7 +196,10 @@ class AcademicService:
             ]
 
         total = len(all_areas)
-        paginated = all_areas[skip : skip + limit]
+        paginated = [
+            {**ra, "name": ra.get("name") or ra.get("label", ra.get("id", ""))}
+            for ra in all_areas[skip : skip + limit]
+        ]
 
         return {
             "total": total,
@@ -264,11 +267,26 @@ class AcademicService:
     # ---------------------------------------------------------------------
     def get_programs(self, unit: Optional[str] = None) -> List[Dict[str, Any]]:
         """Return all degree programs."""
-        return self.repo.get_all_programs(unit=unit)
+        programs = self.repo.get_all_programs(unit=unit)
+        return [
+            {
+                **p,
+                "unit_id": p.get("unit_id") or p.get("unit"),
+                "code": p.get("code") or p.get("id", "").replace("bs-", "BS ").replace("-", " ").upper(),
+            }
+            for p in programs
+        ]
 
     def get_program(self, program_id: str) -> Optional[Dict[str, Any]]:
         """Return single degree program details."""
-        return self.repo.get_program(program_id)
+        p = self.repo.get_program(program_id)
+        if not p:
+            return None
+        return {
+            **p,
+            "unit_id": p.get("unit_id") or p.get("unit"),
+            "code": p.get("code") or p.get("id", "").replace("bs-", "BS ").replace("-", " ").upper(),
+        }
 
     def get_program_curriculum(self, program_id: str) -> Dict[str, Any]:
         """Return curriculum courses organized semester by semester."""

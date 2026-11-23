@@ -406,7 +406,7 @@ export const KnowledgeGraphPage: React.FC = () => {
                 { type: 'course', id: 'AI311', label: 'AI311' },
                 { type: 'course', id: 'CS231', label: 'CS231' },
                 { type: 'unit', id: 'fcse', label: 'FCSE Unit' },
-                { type: 'program', id: 'bs_ai', label: 'BS AI' },
+                { type: 'program', id: 'bs-artificial-intelligence', label: 'BS AI' },
               ].map((s) => (
                 <button
                   key={s.id}

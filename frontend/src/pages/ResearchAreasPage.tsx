@@ -114,7 +114,7 @@ export const ResearchAreasPage: React.FC = () => {
                   </div>
 
                   <h3 className="text-sm font-bold text-slate-900 group-hover:text-purple-700 transition-colors">
-                    {area.name}
+                    {area.name || (area as any).label || area.id}
                   </h3>
 
                   {area.unit_names && area.unit_names.length > 0 && (
@@ -132,7 +132,7 @@ export const ResearchAreasPage: React.FC = () => {
                   </span>
 
                   <Link
-                    to={`/faculty?search=${encodeURIComponent(area.name)}`}
+                    to={`/faculty?search=${encodeURIComponent(area.name || (area as any).label || area.id)}`}
                     className="font-medium text-slate-700 group-hover:text-purple-700 flex items-center gap-0.5 text-xs"
                   >
                     <span>View Faculty</span>
