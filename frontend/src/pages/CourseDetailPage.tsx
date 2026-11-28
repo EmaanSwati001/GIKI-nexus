@@ -207,13 +207,15 @@ export const CourseDetailPage: React.FC = () => {
                       Direct Required Courses
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {prereqData.direct_prerequisites.map((code) => {
+                      {(prereqData.direct_prerequisites || []).map((item: any, idx: number) => {
+                        const code = typeof item === 'string' ? item : item?.code || `PREREQ-${idx}`;
+                        const title = typeof item === 'object' && item?.name ? item.name : undefined;
                         const resolvedCourse = (prereqData.resolved_prerequisites || []).find(
                           (c) => c.code === code
                         );
                         return (
                           <Link
-                            key={code}
+                            key={code || idx}
                             to={`/courses/${code}`}
                             className="p-3 rounded-lg border border-slate-200 hover:border-sky-300 hover:bg-sky-50/40 transition-all flex items-center justify-between group"
                           >
@@ -221,9 +223,9 @@ export const CourseDetailPage: React.FC = () => {
                               <div className="font-mono text-xs font-bold text-slate-900 group-hover:text-sky-700">
                                 {code}
                               </div>
-                              {resolvedCourse && (
+                              {(title || resolvedCourse?.title) && (
                                 <div className="text-[11px] text-slate-500 truncate max-w-[200px]">
-                                  {resolvedCourse.title}
+                                  {title || resolvedCourse?.title}
                                 </div>
                               )}
                             </div>
@@ -270,15 +272,20 @@ export const CourseDetailPage: React.FC = () => {
                 Completing {course.code} serves as an academic prerequisite for:
               </p>
               <div className="flex flex-wrap gap-2">
-                {relatedData.dependent_courses.map((depCode) => (
-                  <Link
-                    key={depCode}
-                    to={`/courses/${depCode}`}
-                    className="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors border border-slate-200"
-                  >
-                    {depCode}
-                  </Link>
-                ))}
+                {(relatedData.dependent_courses || []).map((depItem: any, idx: number) => {
+                  const depCode = typeof depItem === 'string' ? depItem : depItem?.code || `DEP-${idx}`;
+                  const depTitle = typeof depItem === 'object' && depItem?.name ? depItem.name : '';
+                  return (
+                    <Link
+                      key={depCode || idx}
+                      to={`/courses/${depCode}`}
+                      title={depTitle || depCode}
+                      className="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors border border-slate-200"
+                    >
+                      {depCode}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -298,23 +305,30 @@ export const CourseDetailPage: React.FC = () => {
                 <p className="text-xs text-slate-500 mb-2">
                   Included in curriculum roadmaps for:
                 </p>
-                {relatedData.programs.map((prog) => (
-                  <Link
-                    key={prog.id}
-                    to={`/programs/${prog.id}`}
-                    className="p-2.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-between group block"
-                  >
-                    <div>
-                      <div className="text-xs font-semibold text-slate-800 group-hover:text-sky-700">
-                        {prog.name}
+                {(relatedData.programs || []).map((prog: any, idx: number) => {
+                  const progId = prog?.id || `prog-${idx}`;
+                  const progName = prog?.name || progId;
+                  const progCode = prog?.code || progId.replace('bs-', 'BS ').replace(/-/g, ' ').toUpperCase();
+                  const progLevel = prog?.degree_level || 'BS';
+                  const semInfo = prog?.semester ? ` (Sem ${prog.semester})` : '';
+                  return (
+                    <Link
+                      key={progId}
+                      to={`/programs/${progId}`}
+                      className="p-2.5 rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all flex items-center justify-between group block"
+                    >
+                      <div>
+                        <div className="text-xs font-semibold text-slate-800 group-hover:text-sky-700">
+                          {progName}
+                        </div>
+                        <div className="text-[10px] text-slate-400 font-mono mt-0.5">
+                          {progCode} • {progLevel}{semInfo}
+                        </div>
                       </div>
-                      <div className="text-[10px] text-slate-400 font-mono mt-0.5">
-                        {prog.code} • {prog.degree_level}
-                      </div>
-                    </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600" />
-                  </Link>
-                ))}
+                      <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-600" />
+                    </Link>
+                  );
+                })}
               </div>
             ) : (
               <p className="text-xs text-slate-400">
@@ -331,12 +345,14 @@ export const CourseDetailPage: React.FC = () => {
                 <h2 className="text-base font-bold text-slate-900">Department</h2>
               </div>
               <h3 className="text-xs font-bold text-slate-800">{relatedData.unit.name}</h3>
-              <p className="text-xs text-slate-500 mt-1">Code: {relatedData.unit.code || relatedData.unit.id}</p>
+              <p className="text-xs text-slate-500 mt-1">
+                Code: {(relatedData.unit.code || (relatedData.unit as any).short || relatedData.unit.id || '').toUpperCase()}
+              </p>
               <Link
                 to={`/courses?unit=${relatedData.unit.id}`}
                 className="mt-3 text-xs font-semibold text-sky-700 hover:text-sky-800 inline-flex items-center gap-1"
               >
-                <span>Browse all {relatedData.unit.code} courses</span>
+                <span>Browse all {(relatedData.unit.code || (relatedData.unit as any).short || relatedData.unit.id || '').toUpperCase()} courses</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </Link>
             </div>

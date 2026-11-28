@@ -68,8 +68,11 @@ export interface Program {
   name: string;
   code: string;
   unit_id: string;
+  unit_name?: string;
   degree_level: string;
-  curriculum?: Record<string, string[]>;
+  duration_years?: number;
+  course_count?: number;
+  curriculum?: Record<string, any>;
 }
 
 export interface GraphStats {

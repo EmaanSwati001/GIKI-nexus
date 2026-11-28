@@ -85,7 +85,16 @@ class AcademicRepository:
 
         # 3. Courses (preserves exact case for elective placeholders like CS3XX/CS4xx)
         courses_raw = self._load_json_file("courses.json")
-        self.courses = courses_raw.get("courses", [])
+        raw_courses = courses_raw.get("courses", [])
+        self.courses = []
+        for c in raw_courses:
+            rec = dict(c)
+            # Ensure both title and name are present on every course
+            if "name" in rec and "title" not in rec:
+                rec["title"] = rec["name"]
+            elif "title" in rec and "name" not in rec:
+                rec["name"] = rec["title"]
+            self.courses.append(rec)
         self._courses_by_code = {c["code"]: c for c in self.courses if "code" in c}
         self._courses_by_upper_code = {c["code"].upper(): c for c in self.courses if "code" in c}
 
@@ -192,6 +201,44 @@ class AcademicRepository:
             return None
         return self._units_by_id.get(unit_id.strip().lower())
 
+    @staticmethod
+    def resolve_unit_codes(unit_query: str) -> List[str]:
+        """Normalize unit abbreviations, aliases, and parent-child hierarchies."""
+        if not unit_query:
+            return []
+        uq = unit_query.strip().lower()
+        alias_map = {
+            "ee": ["fee"],
+            "fee": ["fee"],
+            "electrical": ["fee"],
+            "cs": ["fcse"],
+            "fcse": ["fcse"],
+            "cse": ["fcse"],
+            "computer": ["fcse"],
+            "me": ["fme"],
+            "fme": ["fme"],
+            "mechanical": ["fme"],
+            "fmce": ["fmce", "dmse", "dche"],
+            "dmse": ["dmse", "fmce"],
+            "dche": ["dche", "fmce"],
+            "materials": ["dmse", "fmce"],
+            "chemical": ["dche", "fmce"],
+            "che": ["dche", "fmce"],
+            "dcve": ["dcve"],
+            "civil": ["dcve"],
+            "ce": ["dcve"],
+            "cve": ["dcve"],
+            "fbs": ["fbs"],
+            "bs": ["fbs"],
+            "basic sciences": ["fbs"],
+            "basic": ["fbs"],
+            "mgs": ["mgs"],
+            "fms": ["mgs"],
+            "mgmt": ["mgs"],
+            "management": ["mgs"],
+        }
+        return alias_map.get(uq, [uq])
+
     # ---------------------------------------------------------------------
     # Faculty Members
     # ---------------------------------------------------------------------
@@ -203,8 +250,11 @@ class AcademicRepository:
     ) -> List[Dict[str, Any]]:
         results = self.faculty
         if unit:
-            unit_norm = unit.strip().lower()
-            results = [f for f in results if unit_norm in [u.lower() for u in f.get("units", [])]]
+            target_units = self.resolve_unit_codes(unit)
+            results = [
+                f for f in results
+                if any(u.lower() in target_units for u in f.get("units", []))
+            ]
         if research_area:
             ra_norm = research_area.strip().lower()
             results = [f for f in results if ra_norm in [r.lower() for r in f.get("research_area_ids", [])]]
@@ -233,8 +283,25 @@ class AcademicRepository:
     ) -> List[Dict[str, Any]]:
         results = self.courses
         if unit:
-            u_norm = unit.strip().lower()
-            results = [c for c in results if c.get("unit") and c["unit"].lower() == u_norm]
+            uq = unit.strip().lower()
+            target_units = self.resolve_unit_codes(unit)
+            if uq in ["dmse", "materials"]:
+                results = [
+                    c for c in results
+                    if c.get("unit") == "dmse"
+                    or (c.get("unit") == "fmce" and c.get("code", "").upper().startswith("MM"))
+                ]
+            elif uq in ["dche", "chemical", "che"]:
+                results = [
+                    c for c in results
+                    if c.get("unit") == "dche"
+                    or (c.get("unit") == "fmce" and c.get("code", "").upper().startswith("CH"))
+                ]
+            else:
+                results = [
+                    c for c in results
+                    if c.get("unit") and c["unit"].lower() in target_units
+                ]
         if program_id:
             p_norm = program_id.strip().lower()
             results = [
